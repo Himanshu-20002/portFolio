@@ -43,7 +43,7 @@ const Canvas = () => {
     }, []);
 
     return (
-        <div id='curve' className='relative w-screen h-screen overflow-hidden'>
+        <div id='curve' className='relative w-screen h-screen overflow-hidden bg-amber-300'>
             <svg ref={svgRef} width="100%" height="160" xmlns="http://www.w3.org/2000/svg" className='bg-blue-600'>
                 <path 
                     ref={pathRef}
@@ -51,6 +51,7 @@ const Canvas = () => {
                     stroke="white" 
                     fill="none" 
                     strokeWidth="2"
+
                 />
             </svg>
         </div>

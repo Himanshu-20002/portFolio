@@ -8,6 +8,7 @@ import Canvas from '@/src/components/Canvas'
 import Section from '@/src/components/Section'
 import OutroLast from '@/src/components/OutroLast'
 import HeorAbout from '@/src/components/HeorAbout'
+import TechStack from '@/src/components/TechStack'
 
 
 
@@ -18,7 +19,8 @@ export default function Home() {
       <HeorAbout />
       <Cards />
       <Experties />
-      <About />
+      <TechStack />
+      {/* <About /> */}
       <Canvas />
       <Section />
       <OutroLast />

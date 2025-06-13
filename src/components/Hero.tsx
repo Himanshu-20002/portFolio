@@ -91,13 +91,13 @@ const Hero = () => {
                     <h1 className='absolute top-50 left-5 text-white text-6xl z-10 font-bold'>
                         hi ,<span className='text-red-600'>I'm </span>
                     </h1>
-                    <h1 className='absolute top-70 left-40 text-black text-6xl z-10 font-bold -translate-x-1/2 -translate-y-1/2'>
+                    <h1 className='absolute top-70 left-40 text-white text-6xl z-10 font-bold -translate-x-1/2 -translate-y-1/2'>
                         Himanshu
                     </h1>
                     <h2 id='title' className='absolute top-80 left-4 text-2xl z-10 font-bold opacity-0'>
                      A <span id='developer'>developer</span> and <span id='designer' className=' hover:text-red-600'>Web designer</span>
                     </h2>
-                    <p id='description' className='absolute top-90 left-10 text-xl z-10  text-left text-grey-500 italic opacity-0'>
+                    <p id='description' className='absolute top-90 left-10 text-xl z-10  text-left text-white italic opacity-0'>
                     "Designer by day, developer by night—basically "
                         <br />a Batman who fights bad UX instead of criminals.
                     </p>
@@ -113,9 +113,9 @@ const Hero = () => {
                 <div className='absolute top-0 left-50 z-10 w-screen h-screen overflow-hidden'>
                     <SecondHero />
                 </div>
-                <div id='rive-canvas' className='absolute top-9 left-90 z-30 fixed w-120 h-200 overflow-hidden'>
+                {/* <div id='rive-canvas' className='absolute top-9 left-90 z-30 fixed w-120 h-200 overflow-hidden'>
                     <RiveComponent />
-                </div>
+                </div> */}
             </div>
         </div>
     )
