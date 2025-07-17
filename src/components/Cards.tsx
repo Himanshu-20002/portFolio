@@ -64,9 +64,9 @@ const Cards = () => {
     }, []);
 
     return (
-        <div className='flex-1 w-screen overflow-x-hidden  '>
+        <div className='flex-1 w-screen overflow-x-hidden  h-[300vh] bg-gradient-to-t from-black-300 via-10%  to-black-500 via-10%  via-violet-900 via-5%'>
 
-            <section className='steps bg-gray-950' id='steps'>
+            <section  id='steps'>
                 <div className='step-counter'>
                     <div className='counter-title'>
                         <h1 className='text-white mt-2.5 pt-20'>knowing by doing-</h1>
@@ -101,11 +101,7 @@ const Cards = () => {
                     <div className='card-empty w-72 h-96'></div>
                 </div>
             </section>
-            <section className='outro'>
-                <p className='w-2xl text-center line-clamp-5'>Our 3d designs are made with creativity and attention to detail. We are passionate about creating beautiful and functional products that enhance the user experience. <span>crfting stunning visuals and prototypes</span></p>
-
-
-            </section>
+            
         </div>
     )
 }
