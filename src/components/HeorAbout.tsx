@@ -6,18 +6,13 @@ gsap.registerPlugin(ScrollTrigger);
 import { useRive } from "@rive-app/react-canvas";
 import Image from "next/image";
 import Ribbons from "./Cursor";
-
+import GradientSpheres from "../components/animated/component/GradientSpheres";
 const HeorAbout = () => {
   const { RiveComponent: FirstHero, rive: firstRive } = useRive({
     src: "/interactive_flower.riv",
     autoplay: true,
     stateMachines: "State Machine 1",
   });
-  // const { RiveComponent: Main, rive: mainRive } = useRive({
-  //   src: "/samurai_hero.riv",
-  //   autoplay: true,
-  //   stateMachines:  "State Machine 1",
-  // });
 
   const { RiveComponent: Skull, rive: secondRive } = useRive({
     src: "/bouncing_spider.riv",
@@ -27,15 +22,15 @@ const HeorAbout = () => {
 
   useGSAP(() => {
     gsap.to("#face", {
-      transform: "translateY(-200%)",
+      transform: "translateY(-100%)",
       opacity: 1,
+      duration: 10,
       scrollTrigger: {
         trigger: "#tc",
-        // pin:true,
+
         scrub: 5,
         start: "top -39%",
         end: "+=500",
-        markers: true,
       },
     });
     gsap.to("#aboutHero", {
@@ -46,7 +41,6 @@ const HeorAbout = () => {
         scrub: 1,
         start: "top 90%",
         end: "+=500",
-     
       },
     });
 
@@ -80,7 +74,7 @@ const HeorAbout = () => {
         trigger: "#tc1",
         start: "top 0%",
         end: "+=900",
-      
+
         pin: true,
 
         scrub: 5,
@@ -99,7 +93,7 @@ const HeorAbout = () => {
         trigger: "#tc",
         start: "top 20",
         end: "+=500",
-    
+
         scrub: 1,
       },
     });
@@ -107,15 +101,19 @@ const HeorAbout = () => {
   return (
     <div
       id="tc1"
-      className="relative w-screen px-8 h-[250vh]  mix-blend-hard-light bg-white"
+      className="relative w-screen px-8 h-[250vh] bg-black  mix-blend-hard-light overflow-hidden "
     >
+      <GradientSpheres
+        spher1Class={"gradient-sphere sphere-1"}
+        spher2Class={"gradient-sphere  sphere-2"}
+      />
       <div
         id="tc"
         className="flex  justify-center  items-center  max-w-7xl gap-88  pt-20"
       >
         <span
           id="face"
-          className="absolute top-90 left-200 font-serif text-md lg:text-xl max-w-xl text-center lg:text-left"
+          className="p-10 absolute top-90 left-200 font-serif text-md text-left lg:text-xl text-white max-w-xl t ext-center max-lg:left-0"
         >
           A passionate software engineer and creative designer who thrives at
           the intersection of code and visual storytelling. I build immersive
@@ -128,17 +126,14 @@ const HeorAbout = () => {
         </span>
 
         {/* <div className="absolute top-200 left-20 z-30  w-120 h-200 overflow-hidden">
-          <span className="text-emerald-500 font-serif text-md lg:text-xl max-w-2xl text-center lg:text-left">
-            Helping with :{" "}
-          </span>
           <span className="text-amber-50 font-serif text-md lg:text-xl max-w-2xl text-center lg:text-left">
             Creative ideas/Redesigns Brand Marketing <br></br>Strategy UI/UX
             design & Development Social Media design<br></br> Motion Graphic &
             3D
           </span>
         </div> */}
-       
-        <div className="absolute top-200 left-20 z-30  w-120 h-200 overflow-hidden">
+
+        <div className="relative top-200 left-20 z-30  w-120 h-200 overflow-hidden">
           <span className="text-amber-50 font-serif text-lg lg:text-3xl max-w-2xl text-center lg:text-left">
             {" "}
             What You'll Find Below
@@ -152,21 +147,21 @@ const HeorAbout = () => {
         </div>
       </div>
 
-      <div className="absolute top-9 left-20 z-30  w-120 h-200 overflow-hidden">
+      {/* <div className="absolute top-9 left-20 z-30  w-120 h-200 overflow-hidden">
         <FirstHero />
-      </div>
+      </div> */}
       {/* <div
         id="main"
         className="absolute top-190 left-190 -z-30  w-120 h-200 overflow-hidden"
       >
         <Main />
       </div> */}
-      <div
+      {/* <div
         id="aboutHero"
         className="absolute  w-full h-[300px] -top-80  left-0 "
       >
         <Skull />
-      </div>
+      </div> */}
       <section id="pinned">
         <div
           id="revealer"

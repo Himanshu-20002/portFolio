@@ -1,6 +1,25 @@
 // index.js
 export const servicesData = [
     {
+      title: "Helping with",
+      description:
+        "Your business deserves a fast, secure, and future-proof digital foundation. I develop custom web apps with clean architecture, optimized databases, and seamless integrations—ensuring reliability at every layer.",
+      items: [
+        {
+          title: "freelance Dev projects",
+          description: "(REST/GraphQL APIs, Microservices, Auth Systems)",
+        },
+        {
+          title: "00",
+          description: "(React, Vue, TypeScript, Interactive UI/UX)",
+        },
+        {
+          title: "00",
+          description: "(SQL/NoSQL Optimization, Scalable Structures)",
+        },
+      ],
+    },
+    {
       title: "FullStack Development",
       description:
         "Your business deserves a fast, secure, and future-proof digital foundation. I develop custom web apps with clean architecture, optimized databases, and seamless integrations—ensuring reliability at every layer.",
@@ -178,4 +197,46 @@ export const servicesData = [
     },
     { name: "LinkedIn", href: "https://www.linkedin.com/in/ali-sanati/" },
     { name: "GitHub", href: "https://github.com/Ali-Sanati" },
+  ];
+  export const iconsList = [
+    {
+      name: "html",
+      image: "/images/html.svg",
+    },
+    {
+      name: "css",
+      image: "/images/css.svg",
+    },
+    {
+      name: "javascript",
+      image: "/images/js.svg",
+    },
+    {
+      name: "react",
+      image: "/images/react.svg",
+    },
+    {
+      name: "typescript",
+      image: "/images/ts.svg",
+    },
+    {
+      name: "github",
+      image: "/images/github.svg",
+    },
+    {
+      name: "gsap",
+      image: "/images/gsap.svg",
+    },
+    {
+      name: "threejs",
+      image: "/images/threejs.svg",
+    },
+    {
+      name: "figma",
+      image: "/images/figma.svg",
+    },
+    {
+      name: "aws",
+      image: "/images/aws.svg",
+    },
   ];

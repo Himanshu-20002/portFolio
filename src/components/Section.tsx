@@ -176,9 +176,9 @@ const Section = () => {
     "text-black absolute top-50% left-50% text-[9vw] italic will-change-transform   translate(-50%, -50%)";
   return (
     <div>
-      <section className="intro">
+      {/* <section className="intro">
         <h1 className={titleClass}>concept</h1>
-      </section>
+      </section> */}
 
       <section className="product-overview bg-white">
         <div className="header-1">

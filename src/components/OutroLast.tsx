@@ -1,14 +1,23 @@
-import React from 'react'
+import React from "react";
+
+import DarkVeil from "./animated/DarkVeil";
+import AnimatedBentoGrid from "./animated/component/animated-bento-grid";
+import Particles from "./animated/StarfieldBackground";
+import GradientSpheres from "./animated/component/GradientSpheres";
+// import MagicBento from "./animated/Bento";
 
 const OutroLast = () => {
-  return (
-    <div className='h-100vh w-screen'>
-      <div className='flex-1 flex justify-center items-center bg-gradient-to-b from-indigo-500 from-10% via-sky-500 via-30% to-black to-90% w-screen h-200 '>
-        <p className='w-2xl text-center line-clamp-5'>Let's Redefine Our RelationShip. <span>I'm not a developer</span></p>
-        <p className='w-2xl text-center line-clamp-5'>i'm a partner in your mission, <span> a colleague in your workforce, a helping hand when you need one, and a trusted advisor during your project's realisation</span></p>
-      </div>
-    </div>
-  )
-}
+  return (// File: OutroLast.tsx
+    <div className="relative w-screen h-[230vh] overflow-hidden flex  items-center justify-center  bg-gradient-to-b from-black from-10% via-sky-500 via-30% to-black w-screen h-200 ">
+ 
+      <div className="w-full max-w-[90vw] h-[100vh]  items-center absolute t-0 l-0 justify-center">
+      <GradientSpheres spher1Class={"gradient-sphere sphere-1"} spher2Class={'gradient-sphere  sphere-2'}/>
 
-export default OutroLast
+        <AnimatedBentoGrid />
+      </div>
+      
+    </div>
+  );
+};
+
+export default OutroLast;

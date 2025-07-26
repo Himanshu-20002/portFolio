@@ -12,12 +12,16 @@ export const AnimatedTextLine  = ({text,className})=>{
         gsap.from(lineRefs.current,{
             y:100,
             opacity:0,
-            duration:1,
-            stagger:0.3,
-            scrub:1,
+            duration:0.5,
+            stagger:0.4,
+            scrub:2,
             ease:"back.out",
             scrollTrigger:{
-                trigger:containerRef.current
+                trigger:containerRef.current,
+                scrub: 1,
+                //   markers:true,
+                start: "top +=120%",
+                end: "+=200",
             }
         })
     }

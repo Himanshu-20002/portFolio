@@ -7,6 +7,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplashCursor from "./Cursor";
+import GradientSpheres from "./animated/component/GradientSpheres";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,7 +53,7 @@ const Services = () => {
       scrollTrigger: {
         trigger:  "#service",
         start: "top 20%",
-        end: "+=900",
+        end: "+=500",
         scrub: 5,
         pin: true,
         
@@ -84,8 +85,8 @@ const Services = () => {
   }, []);
 
   return (
-    <section id="services" className="h-[400vh] bg-black rounded-t-4xl">
-
+    <section id="services" className="h-[500vh] bg-black rounded-t-4xl">
+{/* <GradientSpheres spher1Class={"gradient-sphere sphere-1"} spher2Class={'gradient-sphere  sphere-2'}/> */}
       <AnimatedHeaderSection
         subTitle={"Behind the scene, Beyond the screen"}
         title={"Service"}

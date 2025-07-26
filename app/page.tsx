@@ -20,23 +20,26 @@ import MainServices from "@/src/components/MainServices";
 
 export default function Home() {
   return (
-    <ReactLenis root className="relative min-h-screen w-screen overflow-x-auto bg-black ">
+    <ReactLenis root className=" min-h-screen w-screen overflow-x-hidden bg-black ">
       <Hero />
       <HeorAbout />
       <Services/>
+      {/* <OutroLast /> */}
+      
+      
 
    
 
     
-      <Cards />
+      {/* <Cards /> */}
       <Experties />
 
       {/* <About /> */}
       {/* <Canvas /> */}
-      <Section />
+      {/* <Section /> */}
       
       
-      {/* <OutroLast /> */}
+      
 
       {/* <div style={{ position: "relative", zIndex: 10 }}>
         <Scene />
