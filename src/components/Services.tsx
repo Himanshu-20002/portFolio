@@ -23,11 +23,22 @@ const Services = () => {
   // 1. Avoid mediaQuery issue by using manual query
   const [isDesktop, setIsDesktop] = React.useState(false);
 
-  useEffect(() => {
-    setIsDesktop(window.matchMedia('(min-width: 768px)').matches);
-    hasMounted.current = true;
-  }, []);
+ useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 768px)');
+    setIsDesktop(mediaQuery.matches);
 
+    const handleMediaChange = (e: MediaQueryListEvent) => {
+      setIsDesktop(e.matches);
+    };
+
+    mediaQuery.addEventListener('change', handleMediaChange);
+
+    hasMounted.current = true;
+
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaChange);
+    };
+  }, []);
   useGSAP(() => {
     serviceRefs.current.forEach((el) => {
       if (!el) return;
@@ -44,7 +55,7 @@ const Services = () => {
     });
   }, []);
 
-   // Animate the services on scroll
+  //nimate the services on scroll
    useGSAP(() => {
     
     if (!hasMounted.current) return;
@@ -52,10 +63,11 @@ const Services = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger:  "#service",
-        start: "top 20%",
-        end: "+=500",
+        start: "top 0%",
+        end: "+=300%",
         scrub: 5,
         pin: true,
+        markers:true
         
     
        
@@ -85,8 +97,9 @@ const Services = () => {
   }, []);
 
   return (
-    <section id="services" className="h-[500vh] bg-black rounded-t-4xl">
+    <section id="services" className=" bg-black rounded-t-4xl  relative  h-[400vh]">
 {/* <GradientSpheres spher1Class={"gradient-sphere sphere-1"} spher2Class={'gradient-sphere  sphere-2'}/> */}
+<>
       <AnimatedHeaderSection
         subTitle={"Behind the scene, Beyond the screen"}
         title={"Service"}
@@ -103,9 +116,9 @@ const Services = () => {
             isDesktop
               ? {
                   top: `calc(10vh + ${index * 5}em)`,
-                  marginBottom: `${(servicesData.length - index - 1) * 5}rem`,
+                  // marginBottom: `${(servicesData.length - index - 1) * 1}rem`,
                 }
-              : { top: 0 }
+              : {top: `calc(10vh + ${index * 5}em)`,}
           }
         >
           <div className="flex items-center justify-between gap-4 font-light">
@@ -124,7 +137,7 @@ const Services = () => {
                       {item.title}
                     </h3>
                     {itemIndex < service.items.length - 1 && (
-                      <div className="w-full h-px my-2 bg-white/30" />
+                      <div className="w-full bg-white/30" />
                     )}
                   </div>
                 ))}
@@ -133,6 +146,7 @@ const Services = () => {
           </div>
         </div>
       ))}
+      </>
     </section>
   );
 };

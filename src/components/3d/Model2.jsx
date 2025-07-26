@@ -47,6 +47,7 @@ export const ModelCanvas = () => {
       dpr={[1, 2]}
       camera={{ position: [0, 3, 8], fov: 35 }}
       style={{ height: "100%", width: "100%" }}
+      className=" max-lg:pointer-events-none"
     >
       <ambientLight intensity={1.5} />
       <directionalLight
@@ -63,7 +64,7 @@ export const ModelCanvas = () => {
       />
       <Suspense fallback={null}>
         <Model2 />
-        <OrbitControls enablePan={false} enableZoom={false} autoRotate />
+        <OrbitControls enablePan={false} enableZoom={false}  />
       </Suspense>
     </Canvas>
   ) : (

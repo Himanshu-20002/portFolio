@@ -16,6 +16,10 @@ import SplashCursor from "@/src/components/Cursor";
 import Services from "@/src/components/Services";
 import ReactLenis from "lenis/react"
 import MainServices from "@/src/components/MainServices";
+import MobileApps from "@/src/components/MobileApps";
+import Footer from "@/src/components/Footer";
+import Contact from "@/src/components/Contact";
+import Projects from "@/src/components/Project";
 
 
 export default function Home() {
@@ -24,19 +28,21 @@ export default function Home() {
       <Hero />
       <HeorAbout />
       <Services/>
-      {/* <OutroLast /> */}
       
       
 
    
 
     
-      {/* <Cards /> */}
+      <Cards />
+      <MobileApps/>
+      <Projects/>
+      <OutroLast />
       <Experties />
 
       {/* <About /> */}
       {/* <Canvas /> */}
-      {/* <Section /> */}
+      <Section />
       
       
       
@@ -45,6 +51,8 @@ export default function Home() {
         <Scene />
          
       </div> */}
+      <Contact/>
+      <Footer/>
     </ReactLenis>
   );
 }

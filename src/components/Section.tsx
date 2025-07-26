@@ -255,17 +255,17 @@ const Section = () => {
             </div>
           </div>
         </div>
-
-        <div className="model-container">
+{/* 
+        <div className="  max-lg:pointer-events-none -z-99 w-full  absolute top-0    left-44 h-full">
           <ModelCanvas />
-        </div>
+        </div> */}
       </section>
 
-      <section className="outro">
+      <div className="outro">
         <h1 className="text-6xl font-bold text-white justify-center item-center">
           (That's a wrap)
         </h1>
-      </section>
+      </div>
     </div>
   );
 };
