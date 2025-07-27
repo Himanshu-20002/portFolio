@@ -261,11 +261,11 @@ const Section = () => {
         </div> */}
       </section>
 
-      <div className="outro">
-        <h1 className="text-6xl font-bold text-white justify-center item-center">
+      <section className="intro">
+        <h1 className="text-6xl font-bold text-white justify-center item-center p-8 ">
           (That's a wrap)
         </h1>
-      </div>
+      </section>
     </div>
   );
 };

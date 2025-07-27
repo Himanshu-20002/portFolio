@@ -15,7 +15,6 @@ import Ribbons from "@/src/components/Cursor";
 import SplashCursor from "@/src/components/Cursor";
 import Services from "@/src/components/Services";
 import ReactLenis from "lenis/react"
-import MainServices from "@/src/components/MainServices";
 import MobileApps from "@/src/components/MobileApps";
 import Footer from "@/src/components/Footer";
 import Contact from "@/src/components/Contact";
