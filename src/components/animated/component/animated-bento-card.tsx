@@ -186,7 +186,7 @@ export function AnimatedBentoCard({
   return (
     <Card
       ref={cardRef}
-      className={`relative bg-gray-900/50 border-gray-800 p-6 flex flex-col justify-between cursor-pointer overflow-hidden ${className}`}
+      className={`relative  bg-gray-900/40 border-gray-800 p-6 flex flex-col justify-between cursor-pointer overflow-hidden ${className}`}
       style={
         {
           "--mouse-x": "50%",
@@ -209,12 +209,12 @@ export function AnimatedBentoCard({
           padding: "2px",
         }}
       >
-        <div className="w-full h-full bg-gray-900/50 rounded-lg" />
+        <div className="w-full h-full rounded-lg" />
       </div>
 
       {/* Media Background */}
       {(image || video) && (
-        <div ref={mediaRef} className="absolute inset-0 opacity-20 rounded-lg overflow-hidden">
+        <div ref={mediaRef} className="absolute inset-0 opacity-90 rounded-lg overflow-hidden">
           {video ? (
             <video autoPlay muted loop playsInline className="w-full h-full object-cover">
               <source src={video} type="video/mp4" />

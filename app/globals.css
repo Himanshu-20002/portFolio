@@ -7,6 +7,23 @@
   @apply relative ms-10 text-xs uppercase text-blue-50 after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100 dark:after:bg-white cursor-pointer;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&family=Rubik+Wet+Paint&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Syne:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
+
+.rubik-wet-paint-regular {
+  font-family: "Rubik Wet Paint", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.rubik-moonrocks-regular {
+  font-family: "Rubik Moonrocks", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 .rive-animation {
   position: absolute;
   top: 0;
@@ -96,24 +113,40 @@ img {
   overflow: hidden;
 
 }
-.count{
+/* .count{
   top:-10px;
 
-}
-.count-container{
+} */
+.count-container {
   position: relative;
-  transform: translateY(150px);
-  will-change: transform;
+  height: 120px; /* or whatever fits your font-size */
 }
+.count-container h1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(40px);
+  /* Remove transition here, GSAP will handle it */
+  pointer-events: none;
+}
+.count-container h1.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
 .step-counter h1 {
   width: 100%;
   height: 10px;
   position: relative;
+  font-family: "Rubik Moonrocks";
   color: rgb(251, 254, 251);
   text-transform: uppercase;
-  font-family: "PP Monument Extended";
   font-weight: 500;
-  font-size: 150px;
+  font-size: 120px;
   letter-spacing: -0.04em;
   will-change: transform;
 }

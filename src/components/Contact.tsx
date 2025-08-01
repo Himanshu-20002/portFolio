@@ -32,7 +32,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 md:py-32">
+    <section id="contact" className=" flex py-20 md:py-32 items-center justify-center">
       <div className="container px-4 md:px-6">
         <div className="text-center space-y-4 mb-16">
           <Badge className="bg-purple-100 text-purple-700">Get In Touch</Badge>

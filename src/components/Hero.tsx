@@ -170,8 +170,8 @@ const Hero = () => {
     //   </div> */}
     //   </div>
     // </div>
-    <section className="relative min-h-screen flex  item-center justify-center overflow-hidden">
-      <div className="   absolute overflow-hidden -z-99 h-[100vh]  w-[100vw]">
+    <section className="relative min-h-screen flex  overflow-hidden  max-lg:items-center max-lg:justify-center">
+      <div className="   absolute overflow-hidden -z-99 h-[100vh]  w-[100vw]  ">
         <HeroCenter
           width="100%"
           height="100%"

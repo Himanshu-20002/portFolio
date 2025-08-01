@@ -80,7 +80,7 @@ export default function Projects() {
   const otherProjects = projects.filter((project) => !project.featured)
 
   return (
-    <section id="projects" className="py-20 md:py-32  bg-gradient-to-t from-black from-10% via-violet-500 via-30% to-white    ">
+    <section id="projects" className="py-20 md:py-32  gap-10 justify-around flex  bg-gradient-to-t from-black from-10% via-violet-500 via-30% to-white    ">
       <div className="container px-4 md:px-6">
         <div className="text-center space-y-4 mb-16">
           <Badge className="bg-purple-100 text-purple-700">Portfolio</Badge>
@@ -96,7 +96,7 @@ export default function Projects() {
             <Card
               key={index}
               className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group bg-black">
-            >
+       
               <div className="relative overflow-hidden">
                 <Image
                   src={project.image || "/placeholder.svg"}
@@ -149,7 +149,7 @@ export default function Projects() {
         </div>
 
         {/* Other Projects */}
-        {/* <div className="space-y-8">
+        <div className="space-y-8  hidden md:block">
           <h3 className="text-2xl font-bold text-center">More Projects</h3>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {otherProjects.map((project, index) => (
@@ -205,7 +205,7 @@ export default function Projects() {
               </Card>
             ))}
           </div>
-        </div> */}
+        </div>
 
         <div className="text-center mt-12">
           <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">

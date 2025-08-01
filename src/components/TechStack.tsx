@@ -6,7 +6,7 @@ import TechIcon from "./animated/component/TechIcon";
 import GradientSpheres from "./animated/component/GradientSpheres";
 const TechStack = () => {
   return (
-    <div id="TechStack" className="relative h-dvh w-screen overflow-hidden ">
+    <div id="TechStack" className="relative h-dvh w-screen overflow-hidden  overflow-y-hidden mix-blend-plus-darker">
       
       <div className=" z-100 mt-20 justify-center w-screen grid grid-cols-3 gap-10 items-center">
         {/* <div className="h-14 bg-violet-400"><p className='text-white 5xl:text-6xl uppercase'>html</p></div>

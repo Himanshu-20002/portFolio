@@ -103,8 +103,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-gray-400 flex items-center">
-              © {currentYear} DevPortfolio. Made with <Heart className="h-4 w-4 mx-1 text-red-500" /> using Next.js &
-              Tailwind CSS
+              © {currentYear} DevPortfolio. Made with <Heart className="h-4 w-4 mx-1 text-red-500" /> using Next.js
             </p>
             <div className="flex space-x-6">
               <Link href="#" className="text-sm text-gray-400 hover:text-white transition-colors">

@@ -56,7 +56,7 @@ export default function AnimatedBentoGrid() {
         <div className="mx-auto max-w-7xl">
           <div
             ref={containerRef}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4 h-[800px]"
+            className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4 h-[800px]"
           >
             {/* Insights */}
             <AnimatedBentoCard
@@ -88,7 +88,8 @@ export default function AnimatedBentoGrid() {
               title="Analytics"
               subtitle="Track user behavior"
               className="lg:col-span-1 xl:col-span-1 row-span-1"
-              image="/placeholder.svg?height=300&width=400"
+              // image="/placeholder.svg?height=300&width=400"
+              video="/videos/feature-3.mp4"
               delay={0.4}
             />
 
@@ -159,6 +160,7 @@ export default function AnimatedBentoGrid() {
               subtitle="Enterprise-grade protection"
               className="lg:col-span-1 xl:col-span-1 row-span-1"
               image="/placeholder.svg?height=300&width=400"
+              
               delay={1.2}
             />
           </div>

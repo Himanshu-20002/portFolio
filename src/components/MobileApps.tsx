@@ -24,7 +24,7 @@ export default function MobileApps() {
       description:
         "A seamless shopping experience with real-time inventory and secure payments.",
       videoUrl:
-        "/placeholder.mp4?height=600&width=300&query=e-commerce-app-screen-recording", // Placeholder video URL
+        "/videos/v1.mp4", // Placeholder video URL
       technologies: ["React Native", "Redux", "Stripe", "Firebase"],
     },
     {
@@ -32,7 +32,7 @@ export default function MobileApps() {
       description:
         "Track workouts, monitor progress, and set goals with an intuitive interface.",
       videoUrl:
-        "/placeholder.mp4?height=600&width=300&query=fitness-tracker-app-screen-recording", // Placeholder video URL
+        "/videos/v2.mp4", // Placeholder video URL
       technologies: ["React Native", "Expo", "GraphQL", "PostgreSQL"],
     },
     {
@@ -40,7 +40,7 @@ export default function MobileApps() {
       description:
         "Discover new recipes, manage meal plans, and create shopping lists on the go.",
       videoUrl:
-        "/placeholder.mp4?height=600&width=300&query=recipe-finder-app-screen-recording", // Placeholder video URL
+        "/videos/v3.mp4", // Placeholder video URL
       technologies: ["React Native", "TypeScript", "REST API", "SQLite"],
     },
   ];
@@ -78,21 +78,11 @@ export default function MobileApps() {
 
   // Modern iPhone Mockup Component with Dynamic Island
   const IPhoneMockup = ({ children }: { children: React.ReactNode }) => (
-    <div className="relative w-full  sm::max-w-[220px]  lg:max-w-[220px] xl:max-w-[280px] mx-auto aspect-[9/19] rounded-[1.2rem] sm:rounded-[1.4rem] lg:rounded-[3rem] border-[3px] sm:border-[4px] md:border-[3px] border-gray-200 bg-gray-100 shadow-2xl overflow-hidden">
-      {/* Dynamic Island */}
-      <div className="absolute top-2.5 sm:top-3 md:top-4 left-1/2 -translate-x-1/2 w-[30%] h-5 sm:h-6 md:h-7 bg-gray-800 rounded-full z-10 flex items-center justify-center">
-        {/* Optional: Add small camera/sensor dots inside if desired for more detail */}
-        <div className="w-1 h-1 bg-gray-600 rounded-full mr-0.5" />
-        <div className="w-0.5 h-0.5 bg-gray-600 rounded-full" />
-      </div>
+    <div className="relative w-full  sm::max-w-[220px]  lg:max-w-[220px] xl:max-w-[280px] mx-auto aspect-[9/19] rounded-[1.2rem] sm:rounded-[1.4rem] lg:rounded-[3rem] border-[1px] sm:border-[1px] md:border-[3px] border-gray-200 bg-gray-100 shadow-2xl overflow-hidden">
       {/* Screen */}
-      <div className="absolute inset-[3px] sm:inset-[4px] md:inset-[5px] rounded-[1.2rem] sm:rounded-[1.2rem] overflow-hidden bg-black lg:rounded-[3rem]">
+      <div className="absolute inset-[3px] sm:inset-[1px] md:inset-[5px] rounded-[1.2rem] sm:rounded-[1.2rem] overflow-hidden bg-black lg:rounded-[3rem]">
         {children}
       </div>
-      {/* Buttons (decorative - silver color) */}
-      <div className="absolute top-1/4 -left-[5px] sm:-left-[6px] md:-left-[7px] w-1 sm:w-1.5 md:w-2 h-5 sm:h-6 md:h-8 bg-gray-300 rounded-l-lg" />
-      <div className="absolute top-1/2 -left-[5px] sm:-left-[6px] md:-left-[7px] w-1 sm:w-1.5 md:w-2 h-8 sm:h-10 md:h-12 bg-gray-300 rounded-l-lg" />
-      <div className="absolute top-1/3 -right-[5px] sm:-right-[6px] md:-right-[7px] w-1 sm:w-1.5 md:w-2 h-8 sm:h-10 md:h-12 bg-gray-300 rounded-r-lg" />
     </div>
   );
 
@@ -102,7 +92,7 @@ export default function MobileApps() {
       className="py-20 md:py-32 bg-black text-white"
       ref={sectionRef}
     >
-       <div className="container mx-auto lg:px-59 p-20">
+       <div className="container mx-auto lg:px-59 p-5">
         <div className="grid grid-cols-3 items-center justify-center gap-5">
           {mobileApps.map((app, index) => {
             let yOffset = 0;

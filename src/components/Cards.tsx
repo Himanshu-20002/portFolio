@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -31,6 +31,8 @@ const cardArray = [
 const Cards = () => {
   //card array
 
+  const [activeIndex, setActiveIndex] = useState(0);
+  const numberRefs = useRef<(HTMLHeadingElement | null)[]>([]);
   const cardsRef = useRef(null);
   const stepsRef = useRef<HTMLDivElement>(null);
   const countContainerRef = useRef<HTMLDivElement>(null);
@@ -55,6 +57,12 @@ const Cards = () => {
     const totalTravel = 2 + totalCards / 7.5;
     const adjustedProgress = (progress * totalTravel - 1) * 0.75;
 
+
+    // Calculate which card is centered (active)
+    const active = Math.round(
+      ((adjustedProgress + (totalCards - 1) / totalCards) / (totalCards / totalCards))
+    );
+    setActiveIndex(Math.max(0, Math.min(totalCards - 1, active)));
     // cardArray.forEach((card, i) => {
     //   //convert to array
     //   const normalizedProgress = (totalCards - 1 - i) / totalCards;
@@ -132,24 +140,60 @@ const Cards = () => {
       positionCards(0);
     }
   }, []);
+  // Animate number reveal with GSAP
+  useEffect(() => {
+    numberRefs.current.forEach((el, idx) => {
+      if (!el) return;
+      if (idx === activeIndex) {
+        gsap.to(el, {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: "power3.out",
+          pointerEvents: "auto",
+        });
+      } else {
+        gsap.to(el, {
+          opacity: 0,
+          y: 40,
+          duration: 0.5,
+          ease: "power3.in",
+          pointerEvents: "none",
+        });
+      }
+    });
+  }, [activeIndex]);
   return (
     <div className="flex-1 w-screen overflow-x-hidden pt-90 h-[370vh] bg-black">
       <div id="steps" ref={stepsRef} className="relative ">
         <div className="step-counter">
           <div className="counter-title">
-            <h1 className="text-white pt-2 text-2xl font-[400] ">STEPS</h1>
+            <h1 className="text-white  rubik-moonrocks-regular max-lg:3xl   ">STEPS</h1>
           </div>
           <div className="count">
             <div className="count-container" ref={countContainerRef}>
-              <h1>01</h1>
-              <h1>02</h1>
-              <h1>03</h1>
-              <h1>04</h1>
-              <h1>05</h1>
+              {[1, 2, 3, 4, 5].map((num, idx) => (
+                <h1
+                  key={num}
+                  ref={el => numberRefs.current[idx] = el}
+                  style={{
+                    opacity: idx === activeIndex ? 1 : 0,
+                    transform: idx === activeIndex ? "translateY(0)" : "translateY(40px)",
+                    position: "absolute",
+                    left: 0,
+                    top: 0,
+                    width: "100%",
+                    textAlign: "left",
+                    pointerEvents: idx === activeIndex ? "auto" : "none",
+                  }}
+                >
+                  {`0${num}`}
+                </h1>
+              ))}
             </div>
           </div>
         </div>
-        <div ref={cardsRef} className="cards">
+        <div ref={cardsRef} className="cards  max-lg:scale-60 ">
           {[1, 2, 3].map((_, index) => (
             <div
               key={index}
