@@ -19,13 +19,15 @@ import MobileApps from "@/src/components/MobileApps";
 import Footer from "@/src/components/Footer";
 import Contact from "@/src/components/Contact";
 import Projects from "@/src/components/Project";
+import { Slider } from "@/src/components/HeroSlider";
 
 
 export default function Home() {
   return (
     <ReactLenis root className=" min-h-screen w-screen overflow-x-hidden bg-black ">
       <Hero />
-      <HeorAbout />
+      <HeorAbout /> 
+      <Slider autoPlay={true} autoPlayInterval={4000} />
       <Services/>
       
       
@@ -41,8 +43,8 @@ export default function Home() {
 
       {/* <About /> */}
       {/* <Canvas /> */}
-      <Section />
-      
+      {/* <Section />
+       */}
       
       
 

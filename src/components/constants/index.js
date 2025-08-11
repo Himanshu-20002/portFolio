@@ -124,14 +124,39 @@ export const servicesData = [
 
 
 
+export const sliderData = [
+  {
+    title: "Web Design",
+    img:"../slider_img_1.jpg",
+    url:"/sample-project.html"
+  },
+  {
+    title: "Web Design",
+    img:"../slider_img_1.jpg",
+    url:"/sample-project.html"
+  },
+  {
+    title: "Web Design",
+    img:"../slider_img_1.jpg",
+    url:"/sample-project.html"
+  },
+  {
+    title: "Web Design",
+    img:"../slider_img_1.jpg",
+    url:"/sample-project.html"
+  },
+  {
+    title: "Web Design",
+    img:"../slider_img_1.jpg",
+    url:"/sample-project.html"
+  },
 
 
 
 
 
 
-
-
+]
 
 
 

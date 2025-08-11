@@ -7,12 +7,12 @@ import Image from "next/image"
 export default function Projects() {
   const projects = [
     {
-      title: "E-Commerce Mobile App",
+      title: "Interactive Game Dashboard",
       description:
-        "A full-featured React Native e-commerce app with real-time inventory, payment integration, and smooth animations.",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["React Native", "Redux", "Stripe", "Firebase", "GSAP"],
-      type: "Mobile App",
+        "A full-featured Emersive gaming dashboard  packed with scroll  Transition , leaderboards and animated data visualizations.",
+      image: "/img/projectImg1.png",
+      technologies: ["React ", "Redux", "Firebase", "GSAP"],
+      type: "Web App",
       icon: <Smartphone className="h-4 w-4" />,
       github: "#",
       live: "#",
@@ -41,10 +41,10 @@ export default function Projects() {
       featured: false,
     },
     {
-      title: "Fitness Tracking App",
-      description: "Cross-platform fitness app with workout tracking, progress analytics, and social features.",
+      title: "Multi-vendor E-commerce app",
+      description: "Cross-platform E-commerce app featuring real-time order tracking and instant location updates. Shop from multiple sellers and get your orders delivered fast with live delivery status",
       image: "/placeholder.svg?height=300&width=400",
-      technologies: ["React Native", "Expo", "GraphQL", "PostgreSQL"],
+      technologies: ["React Native", "soket.io", "GraphQL", "PostgreSQL"],
       type: "Mobile App",
       icon: <Smartphone className="h-4 w-4" />,
       github: "#",
@@ -63,7 +63,7 @@ export default function Projects() {
       featured: false,
     },
     {
-      title: "AI-Powered Task Manager",
+      title: "Nike",
       description:
         "Smart task management app with AI suggestions, natural language processing, and predictive analytics.",
       image: "/placeholder.svg?height=300&width=400",
@@ -149,9 +149,9 @@ export default function Projects() {
         </div>
 
         {/* Other Projects */}
-        <div className="space-y-8  hidden md:block">
+        <div className="  hidden md:block">
           <h3 className="text-2xl font-bold text-center">More Projects</h3>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 pt-10">
             {otherProjects.map((project, index) => (
               <Card
                 key={index}
@@ -162,7 +162,7 @@ export default function Projects() {
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
                     width={400}
-                    height={200}
+                    height={300}
                     className="w-full h-48 object-cover"
                   />
                 </div>

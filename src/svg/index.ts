@@ -1,4 +1,10 @@
 export {default as Postr1} from './Poster1.svg';
 export {default as nb} from './nb.svg';
 export {default as esp} from './eps.svg'
-export {default as HeroCenter} from './HeroCenter.svg'
+export {default as HeroCenter} from './HeroCenter.svg';
+export {default as Icon1} from './icon-1.svg';
+export {default as Icon2} from './icon-2.svg';
+export {default as Icon3} from './icon-3.svg';
+export {default as Icon4} from './icon-4.svg';
+export {default as Icon5} from './icon-5.svg';
+export {default as Icon6} from './icon-6.svg';
