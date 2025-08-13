@@ -1,59 +1,54 @@
-"use client";
-import About from "@/src/components/About";
+"use client"
 import Cards from "@/src/components/Cards";
 import Hero from "@/src/components/Hero";
 import React from "react";
-import Experties from "@/src/components/Experties";
-import Canvas from "@/src/components/Canvas";
-import Section from "@/src/components/Section";
-import OutroLast from "@/src/components/OutroLast";
 import HeorAbout from "@/src/components/HeorAbout";
-
-import dynamic from "next/dynamic";
-import Scene from "@/src/components/3d/Scene";
-import Ribbons from "@/src/components/Cursor";
-import SplashCursor from "@/src/components/Cursor";
 import Services from "@/src/components/Services";
 import ReactLenis from "lenis/react"
 import MobileApps from "@/src/components/MobileApps";
 import Footer from "@/src/components/Footer";
 import Contact from "@/src/components/Contact";
 import Projects from "@/src/components/Project";
-import { Slider } from "@/src/components/HeroSlider";
+import HeroSlider from "@/src/components/HeroSlider";
+import Features from "@/src/components/Features";
 
 
 export default function Home() {
   return (
-    <ReactLenis root className=" min-h-screen w-screen overflow-x-hidden bg-black ">
+    <ReactLenis root className="  w-screen overflow-x-hidden bg-black ">
       <Hero />
-      <HeorAbout /> 
-      <Slider autoPlay={true} autoPlayInterval={4000} />
-      <Services/>
-      
-      
 
-   
+      <div style={{ minHeight: '800vh', position: 'relative', zIndex: 2 }}>
+        <HeorAbout />
+      </div>
+      <HeroSlider />
+      <Services />
 
-    
+
+
+
+
+
       <Cards />
-      <MobileApps/>
-      <Projects/>
-      <OutroLast />
-      <Experties />
+      <MobileApps />
+      <Projects />
+      <Features />
+      {/* <OutroLast /> */}
+      {/* <Experties /> */}
 
       {/* <About /> */}
       {/* <Canvas /> */}
-      {/* <Section />
-       */}
-      
-      
+      {/* <Section /> */}
+
+
+
 
       {/* <div style={{ position: "relative", zIndex: 10 }}>
         <Scene />
          
       </div> */}
-      <Contact/>
-      <Footer/>
+      <Contact />
+      <Footer />
     </ReactLenis>
   );
 }

@@ -121,16 +121,16 @@ const Section = () => {
             progress < 0.09
               ? 0
               : progress > 0.35
-              ? -100
-              : -100 * headerProgress,
+                ? -100
+                : -100 * headerProgress,
         });
 
         const maskSize =
           progress < 0.33
             ? 0
             : progress > 0.3
-            ? 100
-            : 100 * ((progress - 0.2) / 0.1);
+              ? 100
+              : 100 * ((progress - 0.2) / 0.1);
         gsap.to(".circular-mask", {
           clipPath: `circle(${maskSize}% at 50% 50%)`,
         });
@@ -139,8 +139,8 @@ const Section = () => {
           progress < 0.15
             ? 100
             : progress > 0.5
-            ? -200
-            : 100 - 300 * header2Progress;
+              ? -200
+              : 100 - 300 * header2Progress;
         gsap.to(".header-2", {
           xPercent: header2Xpercent,
           y: "100%",
@@ -150,8 +150,8 @@ const Section = () => {
           progress < 0.45
             ? 0
             : progress > 0.65
-            ? 100
-            : 100 * ((progress - 0.45) / 0.2);
+              ? 100
+              : 100 * ((progress - 0.45) / 0.2);
         gsap.to(".tooltip .divider", { scaleX: `${scaleX}%`, ...animOptions });
         tooltipSelectors.forEach(({ trigger, elements }) => {
           gsap.to(elements, {
@@ -198,20 +198,8 @@ const Section = () => {
           <h2 className="mr-70">🎠transition</h2>
           <h2>crafting pixel perfect 🧨</h2>
 
-          <h2>
-            {" "}
-            <div className="flex flex-1 w-[20px] h-[20px] flex-col">
-              <span className="text-[2rem] font-[1] italic text-yellow-400">
-                #001110101
-              </span>
-              <span className="text-violet-600 italic text-[4rem]">
-                prototype
-              </span>
-              <span className="text-white italic text-[4rem]">reality</span>
-              <span className="text-violet-600 italic text-[4rem]">
-                experiences
-              </span>
-            </div>
+          <h2>  experiences
+
           </h2>
 
           {/* <h2>.node.close</h2> */}
@@ -255,7 +243,7 @@ const Section = () => {
             </div>
           </div>
         </div>
-{/* 
+        {/* 
         <div className="  max-lg:pointer-events-none -z-99 w-full  absolute top-0    left-44 h-full">
           <ModelCanvas />
         </div> */}

@@ -7,6 +7,7 @@ import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { i, object, svg } from "motion/react-client";
 import { Postr1 } from "../svg/index";
 import { nb as Nb } from "../svg/index";
+import Image from "next/image";
 // Register plugins
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
@@ -14,17 +15,35 @@ const cardArray = [
   {
     id: 1,
     image: (
-      <Postr1 width="100%" height="108%" styles={{ objectFit: "cover" }} />
+     <Image
+        src="/img/1.png"
+        alt="3D Image"
+        width={600}
+        height={600}
+        style={{ objectFit: "contain" }}
+      />
     ),
   },
   {
     id: 2,
-    image: <Nb width="100%" height="130%" styles={{ objectFit: "cover" }} />,
+    image: <Image
+        src="/img/2.png"
+        alt="3D Image"
+        width={600}
+        height={620}
+        style={{ objectFit: "cover" }}
+      />
   },
   {
     id: 3,
     image: (
-      <Postr1 width="100%" height="108%" styles={{ objectFit: "cover" }} />
+      <Image
+        src="/img/3.png"
+        alt="3D Image"
+        width={500}
+        height={520}
+        style={{ objectFit: "cover" }}
+      />
     ),
   },
 ];
@@ -63,22 +82,6 @@ const Cards = () => {
       ((adjustedProgress + (totalCards - 1) / totalCards) / (totalCards / totalCards))
     );
     setActiveIndex(Math.max(0, Math.min(totalCards - 1, active)));
-    // cardArray.forEach((card, i) => {
-    //   //convert to array
-    //   const normalizedProgress = (totalCards - 1 - i) / totalCards;
-    //   const cardProgress = normalizedProgress + adjustedProgress;
-    //   const angle = startArc + arcAngle * cardProgress;
-    //   const x = Math.cos(angle) * radius;
-    //   const y = Math.sin(angle) * radius;
-    //   const rotation = (angle - Math.PI / 2) * (180 / Math.PI);
-
-    //   gsap.set(card, {
-    //     x: x,
-    //     y: -y + radius,
-    //     rotation: -rotation,
-    //     transformOrigin: "center center",
-    //   });
-    // });
     cardRef.current.forEach((el, i) => {
       const normalizedProgress = (totalCards - 1 - i) / totalCards;
       const cardProgress = normalizedProgress + adjustedProgress;
@@ -115,23 +118,7 @@ const Cards = () => {
       },
     });
 
-    // Animate each card with stagger
-    // tl.to(cards, {
-    //     duration: 2,
-    //     stagger: 0.2,
-    //     motionPath: {
-    //       path: [
-    //         { x: window.innerWidth, y: 100 }, // Start off-screen right
-    //         { x: window.innerWidth * 0.75, y: 200 }, // Control point 1
-    //         { x: window.innerWidth * 0.25, y: 200 }, // Control point 2
-    //         { x: -window.innerWidth, y: 100 } // End off-screen left
-    //       ],
-    //       curviness: 1.5,
-    //       autoRotate: false
-    //     },
-    //     scale: 0.8,
-    //     ease: "power1.inOut"
-    //   });
+  
   }, []);
   useEffect(() => {
     // Access elements only after component is mounted
@@ -164,8 +151,8 @@ const Cards = () => {
     });
   }, [activeIndex]);
   return (
-    <div className="flex-1 w-screen overflow-x-hidden pt-90 h-[370vh] bg-black">
-      <div id="steps" ref={stepsRef} className="relative ">
+    <section className="flex-1 w-screen overflow-x-hidden  h-[370vh] bg-black">
+      <div id="steps" ref={stepsRef} className="relative">
         <div className="step-counter">
           <div className="counter-title">
             <h1 className="text-white  rubik-moonrocks-regular max-lg:3xl   ">STEPS</h1>
@@ -198,7 +185,7 @@ const Cards = () => {
             <div
               key={index}
               id="card"
-              className="card transform-gpu w-72 h-96 bg-white rounded-xl shadow-lg overflow-hidden"
+              className="card transform-gpu w-72 h-96 bg-white  rounded-xl shadow-lg overflow-hidden"
               ref={(el) => (cardRef.current[index] = el)}
             >
               <div className="card-image contain-content w-full h-full">
@@ -206,11 +193,9 @@ const Cards = () => {
               </div>
             </div>
           ))}
-          <div className="card-empty w-72 h-96"></div>
-          <div className="card-empty w-72 h-96"></div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
