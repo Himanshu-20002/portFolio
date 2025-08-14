@@ -12,12 +12,13 @@ import StarfieldBackground from "./animated/StarfieldBackground";
 gsap.registerPlugin(ScrollTrigger);
 import {
   ArrowRight,
-  Badge,
+  
   ExternalLink,
   Github,
   Linkedin,
   Mail,
 } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import DecryptionText from "./animated/component/DecryptedText";

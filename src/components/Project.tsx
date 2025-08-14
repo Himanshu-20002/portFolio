@@ -14,13 +14,13 @@ export default function Projects() {
       technologies: ["React ", "Redux", "Firebase", "GSAP"],
       type: "Web App",
       icon: <Smartphone className="h-4 w-4" />,
-      github: "#",
-      live: "#",
+      github: "https://github.com/Himanshu-20002/gaming-webapp.git",
+      live: "https://gaming-webapp.vercel.app/",
       featured: true,
     },
     {
-      title: "3D Portfolio Website",
-      description: "An interactive 3D portfolio built with Three.js featuring immersive animations and WebGL effects.",
+      title: "Custom Animated Landing Page",
+      description: "An interactive landing page built with gsap featuring immersive animations and WebGL effects.",
       image: "/placeholder.svg?height=300&width=400",
       technologies: ["Three.js", "React", "GSAP", "WebGL", "Tailwind"],
       type: "Web App",
@@ -111,16 +111,22 @@ export default function Projects() {
                     <Button
                       size="sm"
                       className="bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30"
+                      asChild
                     >
-                      <Github className="h-4 w-4 mr-2" />
-                      Code
+                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <Github className="h-4 w-4 mr-2" />
+                        Code
+                      </a>
                     </Button>
                     <Button
                       size="sm"
                       className="bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30"
+                      asChild
                     >
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      Live Demo
+                      <a href={project.live} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        Live Demo
+                      </a>
                     </Button>
                   </div>
                 </div>

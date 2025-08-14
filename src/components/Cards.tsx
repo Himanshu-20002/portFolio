@@ -110,7 +110,7 @@ const Cards = () => {
         end: "+=300%",
         scrub: 3,
         pin: true,
-        markers: true,
+        
 
         onUpdate: (self) => {
           positionCards(self.progress);
