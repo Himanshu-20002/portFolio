@@ -127,7 +127,7 @@ export const servicesData = [
 export const sliderData = [
   {
     title: "Web Design",
-    img:"/img/1.png",
+    img:"/img/PROFILE1.png",
     url:"/sample-project.html"
   },
   {

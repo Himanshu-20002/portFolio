@@ -77,7 +77,7 @@ export default function HeroAbout() {
     // 3️⃣ Icons scale toward center
     tl.to(animatedIconsRef.current, {
       scale: exactScale,
-      ease: "power1.inOut",
+      ease: "power2.inout",
       duration: 0.3,
     });
 

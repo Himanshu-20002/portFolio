@@ -97,8 +97,8 @@ const Services = () => {
   }, []);
 
   return (
-    <section id="services" className=" bg-black  relative  h-[400vh]">
-<GradientSpheres spher1Class={"gradient-sphere sphere-1"} spher2Class={'gradient-sphere  sphere-2'}/>
+    <section id="services" className=" bg-black  relative  h-[420dvh]  ">
+<GradientSpheres  spher1Class={"about-gradient-sphere about-sphere-1  "} spher2Class={'gradient-sphere  sphere-4 '}/>
 <>
       <AnimatedHeaderSection
         subTitle={"Behind the scene, Beyond the screen"}

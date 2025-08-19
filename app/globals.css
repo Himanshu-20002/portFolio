@@ -592,8 +592,8 @@ section:not(#services) {
 
 .gradient-sphere {
   position: absolute;
-  width: 700px;
-  height: 700px;
+  width: 1000px;
+  height: 900px;
   border-radius: 50%;
   filter: blur(200px);
 }
@@ -604,7 +604,7 @@ section:not(#services) {
   animation: wander-left 10s ease-in-out infinite;
 }
 .sphere-2 {
-  background: radial-gradient(circle, #1c34ff, #1c34ff);
+ background: radial-gradient(circle, #cfbbdd, #5811ff);
   top: 100px;
   right: 300px;
   animation: wander-right 12s ease-in-out infinite;
@@ -612,15 +612,15 @@ section:not(#services) {
 /* tech stack */
 .about-gradient-sphere {
   position: absolute;
-  width: 400px;
-  height: 400px;
+  width: 1000px;
+  height: 700px;
   border-radius: 50%;
   filter: blur(200px);
 }
 .about-sphere-1 {
-  background: radial-gradient(circle, #9d09ff, #891fed);
-  bottom: 300px;
-  right: 150px;
+  background: radial-gradient(circle, #cfbbdd, #5811ff);
+  top: 250px;
+  left: 6px;
   animation: wander-left 10s ease-in-out infinite;
 }
 .about-sphere-2 {
@@ -689,7 +689,7 @@ section:not(#services) {
     transform: translateX(0);
   }
   50% {
-    transform: translateX(-20vw) translateY(50vh);
+    transform: translateX(-15vw) translateY(20vh);
   }
   100% {
     transform: translateX(0);

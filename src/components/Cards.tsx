@@ -76,12 +76,7 @@ const Cards = () => {
     const totalTravel = 2 + totalCards / 7.5;
     const adjustedProgress = (progress * totalTravel - 1) * 0.75;
 
-
-    // Calculate which card is centered (active)
-    const active = Math.round(
-      ((adjustedProgress + (totalCards - 1) / totalCards) / (totalCards / totalCards))
-    );
-    setActiveIndex(Math.max(0, Math.min(totalCards - 1, active)));
+    // Position cards as before
     cardRef.current.forEach((el, i) => {
       const normalizedProgress = (totalCards - 1 - i) / totalCards;
       const cardProgress = normalizedProgress + adjustedProgress;
@@ -97,6 +92,25 @@ const Cards = () => {
         transformOrigin: "center center",
       });
     });
+
+    // Optimized: Only check card positions every frame, not on scroll events
+    // Find the card whose center is closest to 30% of viewport height
+    if (typeof window !== "undefined") {
+      const targetY = window.innerHeight * 0.4;
+      let minDist = Infinity;
+      let active = 0;
+      cardRef.current.forEach((el, i) => {
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        const centerY = rect.top + rect.height / 2;
+        const dist = Math.abs(centerY - targetY);
+        if (dist < minDist) {
+          minDist = dist;
+          active = i;
+        }
+      });
+      setActiveIndex(active);
+    }
   };
 
   useGSAP(() => {
@@ -151,7 +165,7 @@ const Cards = () => {
     });
   }, [activeIndex]);
   return (
-    <section className="flex-1 w-screen overflow-x-hidden  h-[370vh] bg-black">
+    <section className="flex-1 w-screen overflow-x-hidden  h-[325dvh] bg-black">
       <div id="steps" ref={stepsRef} className="relative">
         <div className="step-counter">
           <div className="counter-title">
@@ -168,9 +182,10 @@ const Cards = () => {
                     transform: idx === activeIndex ? "translateY(0)" : "translateY(40px)",
                     position: "absolute",
                     left: 0,
-                    top: 0,
+                    top: -40,
                     width: "100%",
                     textAlign: "left",
+                  
                     pointerEvents: idx === activeIndex ? "auto" : "none",
                   }}
                 >
