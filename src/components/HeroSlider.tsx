@@ -286,7 +286,7 @@ export default function HeroSlider(): JSX.Element {
   return (
     <div
       ref={sliderRef}
-      className="slider relative overflow-hidden w-screen h-[170vh] bg-black select-none"
+      className="slider relative overflow-hidden w-screen h-[130vh] p-10 bg-black select-none"
       style={{ touchAction: "pan-y" }}
     >
       <div

@@ -11,6 +11,8 @@ import Contact from "@/src/components/Contact";
 import Projects from "@/src/components/Project";
 import HeroSlider from "@/src/components/HeroSlider";
 import Features from "@/src/components/Features";
+import {AboutMe} from '@/src/components/AboutMe';
+import Experties from "@/src/components/Experties";
 
 
 export default function Home() {
@@ -22,6 +24,7 @@ export default function Home() {
         <HeorAbout />
       </div>
       <HeroSlider />
+      <AboutMe/>
       <Services />
 
 

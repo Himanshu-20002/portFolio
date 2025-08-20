@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { ExternalLink, Github, Smartphone, Globe, Gamepad2 } from "lucide-react"
 import Image from "next/image"
+import TechStack from "./TechStack"
 
 export default function Projects() {
   const projects = [
@@ -19,7 +20,7 @@ export default function Projects() {
       featured: true,
     },
     {
-      title: "Custom Animated Landing Page",
+      title: "Animated Component Library",
       description: "An interactive landing page built with gsap featuring immersive animations and WebGL effects.",
       image: "/placeholder.svg?height=300&width=400",
       technologies: ["Three.js", "React", "GSAP", "WebGL", "Tailwind"],
@@ -81,7 +82,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-20 md:py-32  gap-10 justify-around flex  bg-gradient-to-t from-black from-10% via-violet-500 via-30% to-white    ">
-      <div className="container px-4 md:px-6">
+      <div className="container ">
         <div className="text-center space-y-4 mb-16">
           <Badge className="bg-purple-100 text-purple-700">Portfolio</Badge>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Featured Projects</h2>
@@ -91,7 +92,7 @@ export default function Projects() {
         </div>
 
         {/* Featured Projects */}
-        <div className="grid gap-8 lg:grid-cols-2 mb-16">
+        <div className="grid gap-8 lg:grid-cols-2 mb-16  px-7">
           {featuredProjects.map((project, index) => (
             <Card
               key={index}
@@ -154,8 +155,13 @@ export default function Projects() {
           ))}
         </div>
 
+
         {/* Other Projects */}
-        <div className="  hidden md:block">
+     
+
+        <TechStack/>
+     
+        <div className="  hidden md:block py-10 px-5">
           <h3 className="text-2xl font-bold text-center">More Projects</h3>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 pt-10">
             {otherProjects.map((project, index) => (

@@ -102,7 +102,7 @@ const Services = () => {
 <>
       <AnimatedHeaderSection
         subTitle={"Behind the scene, Beyond the screen"}
-        title={"Service"}
+        title={"Skills & Expertise"}
         text={text}
         textColor={"text-white"}
         withScrollTrigger={true}
