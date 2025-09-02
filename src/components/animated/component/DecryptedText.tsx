@@ -5,8 +5,8 @@ export default function DecryptionText() {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [isDecrypting, setIsDecrypting] = useState(false);
   
-  const animationRef = useRef<number>();
-  const timeoutRef = useRef<NodeJS.Timeout>();
+  const animationRef = useRef<number | null>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const phrases = [
     "That Inspire & Engage",

@@ -5,7 +5,17 @@ import gsap from "gsap";
 import { AnimatedTextLine } from "./AnimatedTextLines";
 import GradientSpheres from "./component/GradientSpheres";
 
-const AnimatedHeaderSection = ({
+
+interface AnimatedHeaderSectionProps {
+  subTitle: string;
+  title: string;
+  text: string;
+  textColor: string;
+  withScrollTrigger?: boolean;
+}
+
+
+const AnimatedHeaderSection:  React.FC<AnimatedHeaderSectionProps> =  ({
   subTitle,
   title,
   text,

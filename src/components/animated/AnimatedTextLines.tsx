@@ -3,10 +3,16 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger)
-export const AnimatedTextLine  = ({text,className})=>{
+interface AnimatedTextLineProps {
+    text: string;
+    className?: string;
+}
+
+export const AnimatedTextLine: React.FC<AnimatedTextLineProps> = ({ text, className }) => {
     const containerRef = useRef(null)
-    const lineRefs = useRef([])
-    const lines = text.split("\n").filter((line)=>line.trim()!== "");
+    const lineRefs = useRef<HTMLSpanElement[]>([])
+
+    const lines: string[] = text.split("\n").filter((line: string) => line.trim() !== "");
  useGSAP(()=>{
     if(lineRefs.current.length > 0){
         gsap.from(lineRefs.current,{
@@ -28,12 +34,19 @@ export const AnimatedTextLine  = ({text,className})=>{
 
     return(
         <div ref={containerRef} className={className}>
-            {lines.map((line,index)=>
+            {lines.map((line: string, index: number) =>
             <span 
             key={index}
-            ref={(el)=>(lineRefs.current[index] = el)}
-            className="block leading-relaxed tracking-wide text-pretty"
-            >{line}</span>)}
+            ref={(el: HTMLSpanElement | null) => {
+                if (lineRefs.current && el) {
+                    lineRefs.current[index] = el;
+                }
+            }}
+            className="block leading-relaxed tracking-wide text-pretty">
+                
+                {line}
+                
+                </span>)}
         </div>
     )
 }
