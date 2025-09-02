@@ -20,11 +20,11 @@ export interface SliderItem {
   url?: string;
 }
 
-type ImageRefType = HTMLImageElement & { 
-  style: CSSStyleDeclaration 
+type ImageRefType = HTMLImageElement & {
+  style: CSSStyleDeclaration
 };
 
-export default function HeroSlider(): JSX.Element {
+export default function HeroSlider() {
   const sliderRef = useRef<HTMLDivElement | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
   const slideRefs = useRef<Array<HTMLDivElement | null>>([]);
@@ -53,20 +53,20 @@ export default function HeroSlider(): JSX.Element {
   });
 
   // Build rendered slide list by repeating original data COPIES times
-const renderedSlides = useMemo(() => {
-  const arr: (SliderItem & { key: string })[] = [];
-  for (let c = 0; c < COPIES; c++) {
-    for (let i = 0; i < sliderData.length; i++) {
-      arr.push({ 
-        title: sliderData[i].title, 
-        img: sliderData[i].img, 
-        url: sliderData[i].url, 
-        key: `${c}-${i}` 
-      });
+  const renderedSlides = useMemo(() => {
+    const arr: (SliderItem & { key: string })[] = [];
+    for (let c = 0; c < COPIES; c++) {
+      for (let i = 0; i < sliderData.length; i++) {
+        arr.push({
+          title: sliderData[i].title,
+          img: sliderData[i].img,
+          url: sliderData[i].url,
+          key: `${c}-${i}`
+        });
+      }
     }
-  }
-  return arr;
-}, []);
+    return arr;
+  }, []);
 
   // client + mobile detection
   useEffect(() => {
@@ -311,7 +311,11 @@ const renderedSlides = useMemo(() => {
         {renderedSlides.map((slide, i) => (
           <div
             key={slide.key}
-            ref={(el) => (slideRefs.current[i] = el)}
+            ref={(el: HTMLDivElement | null) => {
+              if (slideRefs.current) {
+                slideRefs.current[i] = el
+              }
+            }}
             className="slide"
             onClick={onSlideClick(i, slide.url)}
             style={{
@@ -324,7 +328,12 @@ const renderedSlides = useMemo(() => {
           >
             <div className="slide-image" style={{ width: "100%", height: "100%", position: "relative" }}>
               <Image
-                ref={(img: ImageRefType | null) => (imageRefs.current[i] = img)}
+                ref={(img: ImageRefType | null) => {
+                  if (imageRefs.current) {
+                    imageRefs.current[i] = img
+                  }
+                }
+                }
                 src={slide.img}
                 alt={slide.title}
                 fill
