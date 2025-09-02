@@ -98,7 +98,13 @@ export default function MobileApps() {
               yOffset = -20; // Adjust for the middle mockup
             }
             return (
-              <div key={index} className="relative" style={{ position: 'relative', top: `${yOffset}px` }} ref={(el) => (cardRefs.current[index] = el)}>
+              <div key={index} className="relative" style={{ position: 'relative', top: `${yOffset}px` }}
+                ref={(el: HTMLDivElement | null) => {
+                  if (cardRefs.current && el) {
+                    cardRefs.current[index] = el;
+                  }
+                }}>
+
                 <CardContent className=" flex items-center justify-center p-0 ">
                   <IPhoneMockup>
                     {/* Using a video element for screen recording */}

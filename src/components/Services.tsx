@@ -10,7 +10,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Services = () => {
-  const serviceRefs = useRef([]);// Reference to the section itself
+const serviceRefs = useRef<Array<HTMLDivElement | null>>([]); 
   const serviceHeaders = useRef<Element[]>([]); // <h2> elements
   const serviceDescriptions = useRef<Element[]>([]); // <p> elements
   const serviceItems = useRef<Element[]>([]); // <h3> elements
@@ -106,7 +106,11 @@ const Services = () => {
         />
         {servicesData.map((service, index) => (
           <div
-            ref={(el) => (serviceRefs.current[index] = el)}
+            ref={(el: HTMLDivElement | null) => {
+              if (serviceRefs.current) {
+                serviceRefs.current[index] = el;
+              }
+            }}
             key={index}
             className="sticky px-10 pt-6 pb-12 text-white bg-black border-t-2 border-white/30"
             style={
