@@ -81,10 +81,10 @@ const Cards = () => {
   const arcAngle = Math.PI * 0.3; //wide determine
   const startArc = Math.PI / 2 - arcAngle / 3;
 
-const positionCards = useCallback((progress: number) => {
-  const radius = getRadius();
-  const totalTravel = 2 + totalCards / 7.5;
-  const adjustedProgress = (progress * totalTravel - 1) * 0.75;
+  const positionCards = useCallback((progress: number) => {
+    const radius = getRadius();
+    const totalTravel = 2 + totalCards / 7.5;
+    const adjustedProgress = (progress * totalTravel - 1) * 0.75;
 
     // Position cards as before
     cardRef.current.forEach((el, i) => {
@@ -121,7 +121,7 @@ const positionCards = useCallback((progress: number) => {
       });
       setActiveIndex(active);
     }
-  },[totalCards ,startArc ,arcAngle]);
+  }, [totalCards, startArc, arcAngle]);
 
   useGSAP(() => {
     gsap.timeline({
@@ -181,8 +181,12 @@ const positionCards = useCallback((progress: number) => {
             <div className="count-container" ref={countContainerRef}>
               {[1, 2, 3, 4, 5].map((num, idx) => (
                 <h1
-                  key={num}
-                  ref={el => numberRefs.current[idx] = el}
+                  key={idx}
+                  ref={(el: HTMLHeadingElement | null) => {
+                    if (numberRefs.current) {
+                      numberRefs.current[idx] = el;
+                    }
+                  }}
                   style={{
                     opacity: idx === activeIndex ? 1 : 0,
                     transform: idx === activeIndex ? "translateY(0)" : "translateY(40px)",
@@ -191,7 +195,6 @@ const positionCards = useCallback((progress: number) => {
                     top: -40,
                     width: "100%",
                     textAlign: "left",
-
                     pointerEvents: idx === activeIndex ? "auto" : "none",
                   }}
                 >
@@ -206,8 +209,13 @@ const positionCards = useCallback((progress: number) => {
             <div
               key={index}
               id="card"
-              className="card transform-gpu w-72 h-96 bg-white  rounded-xl shadow-lg overflow-hidden"
-              ref={(el) => (cardRef.current[index] = el)}
+              className="card transform-gpu w-72 h-96 bg-white rounded-xl shadow-lg overflow-hidden"
+              // Add a null check before assignment
+              ref={(el: HTMLDivElement | null) => {
+                if (cardRef.current && el) {  // Check if both cardRef.current and el exist
+                  cardRef.current[index] = el;
+                }
+              }}
             >
               <div className="card-image contain-content w-full h-full">
                 {cardArray[index % cardArray.length].image}
