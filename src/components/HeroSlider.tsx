@@ -3,6 +3,7 @@
 
 import React, { useEffect, useRef, useState, useMemo } from "react";
 import { sliderData } from "../components/constants/index";
+import Image from "next/image";
 
 const COPIES = 5; // keep small but enough for infinite feel
 const config = {
@@ -12,6 +13,12 @@ const config = {
   PARALLAX_FACTOR: -0.25,
   IMAGE_SCALE: 2.25,
 };
+
+export interface SliderItem {
+  title: string;
+  img: string;
+  url?: string;
+}
 
 export default function HeroSlider(): JSX.Element {
   const sliderRef = useRef<HTMLDivElement | null>(null);
@@ -42,17 +49,20 @@ export default function HeroSlider(): JSX.Element {
   });
 
   // Build rendered slide list by repeating original data COPIES times
-  const renderedSlides = useMemo(() => {
-    const arr: { title: string; img: string; url?: string; key: string }[] = [];
-    for (let c = 0; c < COPIES; c++) {
-      for (let i = 0; i < sliderData.length; i++) {
-        arr.push({ title: sliderData[i].title, img: sliderData[i].img, url: (sliderData[i] as any).url, key: `${c}-${i}` });
-      }
+const renderedSlides = useMemo(() => {
+  const arr: (SliderItem & { key: string })[] = [];
+  for (let c = 0; c < COPIES; c++) {
+    for (let i = 0; i < sliderData.length; i++) {
+      arr.push({ 
+        title: sliderData[i].title, 
+        img: sliderData[i].img, 
+        url: sliderData[i].url, 
+        key: `${c}-${i}` 
+      });
     }
-    return arr;
-    // sliderData is expected stable; only recompute if its length changes
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sliderData.length]);
+  }
+  return arr;
+}, [sliderData.length]);
 
   // client + mobile detection
   useEffect(() => {
@@ -309,17 +319,18 @@ export default function HeroSlider(): JSX.Element {
             }}
           >
             <div className="slide-image" style={{ width: "100%", height: "100%", position: "relative" }}>
-              <img
-                ref={(img) => (imageRefs.current[i] = img)}
+              <Image
+                ref={(img: any) => (imageRefs.current[i] = img)}
                 src={slide.img}
                 alt={slide.title}
+                fill
+                sizes="(max-width: 1000px) 175px, 390px"
                 style={{
-                  width: "100%",
-                  height: "100%",
                   objectFit: "cover",
                   transform: `translateX(0px) scale(${config.IMAGE_SCALE})`,
                   willChange: "transform",
                 }}
+                priority={i < 3} // Load first few images immediately
                 draggable={false}
               />
             </div>

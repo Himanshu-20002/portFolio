@@ -147,7 +147,7 @@ const Cards = () => {
   useEffect(() => {
     // Access elements only after component is mounted
     if (stepsRef.current) {
-      const stickyHeight = window.innerHeight * 7;
+      // const stickyHeight = window.innerHeight * 7;
       positionCards(0);
     }
   }, []);

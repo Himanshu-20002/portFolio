@@ -53,7 +53,7 @@ export function AboutMe() {
   useEffect(() => {
     const interval = setInterval(nextSlide, 4000)
     return () => clearInterval(interval)
-  }, [])
+  }, [nextSlide])
 
   const handleDownloadCV = () => {
     const link = document.createElement("a")

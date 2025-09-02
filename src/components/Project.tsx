@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { ExternalLink, Github, Smartphone, Globe, Gamepad2 } from "lucide-react"
 import Image from "next/image"
-import TechStack from "./TechStack"
 
 export default function Projects() {
   const projects = [

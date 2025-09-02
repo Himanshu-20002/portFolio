@@ -4,22 +4,15 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
-import { ModelCanvas } from "@/src/components/3d/Model2";
 import { FaGooglePlay } from "react-icons/fa6";
 import { BsAndroid } from "react-icons/bs";
 import { IoLogoAppleAppstore } from "react-icons/io5";
 import { SiNextdotjs, SiExpress } from "react-icons/si";
 import { IoLogoNodejs } from "react-icons/io5";
 
-import Rive, { useRive } from "@rive-app/react-canvas";
-import {
-  useGLTF,
-  Text,
-  MeshTransmissionMaterial,
-  Center,
-  Text3D,
-} from "@react-three/drei";
-import { useThree, useFrame } from "@react-three/fiber";
+
+
+
 import { useRef } from "react";
 
 gsap.registerPlugin(SplitText);
@@ -30,7 +23,6 @@ const Section = () => {
   const titleH2Ref = useRef<HTMLHeadingElement>(null); // for ".tooltip .title h2"
   const descriptionPRef = useRef<HTMLParagraphElement>(null); // for ".tooltip .description p"
 
-  const { contextSafe } = useGSAP();
 
   useGSAP(() => {
     if (!header1Ref.current || !titleH2Ref.current || !descriptionPRef.current)
@@ -59,11 +51,7 @@ const Section = () => {
       line.innerHTML = `<span>${line.innerHTML}</span>`;
     });
 
-    // Cache for animations down the line?
-    // gsap.set(header1Split.chars, { yPercent: 100 });
-    // gsap.set([...titleSplits.lines, ...descriptionSplits.lines].flatMap(line => line.children), {
-    //   yPercent: 100,
-    // });
+    
     const animOptions = { duration: 1, ease: "power3.out", stagger: 0.025 };
 const tooltipSelectors = [
   {
@@ -240,10 +228,7 @@ const tooltipSelectors = [
             </div>
           </div>
         </div>
-        {/* 
-        <div className="  max-lg:pointer-events-none -z-99 w-full  absolute top-0    left-44 h-full">
-          <ModelCanvas />
-        </div> */}
+        
       </section>
 
       <section className="intro">

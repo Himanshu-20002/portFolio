@@ -1,8 +1,7 @@
 import React from "react";
-import ScrollVelocity from "./animated/AnimatedScrollText";
 import { iconsList } from "../components/constants";
 import TechIcon from "./animated/component/TechIcon";
-import GradientSpheres from "./animated/component/GradientSpheres";
+
 
 const TechStack = () => {
   return (

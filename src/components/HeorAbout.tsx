@@ -4,7 +4,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-import { icon1, icon2, icon3, icon4, } from '@/public/icon';
+import { icon1,  icon3, } from '@/public/icon';
 import Image from "next/image";
 
 

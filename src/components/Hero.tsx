@@ -1,32 +1,27 @@
 import { useRive } from "@rive-app/react-canvas";
-import React, { useState, useEffect, useRef } from "react";
-import { useGSAP } from "@gsap/react";
+import React from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import GradientSpheres from "./animated/component/GradientSpheres";
-import Particles from "./animated/StarfieldBackground";
-import DecryptedText from "./animated/component/DecryptedText";
 import { esp as Esp } from "../svg/index";
 import { HeroCenter } from "../svg/index";
-import StarfieldBackground from "./animated/StarfieldBackground";
+
 gsap.registerPlugin(ScrollTrigger);
 import {
   ArrowRight,
-
-  ExternalLink,
   Github,
   Linkedin,
   Mail,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import DecryptionText from "./animated/component/DecryptedText";
 
-const Hero = () => {
-  const [currentProject, setCurrentProject] = useState(0);
 
-  const texts = ["Himanshu", "glizzbot"];
+
+
+const Hero = () => {
+
+
   // Second Rive component
   const { RiveComponent: SecondHero, rive: SecondRive } = useRive({
     src: "/parallax_hero.riv",
@@ -35,11 +30,11 @@ const Hero = () => {
   });
 
   // Background hero component
-  const { RiveComponent: BgHero, rive: BgRive } = useRive({
-    src: "/herobg.riv",
-    autoplay: true,
-    stateMachines: "State Machine 1",
-  });
+  // const { RiveComponent: BgHero, rive: BgRive } = useRive({
+  //   src: "/herobg.riv",
+  //   autoplay: true,
+  //   stateMachines: "State Machine 1",
+  // });
 
 
   return (

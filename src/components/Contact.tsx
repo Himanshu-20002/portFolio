@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Send, Calendar, Coffee } from "lucide-react"
+import { Mail, Phone, MapPin, Send,   } from "lucide-react"
 import toast from "react-hot-toast";
 
 export default function Contact() {

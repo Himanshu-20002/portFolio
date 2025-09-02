@@ -10,9 +10,9 @@ import Footer from "@/src/components/Footer";
 import Contact from "@/src/components/Contact";
 import Projects from "@/src/components/Project";
 import HeroSlider from "@/src/components/HeroSlider";
-import Features from "@/src/components/Features";
-import {AboutMe} from '@/src/components/AboutMe';
-import Experties from "@/src/components/Experties";
+
+import { AboutMe } from '@/src/components/AboutMe';
+
 import TechStack from "@/src/components/TechStack";
 import Section from "@/src/components/Section";
 
@@ -26,7 +26,7 @@ export default function Home() {
         <HeorAbout />
       </div>
       <HeroSlider />
-      <AboutMe/>
+      <AboutMe />
       <Services />
 
 
@@ -37,24 +37,13 @@ export default function Home() {
       <Cards />
       <MobileApps />
       <Projects />
-            
-      <TechStack/>
 
-      {/* <Features /> */}
-      {/* <OutroLast /> */}
-      {/* <Experties /> */}
+      <TechStack />
 
-      {/* <About /> */}
-      {/* <Canvas /> */}
       <Section />
 
 
 
-
-      {/* <div style={{ position: "relative", zIndex: 10 }}>
-        <Scene />
-         
-      </div> */}
       <Contact />
       <Footer />
     </ReactLenis>
