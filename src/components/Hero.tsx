@@ -22,15 +22,14 @@ import DecryptionText from "./animated/component/DecryptedText";
 const Hero = () => {
 
 
-  // Second Rive component
-  const { RiveComponent: SecondHero, rive: SecondRive } = useRive({
+  const { RiveComponent: SecondHero, } = useRive({
     src: "/parallax_hero.riv",
     autoplay: true,
     stateMachines: "MainStateMachine",
   });
 
   // Background hero component
-  // const { RiveComponent: BgHero, rive: BgRive } = useRive({
+  // const { RiveComponent: BgHero,  } = useRive({
   //   src: "/herobg.riv",
   //   autoplay: true,
   //   stateMachines: "State Machine 1",

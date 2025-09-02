@@ -41,7 +41,7 @@ export function AboutMe() {
     currentSlide.current = (currentSlide.current + 1) % highlights.length
     const translateX = -currentSlide.current * 100
     sliderRef.current.style.transform = `translateX(${translateX}%)`
-  }, [])
+  }, [highlights.length])
 
   const prevSlide = () => {
     if (!sliderRef.current) return
@@ -105,7 +105,7 @@ export function AboutMe() {
                 className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg hover:shadow-accent/25 hover:shadow-2xl transition-all duration-300 hover:scale-105 glow-button"
               >
                 {/* <Download className="mr-2 h-5 w-5" /> */}
-                Let's talk
+                Let&apos;s talk
               </Button>
             </div>
           </div>
