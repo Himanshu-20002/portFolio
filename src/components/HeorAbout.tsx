@@ -4,7 +4,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-import { icon1,  icon3, } from '@/public/icon';
+import { icon1, icon3, } from '@/public/icon';
 import Image from "next/image";
 
 
@@ -124,7 +124,11 @@ export default function HeroAbout() {
         {ICONS.map((icon, idx) => (
           <div
             key={idx}
-            ref={(el) => el && (iconRefs.current[idx] = el)}
+            ref={(el: HTMLDivElement | null) => {
+              if (iconRefs.current && el) {
+                iconRefs.current[idx] = el;
+              }
+            }}
             className="animated-icon"
           >
             <Image
@@ -142,7 +146,11 @@ export default function HeroAbout() {
         {TEXTS.map((text, idx) => (
           <span
             key={idx}
-            ref={(el) => el && (textRefs.current[idx] = el)}
+            ref={(el: HTMLDivElement | null) => {
+              if (textRefs.current && el) {
+                textRefs.current[idx] = el;
+              }
+            }}
             className={`text-segment ${text.trim() === 'EXPERIENCE' ? 'text-red-400' : 'text-black'}`}
           >
             {text}
