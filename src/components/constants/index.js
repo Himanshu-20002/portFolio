@@ -132,17 +132,17 @@ export const sliderData = [
   },
   {
     title: "Web Design",
-    img:"/img/2.png",
+    img:"/img/profile5.jpg",
     url:"/sample-project.html"
   },
   {
     title: "Web Design",
-    img:"/img/3.png",
+    img:"/img/profile3.png",
     url:"/sample-project.html"
   },
   {
     title: "Web Design",
-    img:"/img/4.png",
+    img:"/img/profile4.png",
     url:"/sample-project.html"
   },
 

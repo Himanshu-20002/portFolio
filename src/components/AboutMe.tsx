@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react"
 import { Download, ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 export function AboutMe() {
   const sliderRef = useRef<HTMLDivElement>(null)
@@ -10,20 +11,28 @@ export function AboutMe() {
 
   const highlights = [
     {
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/img/highlight.png",
       title: "Full-Stack Applications",
+      width: 400,
+      height: 400
     },
     {
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/img/highlight2.png",
       title: "Mobile-First Design",
+      width: 400,
+      height: 400
     },
     {
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/img/highlight2.png",
       title: "Clean Code Architecture",
+      width: 400,
+      height: 400
     },
     {
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/img/highlight2.png",
       title: "API Development",
+      width: 400,
+      height: 400
     },
   ]
 
@@ -81,7 +90,7 @@ export function AboutMe() {
               </div>
             </div>
 
-            <div className="pt-4">
+            <div className="pt-4 gap-10 flex-row  flex" >
               <Button
                 onClick={handleDownloadCV}
                 size="lg"
@@ -89,6 +98,14 @@ export function AboutMe() {
               >
                 <Download className="mr-2 h-5 w-5" />
                 Download My CV
+              </Button>
+              <Button
+                onClick={handleDownloadCV}
+                size="lg"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg hover:shadow-accent/25 hover:shadow-2xl transition-all duration-300 hover:scale-105 glow-button"
+              >
+                {/* <Download className="mr-2 h-5 w-5" /> */}
+                Let's talk
               </Button>
             </div>
           </div>
@@ -105,10 +122,13 @@ export function AboutMe() {
                 >
                   {highlights.map((highlight, index) => (
                     <div key={index} className="w-full h-full flex-shrink-0 relative">
-                      <img
-                        src={highlight.image || "/placeholder.svg"}
+                      <Image
+                        src={highlight.image}
                         alt={highlight.title}
-                        className="w-full h-full object-cover"
+                        width={highlight.width}
+                        height={highlight.height}
+                        className="object-fit w-auto h-auto"
+                        priority={index === 0} // Load first image immediately
                       />
                       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3">
                         <h4 className="text-white font-medium text-sm">{highlight.title}</h4>
@@ -141,9 +161,8 @@ export function AboutMe() {
                         sliderRef.current.style.transform = `translateX(-${index * 100}%)`
                       }
                     }}
-                    className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${
-                      index === currentSlide.current ? "bg-accent scale-125" : "bg-muted-foreground/30"
-                    }`}
+                    className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${index === currentSlide.current ? "bg-accent scale-125" : "bg-muted-foreground/30"
+                      }`}
                   />
                 ))}
               </div>

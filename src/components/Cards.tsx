@@ -4,9 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-import { i, object, svg } from "motion/react-client";
-import { Postr1 } from "../svg/index";
-import { nb as Nb } from "../svg/index";
+
 import Image from "next/image";
 // Register plugins
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
@@ -30,7 +28,7 @@ const cardArray = [
         src="/img/2.png"
         alt="3D Image"
         width={600}
-        height={620}
+        height={600}
         style={{ objectFit: "cover" }}
       />
   },
@@ -40,7 +38,19 @@ const cardArray = [
       <Image
         src="/img/3.png"
         alt="3D Image"
-        width={500}
+        width={600}
+        height={520}
+        style={{ objectFit: "contain" }}
+      />
+    ),
+  },
+  {
+    id: 4,
+    image: (
+      <Image
+        src="/img/4.png"
+        alt="3D Image"
+        width={600}
         height={520}
         style={{ objectFit: "cover" }}
       />
@@ -196,7 +206,7 @@ const Cards = () => {
           </div>
         </div>
         <div ref={cardsRef} className="cards  max-lg:scale-60 ">
-          {[1, 2, 3].map((_, index) => (
+          {[1, 2, 3 , 4].map((_, index) => (
             <div
               key={index}
               id="card"

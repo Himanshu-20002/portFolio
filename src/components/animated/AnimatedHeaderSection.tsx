@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { AnimatedTextLine } from "./AnimatedTextLines";
+import GradientSpheres from "./component/GradientSpheres";
 
 const AnimatedHeaderSection = ({
   subTitle,
@@ -18,7 +19,7 @@ const AnimatedHeaderSection = ({
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: withScrollTrigger ? contextRef.current : undefined,
-        scrub: 1,
+        scrub: true,
         //   markers:true,
         start: "top +=110%",
         end: "+=200",
@@ -58,6 +59,7 @@ const AnimatedHeaderSection = ({
                 textShadow: "1px 0 8px rgba(223, 255, 18, 0.06)",
               }}
             >
+              <GradientSpheres  spher1Class={"about-gradient-sphere about-sphere-1  "} spher2Class={'gradient-sphere  sphere-1 '}/>
               {title}
             </h1>
           </div>

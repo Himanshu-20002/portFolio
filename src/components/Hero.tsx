@@ -12,7 +12,7 @@ import StarfieldBackground from "./animated/StarfieldBackground";
 gsap.registerPlugin(ScrollTrigger);
 import {
   ArrowRight,
-  
+
   ExternalLink,
   Github,
   Linkedin,
@@ -29,7 +29,7 @@ const Hero = () => {
   const texts = ["Himanshu", "glizzbot"];
   // Second Rive component
   const { RiveComponent: SecondHero, rive: SecondRive } = useRive({
-    src: "/hero.riv",
+    src: "/parallax_hero.riv",
     autoplay: true,
     stateMachines: "MainStateMachine",
   });
@@ -43,13 +43,14 @@ const Hero = () => {
 
 
   return (
-    <section className="relative min-h-screen flex  overflow-hidden  max-lg:items-center max-lg:justify-center">
-      <div className="   absolute overflow-hidden -z-99 h-[100vh]  w-[100vw]  ">
+    <section className="relative min-h-screen flex  overflow-hidden  max-lg:items-center max-lg:justify-center  ">
+      <div className="   absolute overflow-hidden -z-99 h-[100vh]  w-[100vw]  xl:right-0 ">
         <HeroCenter
           width="100%"
           height="100%"
-          className="max-lg:scale-400 overflow-hidden scale-120"
+          className="max-lg:scale-400 overflow-hidden scale-120 "
         />
+        {/* <BgHero className=" w-full h-full max-lg:scale-400 overflow-hidden scale-120" /> */}
       </div>
       <div className="container px-4 md:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2  items-center ">
@@ -60,12 +61,12 @@ const Hero = () => {
                 🚀 Available for Exciting Projects
               </Badge>
 
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight">
-               Designing Dompamine Hits"
-                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-3xl font-light text-text-muted block  h-16  pt-8 wrap">
-            <DecryptionText />
-          </div>
+              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight  ">
+                Designing Dompamine <span className="fiery-text">  Hits</span>
               </h1>
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-3xl font-light text-text-muted block  text-white h-16  pt-8 wrap">
+                  <DecryptionText />
+                </div>
 
               <p className="text-xl text-gray-200 max-w-[600px] mx-auto lg:mx-0 leading-relaxed pt-9">
                 “Full-stack dev with main character energy in terminal window
@@ -119,11 +120,11 @@ const Hero = () => {
 
           {/* Right Content - Dynamic Project Slider */}
           <div className="relative ">
-            <div className="relative h-[24vh] w-full overflow-hidden aspect-square lg:h-[100vh]  lg:w-[55vw] lg:mr-39   max-lg:pointer-events-none">
+            <div className="relative h-[24vh] w-full overflow-hidden aspect-square lg:h-[100vh]  lg:w-[55vw] lg:mr-39   max-lg:pointer-events-none  2xl:translate-x-1/4">
               <SecondHero className=" w-full h-full max-lg:scale-160 pointer:none max-w-full max-h-full" />
             </div>
 
-            <div className="grid grid-cols-4  gap-4 mt-12 max-w-lg mx-auto lg:mx-0 absolute right-2   z-99 max-lg:-bottom-19 bottom-10  ">
+            <div className="grid grid-cols-4  gap-4 mt-12 max-w-lg mx-auto lg:mx-0 absolute   z-99 max-lg:-bottom-19 bottom-10 xl:right-0 2xl:-right-140">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 text-center">
                 <div className="text-2xl font-bold text-white">25+</div>
                 <div className="text-sm text-gray-300">Projects</div>
@@ -146,6 +147,7 @@ const Hero = () => {
 
         <div className=" w-screen  max-lg:scale-170 max-lg:bottom-8  absolute  left-0 -z-99 -bottom-13">
           <Esp width="100%" height="108%" styles={{ objectFit: "contain" }} />
+
         </div>
       </div>
     </section>

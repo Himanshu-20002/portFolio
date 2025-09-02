@@ -14,12 +14,10 @@ export const AnimatedTextLine  = ({text,className})=>{
             opacity:0,
             duration:0.5,
             stagger:0.4,
-            scrub:2,
             ease:"back.out",
             scrollTrigger:{
                 trigger:containerRef.current,
                 scrub: 1,
-                //   markers:true,
                 start: "top +=120%",
                 end: "+=200",
             }

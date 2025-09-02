@@ -22,7 +22,7 @@ export default function Projects() {
     {
       title: "Animated Component Library",
       description: "An interactive landing page built with gsap featuring immersive animations and WebGL effects.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/img/projectImage3.png",
       technologies: ["Three.js", "React", "GSAP", "WebGL", "Tailwind"],
       type: "Web App",
       icon: <Globe className="h-4 w-4" />,
@@ -31,12 +31,12 @@ export default function Projects() {
       featured: true,
     },
     {
-      title: "Real-time Chat Application",
-      description: "A scalable chat app with real-time messaging, file sharing, and video calls using WebRTC.",
-      image: "/placeholder.svg?height=300&width=400",
+      title: "Grocery Delivery App",
+      description: "A scalable grocery app with real-time loc tracking admin dashBord sockets , inspired by blinkit.",
+      image: "/img/mobb1.png",
       technologies: ["React", "Node.js", "Socket.io", "WebRTC", "MongoDB"],
-      type: "Web App",
-      icon: <Globe className="h-4 w-4" />,
+      type: "Mobile App",
+      icon: <Smartphone className="h-4 w-4" />,
       github: "#",
       live: "#",
       featured: false,
@@ -44,7 +44,7 @@ export default function Projects() {
     {
       title: "Multi-vendor E-commerce app",
       description: "Cross-platform E-commerce app featuring real-time order tracking and instant location updates. Shop from multiple sellers and get your orders delivered fast with live delivery status",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/img/mob2.png",
       technologies: ["React Native", "soket.io", "GraphQL", "PostgreSQL"],
       type: "Mobile App",
       icon: <Smartphone className="h-4 w-4" />,
@@ -55,7 +55,7 @@ export default function Projects() {
     {
       title: "Interactive Game Dashboard",
       description: "A gaming dashboard with real-time statistics, leaderboards, and animated data visualizations.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/img/mob3.png",
       technologies: ["React", "D3.js", "GSAP", "WebSocket", "Express"],
       type: "Web App",
       icon: <Gamepad2 className="h-4 w-4" />,
@@ -67,12 +67,12 @@ export default function Projects() {
       title: "Nike",
       description:
         "Smart task management app with AI suggestions, natural language processing, and predictive analytics.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/img/projectImg2.png",
       technologies: ["Next.js", "OpenAI", "Prisma", "PostgreSQL", "Tailwind"],
       type: "Web App",
       icon: <Globe className="h-4 w-4" />,
       github: "#",
-      live: "#",
+      live: "https://nike-app-7vsh.vercel.app/",
       featured: true,
     },
   ]
@@ -82,7 +82,8 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-20 md:py-32  gap-10 justify-around flex  bg-gradient-to-t from-black from-10% via-violet-500 via-30% to-white    ">
-      <div className="container ">
+      
+      <div className="container h-100vh mx-auto px-5">
         <div className="text-center space-y-4 mb-16">
           <Badge className="bg-purple-100 text-purple-700">Portfolio</Badge>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Featured Projects</h2>
@@ -157,9 +158,14 @@ export default function Projects() {
 
 
         {/* Other Projects */}
+        
+ 
+    
+
+           
      
 
-        <TechStack/>
+   
      
         <div className="  hidden md:block py-10 px-5">
           <h3 className="text-2xl font-bold text-center">More Projects</h3>

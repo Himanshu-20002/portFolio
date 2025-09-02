@@ -13,16 +13,18 @@ import HeroSlider from "@/src/components/HeroSlider";
 import Features from "@/src/components/Features";
 import {AboutMe} from '@/src/components/AboutMe';
 import Experties from "@/src/components/Experties";
+import TechStack from "@/src/components/TechStack";
+import Section from "@/src/components/Section";
 
 
 export default function Home() {
   return (
     <ReactLenis root className="  w-screen overflow-x-hidden bg-black ">
       <Hero />
-{/* 
+
       <div style={{ minHeight: '800vh', position: 'relative', zIndex: 2 }}>
         <HeorAbout />
-      </div> */}
+      </div>
       <HeroSlider />
       <AboutMe/>
       <Services />
@@ -35,13 +37,16 @@ export default function Home() {
       <Cards />
       <MobileApps />
       <Projects />
-      <Features />
+            
+      <TechStack/>
+
+      {/* <Features /> */}
       {/* <OutroLast /> */}
       {/* <Experties /> */}
 
       {/* <About /> */}
       {/* <Canvas /> */}
-      {/* <Section /> */}
+      <Section />
 
 
 

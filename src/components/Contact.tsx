@@ -1,6 +1,8 @@
 "use client"
 
 import type React from "react"
+import emailjs from '@emailjs/browser';
+import { useRef, useState } from "react";
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -8,9 +10,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, Phone, MapPin, Send, Calendar, Coffee } from "lucide-react"
-import { useState } from "react"
+import toast from "react-hot-toast";
 
 export default function Contact() {
+  const [isLoading, setIsLoading] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,11 +22,33 @@ export default function Contact() {
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     // Handle form submission
-    console.log("Form submitted:", formData)
-  }
+    setIsLoading(true);
+    if (!formRef.current) return;
+   try {
+      console.log('Sending form...', formData); // Debug log
+      const result = await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        formRef.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+      console.log('EmailJS Response:', result); // Debug log
+      
+      toast.success('Message sent successfully!');
+      formRef.current.reset();
+    } catch (error) {
+      console.error('Detailed Error:', error); // More detailed error logging
+      toast.error('Failed to send message');
+    } finally {
+      setIsLoading(false);
+    }
+};
+
+
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -50,7 +76,7 @@ export default function Contact() {
               <CardDescription>Fill out the form below and I'll get back to you within 24 hours.</CardDescription>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium">
@@ -109,10 +135,17 @@ export default function Contact() {
                 </div>
                 <Button
                   type="submit"
+                  disabled={isLoading}
                   className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
                 >
-                  <Send className="mr-2 h-4 w-4" />
-                  Send Message
+                  {isLoading ? (
+                    <span className="loading loading-spinner"></span>
+                  ) : (
+                    <>
+                      <Send className="mr-2 h-4 w-4" />
+                      Send Message
+                    </>
+                  )}
                 </Button>
               </form>
             </CardContent>
@@ -132,7 +165,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-muted-foreground">hello@developer.com</p>
+                    <p className="text-muted-foreground">glizzzbot@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
@@ -141,7 +174,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-medium">Phone</p>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                    <p className="text-muted-foreground">+91 7970686221</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
@@ -150,28 +183,14 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-medium">Location</p>
-                    <p className="text-muted-foreground">San Francisco, CA</p>
+                    <p className="text-muted-foreground">
+                      Anand Vihar , delhi</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-xl">Let's Schedule a Call</CardTitle>
-                <CardDescription>Book a free 30-minute consultation to discuss your project.</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <Button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700">
-                  <Calendar className="mr-2 h-4 w-4" />
-                  Schedule a Meeting
-                </Button>
-                <Button variant="outline" className="w-full bg-transparent">
-                  <Coffee className="mr-2 h-4 w-4" />
-                  Grab a Virtual Coffee
-                </Button>
-              </CardContent>
-            </Card>
+
 
             <Card className="border-0 shadow-lg bg-gradient-to-br from-purple-50 to-pink-50">
               <CardContent className="p-6">

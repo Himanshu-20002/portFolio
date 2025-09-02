@@ -65,29 +65,28 @@ const Section = () => {
     //   yPercent: 100,
     // });
     const animOptions = { duration: 1, ease: "power3.out", stagger: 0.025 };
-    const tooltipSelectors = [
-      {
-        trigger: 0.65,
-        elements: [
-          ".tooltip:nth-child(1) .icon ion-icon",
-          ".tooltip:nth-child(1) .title .line >span",
-          ".tooltip:nth-child(1) .description .line > span",
-        ],
-      },
-      {
-        trigger: 0.65,
-        elements: [
-          ".tooltip:nth-child(2) .icon ion-icon",
-          ".tooltip:nth-child(2) .title .line > span",
-          ".tooltip:nth-child(2) .description .line > span",
-        ],
-      },
-    ];
+const tooltipSelectors = [
+  {
+    trigger: 0.65,
+    elements: [
+      ".tooltip:nth-child(1) .icon svg", // Changed from ion-icon to svg
+      ".tooltip:nth-child(1) .title .line > span",
+      ".tooltip:nth-child(1) .description .line > span",
+    ],
+  },
+  {
+    trigger: 0.65,
+    elements: [
+      ".tooltip:nth-child(2) .icon svg", // Changed from ion-icon to svg
+      ".tooltip:nth-child(2) .title .line > span",
+      ".tooltip:nth-child(2) .description .line > span",
+    ],
+  },
+];
 
     ScrollTrigger.create({
       trigger: ".product-overview",
       start: "75% bottom",
-      markers: true,
       onEnter: () =>
         gsap.to(".header-1 h1 .char > span", {
           y: "10%",
@@ -176,9 +175,7 @@ const Section = () => {
     "text-black absolute top-50% left-50% text-[9vw] italic will-change-transform   translate(-50%, -50%)";
   return (
     <div>
-      {/* <section className="intro">
-        <h1 className={titleClass}>concept</h1>
-      </section> */}
+      
 
       <section className="product-overview bg-white">
         <div className="header-1">

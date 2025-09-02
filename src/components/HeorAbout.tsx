@@ -4,15 +4,16 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-import { Icon1, Icon2, Icon3, Icon4, Icon6 } from "../svg";
+import { icon1, icon2, icon3, icon4, } from '@/public/icon';
+import Image from "next/image";
 
 
-const ICONS = [Icon1, Icon2, Icon3, Icon4, Icon6];
+const ICONS = [icon3, icon1, icon1, icon3,];
 const TEXTS = [
   "Web Design   ",
   "That stand-Out  ",
   "Timeless  ",
-  " EXPERIENCES ",
+  "EXPERIENCE ",
   "Let's ",
   "get INTO ",
   "real-deal",
@@ -81,9 +82,9 @@ export default function HeroAbout() {
       duration: 0.3,
     });
 
-    
+
     tl.to(iconRefs.current, {
-     opacity: 0,
+      opacity: 0,
       ease: "none",
     });
 
@@ -97,7 +98,7 @@ export default function HeroAbout() {
     tl.to(textRefs.current, {
       opacity: 1,
       stagger: 0.1,
-   
+
     });
 
     return () => {
@@ -120,13 +121,19 @@ export default function HeroAbout() {
       </div>
 
       <div ref={animatedIconsRef} className="animated-icons flex gap-4">
-        {ICONS.map((IconComp, idx) => (
+        {ICONS.map((icon, idx) => (
           <div
             key={idx}
             ref={(el) => el && (iconRefs.current[idx] = el)}
             className="animated-icon"
           >
-            <IconComp className="icon-svg" />
+            <Image
+              src={icon}
+              alt={`Icon ${idx + 1}`}
+              width={100}
+              height={100}
+              className="icon-svg"
+            />
           </div>
         ))}
       </div>
@@ -136,7 +143,7 @@ export default function HeroAbout() {
           <span
             key={idx}
             ref={(el) => el && (textRefs.current[idx] = el)}
-            className="text-segment"
+            className={`text-segment ${text.trim() === 'EXPERIENCE' ? 'text-red-400' : 'text-black'}`}
           >
             {text}
           </span>
