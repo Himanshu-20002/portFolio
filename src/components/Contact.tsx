@@ -62,9 +62,9 @@ export default function Contact() {
       <div className="container px-4 md:px-6">
         <div className="text-center space-y-4 mb-16">
           <Badge className="bg-purple-100 text-purple-700">Get In Touch</Badge>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Let's Work Together</h2>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Let&apos;s Work Together</h2>
           <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
-            Have a project in mind? I'd love to hear about it. Let's discuss how we can bring your ideas to life.
+            Have a project in mind? I&apos;d love to hear about it. Let&apos;s discuss how we can bring your ideas to life.
           </p>
         </div>
 
@@ -73,7 +73,7 @@ export default function Contact() {
           <Card className="border-0 shadow-xl">
             <CardHeader>
               <CardTitle className="text-2xl">Send me a message</CardTitle>
-              <CardDescription>Fill out the form below and I'll get back to you within 24 hours.</CardDescription>
+              <CardDescription>Fill out the form below and I&apos;ll get back to you within 24 hours.</CardDescription>
             </CardHeader>
             <CardContent>
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">

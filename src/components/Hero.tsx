@@ -64,8 +64,8 @@ const Hero = () => {
                 </div>
 
               <p className="text-xl text-gray-200 max-w-[600px] mx-auto lg:mx-0 leading-relaxed pt-9">
-                “Full-stack dev with main character energy in terminal window
-                React | Node | MongoDB | Delulu brilliance"
+               &quot;Full-stack dev with main character energy in terminal window
+                React | Node | MongoDB | Delulu brilliance&quot;
               </p>
             </div>
 
@@ -82,7 +82,7 @@ const Hero = () => {
                 variant="outline"
                 className="border-white/30 text-white hover:bg-white/10 bg-white/5 backdrop-blur-sm px-8 py-3"
               >
-                Let's Talk
+                Let&apos;s Talk
               </Button>
             </div>
 

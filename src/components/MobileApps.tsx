@@ -3,13 +3,10 @@
 import type React from "react";
 import { Badge } from "@/components/ui/badge";
 import {
-  Card,
+
   CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
+
 } from "@/components/ui/card";
-import { PlayCircle } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -91,7 +88,7 @@ export default function MobileApps() {
       className="py-20 md:py-32 bg-black text-white"
       ref={sectionRef}
     >
-       <div className="container mx-auto lg:px-59 p-5">
+      <div className="container mx-auto lg:px-59 p-5">
         <div className="grid grid-cols-3 items-center justify-center gap-5">
           {mobileApps.map((app, index) => {
             let yOffset = 0;
@@ -100,27 +97,27 @@ export default function MobileApps() {
             } else if (index === 1) {
               yOffset = -20; // Adjust for the middle mockup
             }
-          return (
-            <div key={index} className="relative" style={{ position: 'relative', top: `${yOffset}px` }} ref={(el) => (cardRefs.current[index] = el)}>
-              <CardContent className=" flex items-center justify-center p-0 ">
-                <IPhoneMockup>
-                  {/* Using a video element for screen recording */}
-                  <video
-                    src={app.videoUrl}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover"
-                    aria-label={`Screen recording of ${app.title}`}
-                  ></video>
-                </IPhoneMockup>
-              </CardContent>
-            </div>
-          );
+            return (
+              <div key={index} className="relative" style={{ position: 'relative', top: `${yOffset}px` }} ref={(el) => (cardRefs.current[index] = el)}>
+                <CardContent className=" flex items-center justify-center p-0 ">
+                  <IPhoneMockup>
+                    {/* Using a video element for screen recording */}
+                    <video
+                      src={app.videoUrl}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover"
+                      aria-label={`Screen recording of ${app.title}`}
+                    ></video>
+                  </IPhoneMockup>
+                </CardContent>
+              </div>
+            );
           })}
         </div>
-     
+
 
 
 

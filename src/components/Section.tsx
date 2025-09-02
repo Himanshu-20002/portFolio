@@ -157,10 +157,6 @@ const tooltipSelectors = [
     };
   }, []);
 
-  const titleClass =
-    "text-6xl font-bold text-white justify-center item-center ";
-  const h1 =
-    "text-black absolute top-50% left-50% text-[9vw] italic will-change-transform   translate(-50%, -50%)";
   return (
     <div>
       
@@ -232,8 +228,8 @@ const tooltipSelectors = [
       </section>
 
       <section className="intro">
-        <h1 className="text-6xl font-bold text-white justify-center item-center p-8 ">
-          (That's a wrap)
+        <h1 className="text-6xl font-bold text-white justify-center item-center p-8">
+          (That&apos;s a wrap)
         </h1>
       </section>
     </div>

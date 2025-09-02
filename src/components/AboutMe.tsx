@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useCallback, useEffect, useRef } from "react"
 import { Download, ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
@@ -36,12 +36,12 @@ export function AboutMe() {
     },
   ]
 
-  const nextSlide = () => {
+ const nextSlide = useCallback(() => {
     if (!sliderRef.current) return
     currentSlide.current = (currentSlide.current + 1) % highlights.length
     const translateX = -currentSlide.current * 100
     sliderRef.current.style.transform = `translateX(${translateX}%)`
-  }
+  }, [])
 
   const prevSlide = () => {
     if (!sliderRef.current) return
@@ -65,13 +65,13 @@ export function AboutMe() {
   }
 
   return (
-    <section className="min-h-screen w-screen flex items-center justify-center px-4 bg-black   pb-30">
+   <section className="min-h-screen w-screen flex items-center justify-center px-4 bg-black pb-30">
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center min-h-screen">
           <div className="lg:col-span-2 space-y-8">
             <div className="group">
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 transition-all duration-500 group-hover:scale-96 hover:text-accent text-white">
-                hi, I'm <span className="text-violet-500 glow-text hover:animate-pulse">Himanshu</span>
+                hi, I&apos;m <span className="text-violet-500 glow-text hover:animate-pulse">Himanshu</span>
               </h1>
               <div className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed space-y-6">
                 <p className="transition-all duration-300 hover:text-white hover:translate-x-2 hover:scale-105 cursor-default">
@@ -80,13 +80,13 @@ export function AboutMe() {
                 </p>
 
                 <p className="transition-all duration-300 hover:text-white hover:translate-x-2 hover:scale-105 cursor-default">
-                  I specialize in crafting web/mobile apps with moder technology crafting stunning scroll  animations  cool effects & scalable applications that
+                  I specialize in crafting web/mobile apps with modern technology crafting stunning scroll animations cool effects &amp; scalable applications that
                   deliver exceptional user experiences and drive business growth.
                 </p>
 
                 <p className="transition-all duration-300 hover:text-violet-300 hover:translate-x-2 hover:scale-105 cursor-default">
-                  When I'm not coding, you'll find me exploring new frameworks, contributing to open-source projects or turning concept to reality
-                </p>
+                  When I&apos;m not coding, you&apos;ll find me exploring new frameworks, contributing to open-source projects or turning concept to reality
+               </p>
               </div>
             </div>
 

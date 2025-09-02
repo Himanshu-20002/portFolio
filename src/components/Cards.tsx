@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -13,7 +13,7 @@ const cardArray = [
   {
     id: 1,
     image: (
-     <Image
+      <Image
         src="/img/1.png"
         alt="3D Image"
         width={600}
@@ -25,12 +25,12 @@ const cardArray = [
   {
     id: 2,
     image: <Image
-        src="/img/2.png"
-        alt="3D Image"
-        width={600}
-        height={600}
-        style={{ objectFit: "cover" }}
-      />
+      src="/img/2.png"
+      alt="3D Image"
+      width={600}
+      height={600}
+      style={{ objectFit: "cover" }}
+    />
   },
   {
     id: 3,
@@ -81,10 +81,10 @@ const Cards = () => {
   const arcAngle = Math.PI * 0.3; //wide determine
   const startArc = Math.PI / 2 - arcAngle / 3;
 
-  const positionCards = (progress: number) => {
-    const radius = getRadius();
-    const totalTravel = 2 + totalCards / 7.5;
-    const adjustedProgress = (progress * totalTravel - 1) * 0.75;
+const positionCards = useCallback((progress: number) => {
+  const radius = getRadius();
+  const totalTravel = 2 + totalCards / 7.5;
+  const adjustedProgress = (progress * totalTravel - 1) * 0.75;
 
     // Position cards as before
     cardRef.current.forEach((el, i) => {
@@ -121,36 +121,32 @@ const Cards = () => {
       });
       setActiveIndex(active);
     }
-  };
+  },[totalCards ,startArc ,arcAngle]);
 
   useGSAP(() => {
-    // Define SVG path for more complex motion
-    //  const path = `M100,200 C100,100 400,100 400,200 c100,200 400,100 300,0`;
-
-    const tl = gsap.timeline({
+    gsap.timeline({
       scrollTrigger: {
         trigger: "#steps",
         start: "top 0%",
         end: "+=300%",
         scrub: 3,
         pin: true,
-        
-
         onUpdate: (self) => {
           positionCards(self.progress);
         },
       },
     });
-
-  
   }, []);
+
+
+
   useEffect(() => {
     // Access elements only after component is mounted
     if (stepsRef.current) {
       // const stickyHeight = window.innerHeight * 7;
       positionCards(0);
     }
-  }, []);
+  }, [positionCards]);
   // Animate number reveal with GSAP
   useEffect(() => {
     numberRefs.current.forEach((el, idx) => {
@@ -195,7 +191,7 @@ const Cards = () => {
                     top: -40,
                     width: "100%",
                     textAlign: "left",
-                  
+
                     pointerEvents: idx === activeIndex ? "auto" : "none",
                   }}
                 >
@@ -206,7 +202,7 @@ const Cards = () => {
           </div>
         </div>
         <div ref={cardsRef} className="cards  max-lg:scale-60 ">
-          {[1, 2, 3 , 4].map((_, index) => (
+          {[1, 2, 3, 4].map((_, index) => (
             <div
               key={index}
               id="card"

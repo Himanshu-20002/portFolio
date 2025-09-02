@@ -20,6 +20,10 @@ export interface SliderItem {
   url?: string;
 }
 
+type ImageRefType = HTMLImageElement & { 
+  style: CSSStyleDeclaration 
+};
+
 export default function HeroSlider(): JSX.Element {
   const sliderRef = useRef<HTMLDivElement | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
@@ -62,7 +66,7 @@ const renderedSlides = useMemo(() => {
     }
   }
   return arr;
-}, [sliderData.length]);
+}, []);
 
   // client + mobile detection
   useEffect(() => {
@@ -320,7 +324,7 @@ const renderedSlides = useMemo(() => {
           >
             <div className="slide-image" style={{ width: "100%", height: "100%", position: "relative" }}>
               <Image
-                ref={(img: any) => (imageRefs.current[i] = img)}
+                ref={(img: ImageRefType | null) => (imageRefs.current[i] = img)}
                 src={slide.img}
                 alt={slide.title}
                 fill
