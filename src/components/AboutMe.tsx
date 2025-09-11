@@ -14,7 +14,7 @@ export function AboutMe() {
       image: "/img/highlight.png",
       title: "Full-Stack Applications",
       width: 400,
-      height: 400
+      height: 500
     },
     {
       image: "/img/highlight2.png",
@@ -25,8 +25,8 @@ export function AboutMe() {
     {
       image: "/img/highlight2.png",
       title: "Clean Code Architecture",
-      width: 400,
-      height: 400
+      width: 350,
+      height: 600
     },
     {
       image: "/img/highlight2.png",
@@ -114,20 +114,20 @@ export function AboutMe() {
             <div className="relative bg-card/50 backdrop-blur-sm rounded-xl p-4 shadow-xl border border-border/50">
               <h3 className="text-lg font-semibold mb-3 text-center">Highlights</h3>
 
-              <div className="relative overflow-hidden rounded-lg aspect-[3/4] bg-muted">
+              <div className="relative overflow-hidden rounded-lg  bg-muted aspect-[3/4] sm:aspect-[4/5] md:aspect-[3/4]">
                 <div
                   ref={sliderRef}
                   className="flex transition-transform duration-500 ease-in-out h-full"
                   style={{ width: `${highlights.length * 100}%` }}
                 >
                   {highlights.map((highlight, index) => (
-                    <div key={index} className="w-full h-full flex-shrink-0 relative">
+                    <div key={index} className="w-full  object-cover h-full flex-shrink-0 relative">
                       <Image
                         src={highlight.image}
                         alt={highlight.title}
                         width={highlight.width}
                         height={highlight.height}
-                        className="object-fit w-auto h-auto"
+                        className="object-cover w-autoDo you make dinner? Hey, Cortana. Who is in my marketplace? Mehbooba Mufti. It doesn't matter. Hey, Cortana. Job.  h-full lg:object-contain"
                         priority={index === 0} // Load first image immediately
                       />
                       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3">

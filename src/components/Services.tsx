@@ -62,7 +62,7 @@ const serviceRefs = useRef<Array<HTMLDivElement | null>>([]);
       scrollTrigger: {
         trigger: "#service",
         start: "top 0%",
-        end: "+=300%",
+        end: "+=370%",
         scrub: 3,
         pin: true,
 
@@ -95,7 +95,7 @@ scrub:2,
   }, []);
 
   return (
-    <section id="services" className=" bg-black  relative overflow-clip  h-[350vh]  lg:h-[230dvh] ">
+    <section id="services" className=" bg-black  relative overflow-clip  h-[350vh]  lg:h-[380dvh] ">
 
       <>
         <AnimatedHeaderSection

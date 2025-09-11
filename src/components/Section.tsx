@@ -175,10 +175,11 @@ const tooltipSelectors = [
             </span>
           </h1>
 
-          <h1>stunning 🌀visual </h1>
+          <h1>stunning 🌀visual  🎠transition </h1>
+         
         </div>
-        <div className="header-2">
-          <h2 className="mr-70 text-black">🎠transition</h2>
+        <div className="">
+          <h2 className="mr-70 text-white">🎠transition</h2>
           <h2>crafting pixel perfect </h2>
 
           <h2>  experience
