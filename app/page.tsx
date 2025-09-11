@@ -22,10 +22,16 @@ export default function Home() {
     <ReactLenis root className="  w-screen overflow-x-hidden bg-black ">
       <Hero />
 
-      <div style={{ minHeight: '800vh', position: 'relative', zIndex: 2 }}>
+      <div className="sm:h-[500dvh]" style={{ minHeight: '505vh', position: 'relative', zIndex: 2 }}>
         <HeorAbout />
       </div>
+
+     
+      
       <HeroSlider />
+     
+
+    
       <AboutMe />
       <Services />
 

@@ -4,6 +4,11 @@
 import React, { useEffect, useRef, useState, useMemo } from "react";
 import { sliderData } from "../components/constants/index";
 import Image from "next/image";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 
 const COPIES = 5; // keep small but enough for infinite feel
 const config = {
@@ -68,6 +73,31 @@ export default function HeroSlider() {
     return arr;
   }, []);
 
+
+  // useGSAP(() => {
+  //   const tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: sliderRef.current,
+  //       start: "top top",
+  //       end: "+=100%", // Pin for 100% of viewport height
+  //       scrub: 1.5,
+  //       pin: false,
+  //       pinSpacing: true, // Maintains the space during pin
+  //       anticipatePin: 1, // Prevents layout shift by pre-positioning
+  //       invalidateOnRefresh: true,
+  //       onUpdate: (self) => {
+  //         const s = stateRef.current;
+  //         const progress = self.progress;
+  //         const totalMove = window.innerWidth * (isMobile ? 1 : 1.5);
+  //         s.targetX = -progress * totalMove;
+  //       },
+  //     },
+  //   });
+
+  //   return () => {
+  //     tl.kill();
+  //   };
+  // }, [isMobile]);
   // client + mobile detection
   useEffect(() => {
     setIsClient(true);
@@ -97,6 +127,8 @@ export default function HeroSlider() {
     if (trackRef.current) {
       trackRef.current.style.width = `${renderedSlides.length * s.slideWidth}px`;
     }
+
+
 
     // Setup IntersectionObserver to track which slide indices are "active"
     observerRef.current = new IntersectionObserver(
@@ -139,8 +171,8 @@ export default function HeroSlider() {
       // Only wrap when stable (no user interaction & low velocity)
       if (isStableForWrap()) {
         if (s.currentX > -sequenceWidth * 1) {
-          s.currentX -= sequenceWidth;
-          s.targetX -= sequenceWidth;
+          // s.currentX -= sequenceWidth;
+          // s.targetX -= sequenceWidth;
         } else if (s.currentX < -sequenceWidth * (COPIES - 1)) {
           s.currentX += sequenceWidth;
           s.targetX += sequenceWidth;
@@ -212,19 +244,19 @@ export default function HeroSlider() {
       s.hasActuallyDragged = false;
     };
 
-    const handleTouchMove = (e: TouchEvent) => {
-      if (!s.isDragging) return;
-      const dx = (e.touches[0].clientX - s.startX) * 1.5;
-      s.targetX = s.lastX + dx;
-      s.dragDistance = Math.abs(dx);
-      if (s.dragDistance > 5) s.hasActuallyDragged = true;
-    };
 
     const handleTouchEnd = () => {
       s.isDragging = false;
       setTimeout(() => (s.hasActuallyDragged = false), 100);
     };
 
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!s.isDragging) return;
+      const dx = (e.touches[0].clientX - s.startX) * 3.5;
+      s.targetX = s.lastX + dx;
+      s.dragDistance = Math.abs(dx);
+      if (s.dragDistance > 5) s.hasActuallyDragged = true;
+    };
     const handleMouseDown = (e: MouseEvent) => {
       e.preventDefault();
       s.isDragging = true;
@@ -241,7 +273,7 @@ export default function HeroSlider() {
       s.targetX += dx;
       s.lastMouseX = e.clientX;
       s.dragDistance += Math.abs(dx);
-      if (s.dragDistance > 5) s.hasActuallyDragged = true;
+      if (s.dragDistance > 2) s.hasActuallyDragged = true;
     };
 
     const handleMouseUp = () => {
@@ -298,9 +330,9 @@ export default function HeroSlider() {
   imageRefs.current = new Array(renderedSlides.length).fill(null);
 
   return (
-    <div
+ <div
       ref={sliderRef}
-      className="slider relative overflow-hidden w-screen h-[130vh] p-10 bg-black select-none"
+      className="slider relative overflow-hidden w-screen h-screen p-10 bg-black select-none"
       style={{ touchAction: "pan-y" }}
     >
       <div

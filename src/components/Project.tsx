@@ -15,7 +15,7 @@ export default function Projects() {
       type: "Web App",
       icon: <Smartphone className="h-4 w-4" />,
       github: "https://github.com/Himanshu-20002/gaming-webapp.git",
-      live: "https://gaming-webapp.vercel.app/",
+      live: "https://next-valorant.vercel.app/",
       featured: true,
     },
     {
@@ -71,7 +71,7 @@ export default function Projects() {
       type: "Web App",
       icon: <Globe className="h-4 w-4" />,
       github: "#",
-      live: "https://nike-app-7vsh.vercel.app/",
+      live: "https://next-nike-mauve.vercel.app/",
       featured: true,
     },
   ]

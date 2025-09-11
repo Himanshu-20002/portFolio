@@ -128,7 +128,7 @@ const Cards = () => {
       scrollTrigger: {
         trigger: "#steps",
         start: "top 0%",
-        end: "+=300%",
+        end: "+=270%",
         scrub: 3,
         pin: true,
         onUpdate: (self) => {
@@ -171,7 +171,7 @@ const Cards = () => {
     });
   }, [activeIndex]);
   return (
-    <section className="flex-1 w-screen overflow-x-hidden  h-[325dvh] bg-black">
+    <section className="flex-1 w-screen overflow-x-hidden  h-[315vh] bg-black">
       <div id="steps" ref={stepsRef} className="relative">
         <div className="step-counter">
           <div className="counter-title">

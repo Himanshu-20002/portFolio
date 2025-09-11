@@ -45,7 +45,7 @@ export default function HeroAbout() {
       scrollTrigger: {
         trigger: heroSectionRef.current,
         start: "top top",
-        end: `+=${window.innerHeight * 7}`,
+        end: `+=${isMobile ? window.innerHeight * 4.3 : window.innerHeight * 4}`,
         //${window.innerHeight * 8}
         scrub: true,
         pin: true,
