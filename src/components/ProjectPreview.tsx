@@ -22,26 +22,26 @@ const ProjectPreview: React.FC<ProjectPreviewProps> = ({ images, isOpen, onClose
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
 
-  // Handle drag start
-  const handleMouseDown = (e: React.MouseEvent) => {
-    setIsDragging(true);
-    setStartX(e.pageX - (dragRef.current?.offsetLeft || 0));
-    setScrollLeft(dragRef.current?.scrollLeft || 0);
-  };
+  // // Handle drag start
+  // const handleMouseDown = (e: React.MouseEvent) => {
+  //   setIsDragging(true);
+  //   setStartX(e.pageX - (dragRef.current?.offsetLeft || 0));
+  //   setScrollLeft(dragRef.current?.scrollLeft || 0);
+  // };
 
-  // Handle drag end
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
+  // // Handle drag end
+  // const handleMouseUp = () => {
+  //   setIsDragging(false);
+  // };
 
-  // Handle dragging
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging || !dragRef.current) return;
-    e.preventDefault();
-    const x = e.pageX - (dragRef.current?.offsetLeft || 0);
-    const walk = (x - startX) * 2; // Scroll speed multiplier
-    dragRef.current.scrollLeft = scrollLeft - walk;
-  };
+  // // Handle dragging
+  // const handleMouseMove = (e: React.MouseEvent) => {
+  //   if (!isDragging || !dragRef.current) return;
+  //   e.preventDefault();
+  //   const x = e.pageX - (dragRef.current?.offsetLeft || 0);
+  //   const walk = (x - startX) * 2; // Scroll speed multiplier
+  //   dragRef.current.scrollLeft = scrollLeft - walk;
+  // };
 
   // ✅ Handle mouse wheel for vertical scroll
   const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {

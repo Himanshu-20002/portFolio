@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { ExternalLink, Github, Smartphone, Globe, Gamepad2 } from "lucide-react"
+import { ExternalLink, Github, Smartphone, Globe,  } from "lucide-react"
 import Image from "next/image"
 
 export default function Projects() {
@@ -107,7 +107,7 @@ export default function Projects() {
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-               // Replace the buttons section in your Card component
+           
                 <div className="absolute bottom-4 left-4 right-4 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="flex space-x-2">
                     <Button
