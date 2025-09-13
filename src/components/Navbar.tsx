@@ -1,5 +1,5 @@
 'use client'
-import Image from 'next/image'
+
 import Link from 'next/link'
 import React from 'react'
 
@@ -17,14 +17,14 @@ const Navbar = () => {
                 <nav className='flex size-full  item-center justify-between'>
                     <div className='flex items-center gap-5' style={{ width: "100%", height: "100%", position: "relative" }}>
                         <Link href='/' className='nav-hover-btn'>
-                            <Image
+                            {/* <Image
                                 src='/img/dev.png'
                                 alt='Logo'
-                                width={64}    // equivalent to w-16
+                                width={34}    // equivalent to w-16
                                 height={40}   // equivalent to h-10
                                 className='rounded-sm'
                                 priority      // Logo should load first
-                            />
+                            /> */}
                         </Link>
                     </div>
 

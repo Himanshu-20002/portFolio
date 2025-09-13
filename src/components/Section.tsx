@@ -25,7 +25,7 @@ const Section = () => {
 
 
   useGSAP(() => {
-    if (!header1Ref.current || !titleH2Ref.current || !descriptionPRef.current)
+    if (!header1Ref.current || !descriptionPRef.current)
       return;
 
     const header1Split = new SplitText(header1Ref.current, {
@@ -164,8 +164,8 @@ const tooltipSelectors = [
       
 
       <section className="product-overview h-screen w-screen bg-white">
-        <div className="header-1">
-          <h1 ref={header1Ref}>Showcase real</h1>
+        {/* <div className="header-1">
+          <h1  ref={header1Ref}>Showcase real </h1>
           <h1>
             when desi<span className="text-red-400">g</span>n Meets
           </h1>
@@ -177,52 +177,55 @@ const tooltipSelectors = [
 
           <h1>stunning 🌀visual  🎠transition </h1>
          
-        </div>
-        <div className="">
-          <h2 className="mr-70 text-white">🎠transition</h2>
-          <h2>crafting pixel perfect </h2>
+        </div> */}
+       <div className="header-1">
+             <h1 className="pt-25 max-lg:pt-3" ref={header1Ref}>Showcase real</h1>
+             <h1>
+                when design Meets
+             </h1>
+             <h1 className="text-10xl">
+                <span className=" text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-indigo-600">
+              Code
+            </span>
 
-          <h2>  experience
+             </h1>
+              <h1>stunning 🌀visual  🎠transition </h1>
 
-          </h2>
-
-          {/* <h2>.node.close</h2> */}
-        </div>
+           
+           </div>
         <div className="circular-mask"></div>
-        <div className="tooltips">
+        <div className="absolute top-1/2 left-[50%] -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 flex gap-30">
           <div className="tooltip">
-            <div className="icon flex-row">
-              <div className="flex flex-row justify-start gap-10 ">
+            <div className="icon flex-row pb-3">
+              <div  className="flex flex-row justify-start gap-10 ">
                 <FaGooglePlay />
                 <BsAndroid />
                 <IoLogoAppleAppstore />
               </div>
             </div>
             <div className="divider"></div>
-            <div className="title">
-              <h2 ref={titleH2Ref}>Android / ios apps</h2>
+            <div className="title font-bold">
+              <h2 >Android / ios apps</h2>
             </div>
-            <div className="description">
+            <div className="description max-lg:w-[220%]">
               <p ref={descriptionPRef}>
-                Designed to match your pace, GRAND run all week on a single
-                charge .No interruptions, no slowing down.
+                Crafting seamless mobile experiences with  pixel-perfect UI. From concept to app store.
               </p>
             </div>
           </div>
           <div className="tooltip">
-            <div className="icon">
-              <div className="flex flex-row justify-start gap-10 ">
+            <div className="icon flex-row pb-3">
+              <div  className="flex flex-row   gap-10 ">
                 <SiExpress /> <SiNextdotjs /> <IoLogoNodejs />
               </div>
             </div>
             <div className="divider"></div>
-            <div className="title">
+            <div className="title font-bold">
               <h2>web / applications</h2>
             </div>
-            <div className="description">
-              <p>
-                Designed to match your pace, GRAND run all week on a single
-                charge .No interruptions, no slowing down.
+            <div className="description max-lg:w-[220%]">
+              <p ref={descriptionPRef} >
+                 Building modern web experiences with cutting-edge tech. Fast, responsive, and engineered for scale.
               </p>
             </div>
           </div>
@@ -231,7 +234,7 @@ const tooltipSelectors = [
       </section>
 
       <section className="intro">
-        <h1 className="text-6xl font-bold text-white justify-center item-center p-8">
+        <h1 className="text-6xl font-bold text-white justify-center item-center p-8 text-nowrap">
           (That&apos;s a wrap)
         </h1>
       </section>

@@ -18,17 +18,7 @@ export default function Projects() {
       live: "https://next-valorant.vercel.app/",
       featured: true,
     },
-    {
-      title: "Animated Component Library",
-      description: "An interactive landing page built with gsap featuring immersive animations and WebGL effects.",
-      image: "/img/projectImage3.png",
-      technologies: ["Three.js", "React", "GSAP", "WebGL", "Tailwind"],
-      type: "Web App",
-      icon: <Globe className="h-4 w-4" />,
-      github: "#",
-      live: "#",
-      featured: true,
-    },
+    
     {
       title: "Grocery Delivery App",
       description: "A scalable grocery app with real-time loc tracking admin dashBord sockets , inspired by blinkit.",
@@ -52,26 +42,36 @@ export default function Projects() {
       featured: false,
     },
     {
-      title: "Interactive Game Dashboard",
-      description: "A gaming dashboard with real-time statistics, leaderboards, and animated data visualizations.",
+      title: "web scrapper API",
+      description: "High-performance web scraping API service built with Express and React. Features real-time data visualization, automated scraping schedules, and custom data extraction patterns for e-commerce sites.",
       image: "/img/mob3.png",
       technologies: ["React", "D3.js", "GSAP", "WebSocket", "Express"],
       type: "Web App",
-      icon: <Gamepad2 className="h-4 w-4" />,
+      icon: <Globe className="h-4 w-4" />,
       github: "#",
       live: "#",
       featured: false,
     },
     {
       title: "Nike",
-      description:
-        "Smart task management app with AI suggestions, natural language processing, and predictive analytics.",
-      image: "/img/projectImg2.png",
+      description:" A dynamic Nike showcase website featuring interactive 3D product models, fluid animations, and a modern e-commerce experience. Highlights include animated product arrivals, curated collections, and seamless browsing with GSAP-powered transitions.",
+      image: "/img/nike.png",
       technologies: ["Next.js", "OpenAI", "Prisma", "PostgreSQL", "Tailwind"],
       type: "Web App",
       icon: <Globe className="h-4 w-4" />,
       github: "#",
       live: "https://next-nike-mauve.vercel.app/",
+      featured: true,
+    },
+    {
+      title: "Animated Component Library",
+      description: "An interactive landing page built with gsap featuring immersive animations and WebGL effects.",
+      image: "/img/projectImg3.png",
+      technologies: ["Three.js", "React", "GSAP", "WebGL", "Tailwind"],
+      type: "Web App",
+      icon: <Globe className="h-4 w-4" />,
+      github: "#",
+      live: "https://landing-page-bay-seven-16.vercel.app/",
       featured: true,
     },
   ]
@@ -80,8 +80,8 @@ export default function Projects() {
   const otherProjects = projects.filter((project) => !project.featured)
 
   return (
-    <section id="projects" className="py-20 md:py-32  gap-10 justify-around flex  bg-gradient-to-t from-black from-10% via-violet-500 via-30% to-white    ">
-      
+    <section id="portfolio" className="py-20 md:py-32  gap-10 justify-around flex  bg-gradient-to-t from-black from-10% via-violet-500 via-30% to-white    ">
+
       <div className="container h-100vh mx-auto px-5">
         <div className="text-center space-y-4 mb-16">
           <Badge className="bg-purple-100 text-purple-700">Portfolio</Badge>
@@ -97,7 +97,7 @@ export default function Projects() {
             <Card
               key={index}
               className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group bg-black">
-       
+
               <div className="relative overflow-hidden">
                 <Image
                   src={project.image || "/placeholder.svg"}
@@ -107,11 +107,12 @@ export default function Projects() {
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+               // Replace the buttons section in your Card component
+                <div className="absolute bottom-4 left-4 right-4 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="flex space-x-2">
                     <Button
                       size="sm"
-                      className="bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30"
+                      className="bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30 md:opacity-0 group-hover:opacity-100"
                       asChild
                     >
                       <a href={project.github} target="_blank" rel="noopener noreferrer">
@@ -121,7 +122,7 @@ export default function Projects() {
                     </Button>
                     <Button
                       size="sm"
-                      className="bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30"
+                      className="bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30 max-lg:bg-purple-500 md:opacity-0 group-hover:opacity-100"
                       asChild
                     >
                       <a href={project.live} target="_blank" rel="noopener noreferrer">
@@ -157,15 +158,15 @@ export default function Projects() {
 
 
         {/* Other Projects */}
-        
- 
-    
 
-           
-     
 
-   
-     
+
+
+
+
+
+
+
         <div className="  hidden md:block py-10 px-5">
           <h3 className="text-2xl font-bold text-center">More Projects</h3>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 pt-10">

@@ -37,8 +37,8 @@ const Hero = () => {
 
 
   return (
-    <section className="relative min-h-screen flex  overflow-hidden  max-lg:items-center max-lg:justify-center  ">
-      <div className="   absolute overflow-hidden -z-99 h-[100vh]  w-[100vw]  xl:right-0 ">
+    <section className="relative h-screen flex max-lg:h-[95vh] overflow-hidden  max-lg:items-center max-lg:justify-center  ">
+      <div className="   absolute overflow-hidden -z-99 h-screen  w-[100vw]  xl:right-0 ">
         <HeroCenter
           width="100%"
           height="100%"
@@ -55,23 +55,25 @@ const Hero = () => {
                 🚀 Available for Exciting Projects
               </Badge>
 
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight  ">
+              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight special-font  ">
                 Designing Dompamine <span className="fiery-text">  Hits</span>
               </h1>
-                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-3xl font-light text-text-muted block  text-white h-16  pt-8 wrap">
-                  <DecryptionText />
-                </div>
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-3xl font-light text-text-muted block  text-white h-16  pt-8 wrap">
+                <DecryptionText />
+              </div>
 
               <p className="text-xl text-gray-200 max-w-[600px] mx-auto lg:mx-0 leading-relaxed pt-9">
-               &quot;Full-stack dev with main character energy in terminal window
+                &quot;Full-stack dev with main character energy in terminal window
                 React | Node | MongoDB | Delulu brilliance&quot;
               </p>
             </div>
-
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4 ">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-black font-semibold px-8 py-3"
+                onClick={() => {
+                  document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 View My Work
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -80,11 +82,13 @@ const Hero = () => {
                 size="lg"
                 variant="outline"
                 className="border-white/30 text-white hover:bg-white/10 bg-white/5 backdrop-blur-sm px-8 py-3"
+                onClick={() => {
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 Let&apos;s Talk
               </Button>
             </div>
-
             <div className="flex justify-center lg:justify-start space-x-6 p-6">
               <Button
                 variant="ghost"
@@ -118,7 +122,7 @@ const Hero = () => {
               <SecondHero className=" w-full h-full max-lg:scale-160 pointer:none max-w-full max-h-full" />
             </div>
 
-            <div className="grid grid-cols-4  gap-4 mt-12 max-w-lg mx-auto lg:mx-0 absolute   z-99 max-lg:-bottom-19 bottom-10 xl:right-0 2xl:-right-140">
+            <div className="grid grid-cols-4  gap-4 mt-12 max-w-lg mx-auto lg:mx-0 absolute   z-99 max-lg:-bottom-19 bottom-10 xl:right-0 2xl:-right-140 lg:translate-x-1/4">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 text-center">
                 <div className="text-2xl font-bold text-white">25+</div>
                 <div className="text-sm text-gray-300">Projects</div>

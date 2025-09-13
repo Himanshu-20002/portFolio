@@ -175,10 +175,10 @@ const Cards = () => {
       <div id="steps" ref={stepsRef} className="relative">
         <div className="step-counter">
           <div className="counter-title">
-            <h1 className="text-white  rubik-moonrocks-regular max-lg:3xl   ">STEPS</h1>
+            <h1 className="text-white  special-font max-lg:3xl  tracking-widest "><b>S T E P S</b></h1>
           </div>
           <div className="count">
-            <div className="count-container" ref={countContainerRef}>
+            <div className="count-container special-font" ref={countContainerRef}>
               {[1, 2, 3, 4, 5].map((num, idx) => (
                 <h1
                   key={idx}
@@ -198,7 +198,7 @@ const Cards = () => {
                     pointerEvents: idx === activeIndex ? "auto" : "none",
                   }}
                 >
-                  {`0${num}`}
+                 <b>{`0 ${ num}`}</b> 
                 </h1>
               ))}
             </div>

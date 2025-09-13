@@ -1,10 +1,9 @@
-// components/HeroSlider.tsx
+
 "use client";
 
 import React, { useEffect, useRef, useState, useMemo } from "react";
 import { sliderData } from "../components/constants/index";
 import Image from "next/image";
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -65,7 +64,7 @@ export default function HeroSlider() {
         arr.push({
           title: sliderData[i].title,
           img: sliderData[i].img,
-          url: sliderData[i].url,
+          // url: sliderData[i].url,
           key: `${c}-${i}`
         });
       }

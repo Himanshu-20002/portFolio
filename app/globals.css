@@ -35,18 +35,51 @@
              shake 0.5s linear infinite;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
+@layer utilities {
+  .scrollbar-custom {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  }
 
-@keyframes fire {
-  to {
-    background-position: 200% center;
+  .scrollbar-custom::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+  }
+
+  /* Hide scrollbar when body is fixed */
+  body[style*="position: fixed"] {
+    overflow-y: hidden;
+  }
+   .special-font b {
+    font-family: "Zentry";
+    font-feature-settings: "ss01" on;
+  }
+
+   @font-face {
+    font-family: "zentry";
+    src: url("/fonts/zentry-regular.woff2") format("woff2");
   }
 }
-
 @keyframes shake {
   0%, 100% { transform: translateX(0); }
   25% { transform: translateX(-1px); }
   75% { transform: translateX(1px); }
 }
+
+
+  .special-font b {
+    font-family: "Zentry";
+    font-feature-settings: "ss01" on;
+  }
+
 .slide{
   flex-shrink: 0;
   width: 350px;
@@ -319,8 +352,8 @@ section:not(#services) {
 
  .header-1{
   position: relative;
-  width: 500vw;
-  height: 100svh;
+  width: 645vw;
+  height: 100vh;
   transform: translateX(0%);
   overflow-x: auto;
   gap: 1vh;
@@ -360,16 +393,16 @@ section:not(#services) {
   background-color: #0d0d0d;
   clip-path:circle(0% at 50% 50%);
  }
- .tooltips{
+ /* .tooltips{
   position: absolute;
   top:50%;
-  left:50%;
+  left:40%;
   transform:translate(-50%,-50%);
   width: 75%;
   height: 75%;
   display: flex;
   gap:15rem;
- }
+ } */
  .ribbons-container {
   width: 100%;
   height: 100%;
@@ -405,7 +438,7 @@ section:not(#services) {
   transform-origin: left center;
  }
  .toltip .icon{
-  font-size:2.5rem;
+  font-size:3.5rem;
   overflow: hidden;
  }
  .tooltip .description{
@@ -414,17 +447,21 @@ section:not(#services) {
 
  /* now to prep for animation  we wll assgn specific classname to tl header description */
  .tooltip:nth-chld(2).icon,
- .tooltip:nth-child(2).title,
- .tooltip .description{
-  width: 70%;
+ .tooltip:nth-child(2).title{
+  width: 90%;
  }
+
+
+ /* .tooltip .description{
+  width: 220%;
+ } */
  .header-1 h1 .char,
  .toltip.title.line{
   display:inline-block;
   overflow:hidden;
  }
 
- .header-1 h1 .char > span,
+ /* .header-1 h1 .char > span,
  .toltip .icon ion-icon,
  .tooltip .title .line > span,
  .tooltip .description .line > span{
@@ -432,7 +469,7 @@ section:not(#services) {
   display: block;
   transform: translateY(100%);
   will-change: transform;
- }
+ } */
 
 
 

@@ -13,26 +13,26 @@ export function AboutMe() {
     {
       image: "/img/highlight.png",
       title: "Full-Stack Applications",
-      width: 400,
+      width: 500,
       height: 500
     },
     {
-      image: "/img/highlight2.png",
+      image: "/img/highlight3.png",
       title: "Mobile-First Design",
-      width: 400,
-      height: 400
-    },
-    {
-      image: "/img/highlight2.png",
-      title: "Clean Code Architecture",
-      width: 350,
+      width: 500,
       height: 600
     },
     {
-      image: "/img/highlight2.png",
+      image: "/img/highlight5.png",
+      title: "Clean Code Architecture",
+      width: 500,
+      height: 600
+    },
+    {
+      image: "/img/highlight4.png",
       title: "API Development",
-      width: 400,
-      height: 400
+      width: 500,
+      height: 600
     },
   ]
 
@@ -65,7 +65,7 @@ export function AboutMe() {
   }
 
   return (
-   <section className="min-h-screen w-screen flex items-center justify-center px-4 bg-black pb-30">
+   <section   id="about" className="min-h-screen w-screen flex items-center justify-center px-4 bg-black pb-30">
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center min-h-screen">
           <div className="lg:col-span-2 space-y-8">
@@ -114,7 +114,7 @@ export function AboutMe() {
             <div className="relative bg-card/50 backdrop-blur-sm rounded-xl p-4 shadow-xl border border-border/50">
               <h3 className="text-lg font-semibold mb-3 text-center">Highlights</h3>
 
-              <div className="relative overflow-hidden rounded-lg  bg-muted aspect-[3/4] sm:aspect-[4/5] md:aspect-[3/4]">
+              <div className="relative overflow-hidden rounded-lg  bg-muted flex flex-1">
                 <div
                   ref={sliderRef}
                   className="flex transition-transform duration-500 ease-in-out h-full"

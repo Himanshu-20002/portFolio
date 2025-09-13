@@ -1,7 +1,7 @@
 "use client"
 import Cards from "@/src/components/Cards";
 import Hero from "@/src/components/Hero";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HeorAbout from "@/src/components/HeorAbout";
 import Services from "@/src/components/Services";
 import ReactLenis from "lenis/react"
@@ -18,8 +18,28 @@ import Section from "@/src/components/Section";
 
 
 export default function Home() {
+
+   const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const lenisOptions = {
+    duration: isMobile ? 1.4 : 1.2, // Slower duration for mobile
+    smoothWheel: true,
+    wheelMultiplier: isMobile ? 0.2 : 1, // Reduced wheel multiplier for mobile
+    touchMultiplier: 0.2, // Reduced touch sensitivity
+    infinite: false,
+  };
   return (
-    <ReactLenis root className="  w-screen overflow-x-hidden bg-black ">
+    <ReactLenis root  options={lenisOptions} className="  w-screen overflow-x-hidden bg-black ">
       <Hero />
 
       <div className="sm:h-[500dvh]" style={{ minHeight: '505vh', position: 'relative', zIndex: 2 }}>
