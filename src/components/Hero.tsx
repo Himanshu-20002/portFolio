@@ -93,20 +93,25 @@ const Hero = () => {
               <Button
                 variant="ghost"
                 size="sm"
+                onClick={() => window.open("https://github.com/Himanshu-20002", "_blank")}
                 className="text-white hover:text-yellow-400 hover:bg-white/10"
               >
                 <Github className="h-6 w-6" />
               </Button>
+
               <Button
                 variant="ghost"
                 size="sm"
+                onClick={() => window.open("https://www.linkedin.com/in/himanshu-devdesign/", "_blank")}
                 className="text-white hover:text-yellow-400 hover:bg-white/10"
               >
                 <Linkedin className="h-6 w-6" />
               </Button>
+
               <Button
                 variant="ghost"
                 size="sm"
+                onClick={() => (window.location.href = "mailto:webuxhimanshu@gmail.com")}
                 className="text-white hover:text-yellow-400 hover:bg-white/10"
               >
                 <Mail className="h-6 w-6" />
