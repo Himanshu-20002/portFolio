@@ -57,12 +57,13 @@ export function AboutMe() {
 
   const handleDownloadCV = () => {
     const link = document.createElement("a")
-    link.href = "/placeholder.svg?height=800&width=600"
-    link.download = "Developer_CV.pdf"
+    link.href = "/webuxhimanshu_resume.pdf"; // <-- actual file path in public
+  link.download = "webuxhimanshu_resume.pdf";
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
   }
+
 
   return (
    <section   id="about" className="min-h-screen w-screen flex items-center justify-center px-4 bg-black pb-30">
@@ -100,7 +101,9 @@ export function AboutMe() {
                 Download My CV
               </Button>
               <Button
-                onClick={handleDownloadCV}
+               onClick={() => {
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}
                 size="lg"
                 className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg hover:shadow-accent/25 hover:shadow-2xl transition-all duration-300 hover:scale-105 glow-button"
               >
