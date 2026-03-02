@@ -2,7 +2,6 @@ import { useRive } from "@rive-app/react-canvas";
 import React from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { esp as Esp } from "../svg/index";
 import { HeroCenter } from "../svg/index";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -15,7 +14,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import DecryptionText from "./animated/component/DecryptedText";
-import Plasma from "@/components/Plasma";
+
 
 
 
@@ -29,19 +28,7 @@ const Hero = () => {
     stateMachines: "MainStateMachine",
   });
 
-  // Background hero component
-  const { RiveComponent: BgHero, } = useRive({
-    src: "/herobg.riv",
-    autoplay: true,
-    stateMachines: "State Machine 1",
-  });
 
-  // Center hero component
-  // const { RiveComponent: CenterHero, } = useRive({
-  //   src: "/hero_center.riv",
-  //   autoplay: true,
-  //   stateMachines: "State Machine 1",
-  // });
 
 
   return (
@@ -52,9 +39,6 @@ const Hero = () => {
           height="100%"
           className="max-lg:scale-400 overflow-hidden scale-120 "
         />
-        {/* <BgHero className=" w-full h-full max-lg:scale-400 overflow-hidden scale-120" /> */}
-
-
       </div>
 
       <div className="container px-4 md:px-6 lg:px-8 relative z-10">
@@ -159,10 +143,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* <div className=" w-screen  max-lg:scale-170 max-lg:bottom-8  absolute  left-0 -z-99 -bottom-13">
-          <Esp width="100%" height="108%" styles={{ objectFit: "contain" }} />
 
-        </div> */}
       </div>
     </section>
   );
