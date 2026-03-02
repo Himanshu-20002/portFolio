@@ -15,6 +15,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import DecryptionText from "./animated/component/DecryptedText";
+import Plasma from "@/components/Plasma";
 
 
 
@@ -29,23 +30,33 @@ const Hero = () => {
   });
 
   // Background hero component
-  // const { RiveComponent: BgHero,  } = useRive({
-  //   src: "/herobg.riv",
+  const { RiveComponent: BgHero, } = useRive({
+    src: "/herobg.riv",
+    autoplay: true,
+    stateMachines: "State Machine 1",
+  });
+
+  // Center hero component
+  // const { RiveComponent: CenterHero, } = useRive({
+  //   src: "/hero_center.riv",
   //   autoplay: true,
   //   stateMachines: "State Machine 1",
   // });
 
 
   return (
-    <section className="relative h-screen flex max-lg:h-[95vh] overflow-hidden  max-lg:items-center max-lg:justify-center  ">
-      <div className="   absolute overflow-hidden -z-99 h-screen  w-[100vw]  xl:right-0 ">
+    <section className="relative h-screen flex max-lg:h-[95vh] overflow-hidden   max-lg:items-center max-lg:justify-center  ">
+      <div className=" absolute overflow-hidden -z-99 h-screen  w-[100vw]  xl:right-0 ">
         <HeroCenter
           width="100%"
           height="100%"
           className="max-lg:scale-400 overflow-hidden scale-120 "
         />
         {/* <BgHero className=" w-full h-full max-lg:scale-400 overflow-hidden scale-120" /> */}
+
+
       </div>
+
       <div className="container px-4 md:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2  items-center ">
           {/* Left Content - Text aligned left on desktop, center on mobile */}
@@ -63,8 +74,8 @@ const Hero = () => {
               </div>
 
               <p className="text-xl text-gray-200 max-w-[600px] mx-auto lg:mx-0 leading-relaxed pt-9">
-                &quot;Full-stack dev with main character energy in terminal window
-                React | Node | MongoDB | Delulu brilliance&quot;
+                &quot;Full-stack dev packed with endless webdesign & development
+                Next | Node | firebase | brilliance&quot;
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4 ">
@@ -123,11 +134,11 @@ const Hero = () => {
 
           {/* Right Content - Dynamic Project Slider */}
           <div className="relative ">
-            <div className="relative h-[24vh] w-full overflow-hidden aspect-square lg:h-[100vh]  lg:w-[55vw] lg:mr-39   max-lg:pointer-events-none  2xl:translate-x-1/4">
+            <div className="relative h-[24vh] w-full overflow-hidden aspect-square lg:h-[100vh]  lg:w-[55vw] lg:mr-39   max-lg:pointer-events-none  2xl:translate-x-1/8">
               <SecondHero className=" w-full h-full max-lg:scale-160 pointer:none max-w-full max-h-full" />
             </div>
 
-            <div className="grid grid-cols-4  gap-4 mt-12 max-w-lg mx-auto lg:mx-0 absolute   z-99 max-lg:-bottom-19 bottom-10 xl:right-0 2xl:-right-140 lg:translate-x-1/4">
+            <div className="grid grid-cols-4  gap-4 mt-12 max-w-lg mx-auto lg:mx-0 absolute   z-99 max-lg:-bottom-19 bottom-10 xl:right-0 2xl:translate-x-1/2 2xl:-translate-y-1/9 lg:translate-x-1/1">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 text-center">
                 <div className="text-2xl font-bold text-white">25+</div>
                 <div className="text-sm text-gray-300">Projects</div>
@@ -148,10 +159,10 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className=" w-screen  max-lg:scale-170 max-lg:bottom-8  absolute  left-0 -z-99 -bottom-13">
+        {/* <div className=" w-screen  max-lg:scale-170 max-lg:bottom-8  absolute  left-0 -z-99 -bottom-13">
           <Esp width="100%" height="108%" styles={{ objectFit: "contain" }} />
 
-        </div>
+        </div> */}
       </div>
     </section>
   );

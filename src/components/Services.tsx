@@ -10,7 +10,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Services = () => {
-const serviceRefs = useRef<Array<HTMLDivElement | null>>([]); 
+  const serviceRefs = useRef<Array<HTMLDivElement | null>>([]);
   const serviceHeaders = useRef<Element[]>([]); // <h2> elements
   const serviceDescriptions = useRef<Element[]>([]); // <p> elements
   const serviceItems = useRef<Element[]>([]); // <h3> elements
@@ -74,7 +74,7 @@ const serviceRefs = useRef<Array<HTMLDivElement | null>>([]);
       opacity: 0,
       y: 100,
       stagger: 0.3,
-      scrub:2,
+      scrub: 2,
 
       duration: 1,
     }, 0)
@@ -82,20 +82,20 @@ const serviceRefs = useRef<Array<HTMLDivElement | null>>([]);
       opacity: 0,
       y: 80,
       stagger: 0.3,
-scrub:2,
+      scrub: 2,
       duration: 1,
     }, 0.3)
     tl.from(serviceItems.current, {
       opacity: 0,
       y: 60,
       stagger: 0.1,
-scrub:2,
+      scrub: 2,
       duration: 0.8,
     }, 0.6);
   }, []);
 
   return (
-    <section id="services" className=" bg-black  relative overflow-clip  h-[350vh]  lg:h-[380dvh] ">
+    <section id="services" className=" bg-black  relative overflow-clip  h-[340vh]  lg:h-[340dvh] ">
 
       <>
         <AnimatedHeaderSection

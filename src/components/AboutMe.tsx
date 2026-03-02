@@ -1,176 +1,80 @@
 "use client"
 
-import { useCallback, useEffect, useRef } from "react"
-import { Download, ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import Image from "next/image"
 
 export function AboutMe() {
-  const sliderRef = useRef<HTMLDivElement>(null)
-  const currentSlide = useRef(0)
-
-  const highlights = [
+  const stats = [
     {
-      image: "/img/highlight.png",
-      title: "Full-Stack Applications",
-      width: 500,
-      height: 500
+      value: "25+",
+      title: "Projects Completed",
+      description: "Web applications & tools",
     },
     {
-      image: "/img/highlight3.png",
-      title: "Mobile-First Design",
-      width: 500,
-      height: 600
+      value: "3",
+      title: "Certifications",
+      description: "Verified technical skills",
     },
     {
-      image: "/img/highlight5.png",
-      title: "Clean Code Architecture",
-      width: 500,
-      height: 600
-    },
-    {
-      image: "/img/highlight4.png",
-      title: "API Development",
-      width: 500,
-      height: 600
+      value: "3+",
+      title: "Years of Learning",
+      description: "Consistent growth journey",
     },
   ]
 
- const nextSlide = useCallback(() => {
-    if (!sliderRef.current) return
-    currentSlide.current = (currentSlide.current + 1) % highlights.length
-    const translateX = -currentSlide.current * 100
-    sliderRef.current.style.transform = `translateX(${translateX}%)`
-  }, [highlights.length])
-
-  const prevSlide = () => {
-    if (!sliderRef.current) return
-    currentSlide.current = currentSlide.current === 0 ? highlights.length - 1 : currentSlide.current - 1
-    const translateX = -currentSlide.current * 100
-    sliderRef.current.style.transform = `translateX(${translateX}%)`
-  }
-
-  useEffect(() => {
-    const interval = setInterval(nextSlide, 4000)
-    return () => clearInterval(interval)
-  }, [nextSlide])
-
-  const handleDownloadCV = () => {
-    const link = document.createElement("a")
-    link.href = "/webuxhimanshu_resume.pdf"; // <-- actual file path in public
-  link.download = "webuxhimanshu_resume.pdf";
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
-  }
-
-
   return (
-   <section   id="about" className="min-h-screen w-screen flex items-center justify-center px-4 bg-black pb-30">
-      <div className="max-w-7xl mx-auto w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center min-h-screen">
-          <div className="lg:col-span-2 space-y-8">
-            <div className="group">
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 transition-all duration-500 group-hover:scale-96 hover:text-accent text-white">
-                hi, I&apos;m <span className="text-violet-500 glow-text hover:animate-pulse">Himanshu</span>
-              </h1>
-              <div className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed space-y-6">
-                <p className="transition-all duration-300 hover:text-white hover:translate-x-2 hover:scale-105 cursor-default">
-                  A passionate full-stack developer with 3+ years of experience crafting digital experiences that blend
-                  creativity with cutting-edge technology.
-                </p>
+    <section id="about" className="relative min-h-screen w-full flex flex-col items-center justify-center px-4 py-24 md:py-32 bg-[#020202] overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[80vw] max-w-[800px] h-[500px] bg-blue-500/10 blur-[120px] rounded-full pointer-events-none" />
 
-                <p className="transition-all duration-300 hover:text-white hover:translate-x-2 hover:scale-105 cursor-default">
-                  I specialize in crafting web/mobile apps with modern technology crafting stunning scroll animations cool effects &amp; scalable applications that
-                  deliver exceptional user experiences and drive business growth.
-                </p>
+      <div className="max-w-5xl mx-auto w-full flex flex-col items-center text-center z-10 mt-10 md:mt-0">
 
-                <p className="transition-all duration-300 hover:text-violet-300 hover:translate-x-2 hover:scale-105 cursor-default">
-                  When I&apos;m not coding, you&apos;ll find me exploring new frameworks, contributing to open-source projects or turning concept to reality
-               </p>
-              </div>
+        {/* Title */}
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-6 text-white tracking-tight">
+          About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">Me</span>
+        </h2>
+
+        {/* Description */}
+        <p className="text-base md:text-lg text-zinc-400 leading-relaxed max-w-3xl mb-12">
+          Hello, I&apos;m <strong className="text-white font-medium">Himanshu</strong>, passionate about building clean, scalable, and modern web applications. I enjoy working across the full stack, constantly learning new technologies, and refining my problem-solving skills to build real-world solutions.
+        </p>
+
+        {/* Buttons */}
+        <div className="flex flex-wrap items-center justify-center gap-4 mb-20">
+          <Button
+            asChild
+            className="bg-[#111113] hover:bg-[#1a1a1c] border border-white/5 text-white rounded-xl px-8 h-12 transition-all backdrop-blur-md shadow-lg font-medium text-sm cursor-pointer"
+          >
+            <a
+              href="/himanshu_resume.pdf?v=1"
+              download="Himanshu_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View CV
+            </a>
+          </Button>
+          <Button
+            onClick={() => {
+              document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="bg-[#111113] hover:bg-[#1a1a1c] border border-white/5 text-white rounded-xl px-8 h-12 transition-all backdrop-blur-md shadow-lg font-medium text-sm cursor-pointer"
+          >
+            View Projects
+          </Button>
+        </div>
+
+        {/* Stats Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full max-w-4xl">
+          {stats.map((stat, index) => (
+            <div
+              key={index}
+              className="bg-[#111113] border border-white/5 backdrop-blur-xl rounded-2xl p-8 flex flex-col items-start justify-center transition-all hover:bg-[#161618] text-left hover:-translate-y-1 hover:border-white/10 duration-300"
+            >
+              <h3 className="text-white font-semibold text-3xl mb-4">{stat.value}</h3>
+              <p className="text-white font-medium text-sm mb-2">{stat.title}</p>
+              <p className="text-zinc-500 text-sm">{stat.description}</p>
             </div>
-
-            <div className="pt-4 gap-10 flex-row  flex" >
-              <Button
-                onClick={handleDownloadCV}
-                size="lg"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg hover:shadow-accent/25 hover:shadow-2xl transition-all duration-300 hover:scale-105 glow-button"
-              >
-                <Download className="mr-2 h-5 w-5" />
-                Download My CV
-              </Button>
-              <Button
-               onClick={() => {
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                size="lg"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg hover:shadow-accent/25 hover:shadow-2xl transition-all duration-300 hover:scale-105 glow-button"
-              >
-                {/* <Download className="mr-2 h-5 w-5" /> */}
-                Let&apos;s talk
-              </Button>
-            </div>
-          </div>
-
-          <div className="lg:col-span-1">
-            <div className="relative bg-card/50 backdrop-blur-sm rounded-xl p-4 shadow-xl border border-border/50">
-              <h3 className="text-lg font-semibold mb-3 text-center">Highlights</h3>
-
-              <div className="relative overflow-hidden rounded-lg  bg-muted flex flex-1">
-                <div
-                  ref={sliderRef}
-                  className="flex transition-transform duration-500 ease-in-out h-full"
-                  style={{ width: `${highlights.length * 100}%` }}
-                >
-                  {highlights.map((highlight, index) => (
-                    <div key={index} className="w-full  object-cover h-full flex-shrink-0 relative">
-                      <Image
-                        src={highlight.image}
-                        alt={highlight.title}
-                        width={highlight.width}
-                        height={highlight.height}
-                        className="object-cover w-autoDo you make dinner? Hey, Cortana. Who is in my marketplace? Mehbooba Mufti. It doesn't matter. Hey, Cortana. Job.  h-full lg:object-contain"
-                        priority={index === 0} // Load first image immediately
-                      />
-                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3">
-                        <h4 className="text-white font-medium text-sm">{highlight.title}</h4>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <button
-                  onClick={prevSlide}
-                  className="absolute left-1 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 rounded-full transition-all duration-200 hover:scale-110"
-                >
-                  <ChevronLeft className="h-3 w-3" />
-                </button>
-                <button
-                  onClick={nextSlide}
-                  className="absolute right-1 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 rounded-full transition-all duration-200 hover:scale-110"
-                >
-                  <ChevronRight className="h-3 w-3" />
-                </button>
-              </div>
-
-              <div className="flex justify-center mt-3 space-x-1.5">
-                {highlights.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => {
-                      currentSlide.current = index
-                      if (sliderRef.current) {
-                        sliderRef.current.style.transform = `translateX(-${index * 100}%)`
-                      }
-                    }}
-                    className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${index === currentSlide.current ? "bg-accent scale-125" : "bg-muted-foreground/30"
-                      }`}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
