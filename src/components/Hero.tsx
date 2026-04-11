@@ -109,12 +109,12 @@ const Hero = () => {
 
           {/* Right Content - Dynamic Rive Animation or Secondary Visual */}
           <div className="relative flex flex-col items-center lg:items-end lg:mt-0">
-            <div className="relative max-lg:scale-[1.2] w-full h-[30dvh] aspect-square max-w-[460px] lg:max-w-none lg:h-[75vh] lg:w-[45vw] pointer-events-none transition-transform hover:scale-105 duration-700">
+            <div className="relative max-lg:scale-[1.2] w-full h-[30dvh] aspect-square max-w-[460px] lg:max-w-none lg:h-[75vh] lg:w-[45vw]  transition-transform hover:scale-105 duration-700">
               {/* StarField Background */}
               <div className="absolute inset-0 z-0">
                 <StarField className="w-full h-full" />
               </div>
-              <SecondHero className="relative z-10 w-full h-full object-contain" />
+              <SecondHero className="relative z-1000 w-full h-full object-contain" />
             </div>
           </div>
         </div>
