@@ -329,9 +329,9 @@ export default function HeroSlider() {
   imageRefs.current = new Array(renderedSlides.length).fill(null);
 
   return (
- <div
+    <div
       ref={sliderRef}
-      className="slider relative overflow-hidden w-screen h-screen p-10 bg-black select-none"
+      className="slider relative overflow-hidden w-screen lg:h-screen h-[40dvh] p-10 bg-black select-none"
       style={{ touchAction: "pan-y" }}
     >
       <div

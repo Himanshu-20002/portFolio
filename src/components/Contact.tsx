@@ -24,24 +24,23 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
     setIsLoading(true);
     if (!formRef.current) return;
    try {
-      console.log('Sending form...', formData); // Debug log
       const result = await emailjs.sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         formRef.current,
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
-      console.log('EmailJS Response:', result); // Debug log
       
-      toast.success('Message sent successfully!');
-      formRef.current.reset();
+      if (result.status === 200) {
+        toast.success('Message sent successfully!');
+        formRef.current.reset();
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      }
     } catch (error) {
-      console.error('Detailed Error:', error); // More detailed error logging
-      toast.error('Failed to send message');
+      toast.error('Failed to send message. Please try again later.');
     } finally {
       setIsLoading(false);
     }

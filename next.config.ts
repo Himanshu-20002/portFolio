@@ -2,7 +2,6 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ['res.cloudinary.com'], // Add Cloudinary domain
     remotePatterns: [
       {
         protocol: 'https',
@@ -10,6 +9,7 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
+    formats: ['image/avif', 'image/webp'],
   },
   webpack: (config) => {
     config.module.rules.push({

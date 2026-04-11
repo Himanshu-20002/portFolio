@@ -16,8 +16,34 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DevPortfolio",
-  description: "A portfolio website showcasing web development projects and skills.",
+  metadataBase: new URL("https://your-portfolio-url.vercel.app"),
+  title: "Himanshu | Full Stack Developer & UI/UX Designer",
+  description: "Crafting world-class digital experiences with precision, aesthetics, and high-performance code. Specialized in React, Next.js, and immersive animations.",
+  keywords: ["Himanshu", "Full Stack Developer", "Web Designer", "Portfolio", "React Developer", "Next.js", "GSAP Animations"],
+  authors: [{ name: "Himanshu" }],
+  creator: "Himanshu",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://your-portfolio-url.vercel.app", // Replace with actual URL when deployed
+    siteName: "Himanshu Portfolio",
+    title: "Himanshu | Full Stack Developer & UI/UX Designer",
+    description: "Immersive portfolio showcasing high-performance web applications and creative UI/UX designs.",
+    images: [
+      {
+        url: "/img/og-image.png", // Will need to ensure an image exists or fallback
+        width: 1200,
+        height: 630,
+        alt: "Himanshu Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Himanshu | Full Stack Developer",
+    description: "Creative developer building the future of the web.",
+    images: ["/img/og-image.png"],
+  },
   icons: {
     icon: [
       {
@@ -47,14 +73,7 @@ export const metadata: Metadata = {
       sizes: "180x180",
       type: "image/png",
     },
-    other: [
-      {
-        rel: "mask-icon",
-        url: "/img/code.png",
-      },
-    ],
   },
-
 };
 
 export default function RootLayout({

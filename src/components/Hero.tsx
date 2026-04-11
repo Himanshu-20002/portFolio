@@ -1,10 +1,5 @@
 import { useRive } from "@rive-app/react-canvas";
 import React from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import { HeroCenter } from "../svg/index";
-
-gsap.registerPlugin(ScrollTrigger);
 import {
   ArrowRight,
   Github,
@@ -14,9 +9,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import DecryptionText from "./animated/component/DecryptedText";
-
-
-
+import { StarField } from "./animated/component/StarField";
 
 
 const Hero = () => {
@@ -32,37 +25,32 @@ const Hero = () => {
 
 
   return (
-    <section className="relative h-screen flex max-lg:h-[95vh] overflow-hidden   max-lg:items-center max-lg:justify-center  ">
-      <div className=" absolute overflow-hidden -z-99 h-screen  w-[100vw]  xl:right-0 ">
-        <HeroCenter
-          width="100%"
-          height="100%"
-          className="max-lg:scale-400 overflow-hidden scale-120 "
-        />
-      </div>
+    <section className="relative min-h-[100dvh] flex items-center justify-center pt-13 pb-10 lg:py-0 overflow-hidden bg-black">
 
       <div className="container px-4 md:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2  items-center ">
           {/* Left Content - Text aligned left on desktop, center on mobile */}
-          <div className=" text-center lg:text-left lg:pl-8">
-            <div className="space-y-6">
-              <Badge className="bg-white/20 text-white border-white/30 hover:bg-white/30 inline-flex">
+          <div className="text-center lg:text-left lg:pl-8">
+            <div className="space-y-2 sm:space-y-6">
+              <Badge className="bg-white/10 text-white/70 border-white/20 hover:bg-white/20 inline-flex text-[10px] sm:text-[14px] py-1 px-2">
                 🚀 Available for Exciting Projects
               </Badge>
 
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight special-font  ">
-                Designing Dompamine <span className="fiery-text">  Hits</span>
+              <h1 className="text-[10vw] sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white leading-[0.9] mb-4 uppercase break-words">
+                Designing <br className="sm:hidden" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-purple-500">Digital</span> <br />
+                <span className="fiery-text">Delight</span>
               </h1>
-              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-3xl font-light text-text-muted block  text-white h-16  pt-8 wrap">
+
+              <div className="text-sm sm:text-lg md:text-2xl font-mono text-purple-400/80 h-8 flex items-center justify-center lg:justify-start">
                 <DecryptionText />
               </div>
 
-              <p className="text-xl text-gray-200 max-w-[600px] mx-auto lg:mx-0 leading-relaxed pt-9">
-                &quot;Full-stack dev packed with endless webdesign & development
-                Next | Node | firebase | brilliance&quot;
+              <p className="text-sm sm:text-lg text-gray-400 max-w-[500px] mx-auto lg:mx-0 leading-relaxed font-sans font-normal">
+                Full-stack Engineer & Creative Designer building premium digital products for ambitious brands and high-performing apps.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4 ">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-3 ">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-black font-semibold px-8 py-3"
@@ -76,7 +64,7 @@ const Hero = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 bg-white/5 backdrop-blur-sm px-8 py-3"
+                className="border-white/30 text-white hover:bg-white/10 bg-white/5 backdrop-blur-sm px-8 py-2"
                 onClick={() => {
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                 }}
@@ -84,67 +72,77 @@ const Hero = () => {
                 Let&apos;s Talk
               </Button>
             </div>
-            <div className="flex justify-center lg:justify-start space-x-6 p-6">
+            <div className="flex justify-center lg:justify-start space-x-3 p-4">
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => window.open("https://github.com/Himanshu-20002", "_blank")}
-                className="text-white hover:text-yellow-400 hover:bg-white/10"
+                onClick={() => window.open("https://github.com/Himanshu-20002", "_blank", "noopener,noreferrer")}
+                className="text-white/60 hover:text-white transition-colors h-8 w-8 p-0"
+                aria-label="View my GitHub profile"
               >
-                <Github className="h-6 w-6" />
+                <Github className="h-5 w-5" />
               </Button>
 
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => window.open("https://www.linkedin.com/in/himanshu-devdesign/", "_blank")}
-                className="text-white hover:text-yellow-400 hover:bg-white/10"
+                onClick={() => window.open("https://www.linkedin.com/in/himanshu-devdesign/", "_blank", "noopener,noreferrer")}
+                className="text-white/60 hover:text-white transition-colors h-8 w-8 p-0"
+                aria-label="View my LinkedIn profile"
               >
-                <Linkedin className="h-6 w-6" />
+                <Linkedin className="h-5 w-5" />
               </Button>
 
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => (window.location.href = "mailto:webuxhimanshu@gmail.com")}
-                className="text-white hover:text-yellow-400 hover:bg-white/10"
+                className="text-white/60 hover:text-white transition-colors h-8 w-8 p-0"
+                aria-label="Send me an email"
               >
-                <Mail className="h-6 w-6" />
+                <Mail className="h-5 w-5" />
               </Button>
             </div>
 
             {/* Stats - visible on mobile too */}
           </div>
 
-          {/* Right Content - Dynamic Project Slider */}
-          <div className="relative ">
-            <div className="relative h-[24vh] w-full overflow-hidden aspect-square lg:h-[100vh]  lg:w-[55vw] lg:mr-39   max-lg:pointer-events-none  2xl:translate-x-1/8">
-              <SecondHero className=" w-full h-full max-lg:scale-160 pointer:none max-w-full max-h-full" />
-            </div>
-
-            <div className="grid grid-cols-4  gap-4 mt-12 max-w-lg mx-auto lg:mx-0 absolute   z-99 max-lg:-bottom-19 bottom-10 xl:right-0 2xl:translate-x-1/2 2xl:-translate-y-1/9 lg:translate-x-1/1">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 text-center">
-                <div className="text-2xl font-bold text-white">25+</div>
-                <div className="text-sm text-gray-300">Projects</div>
+          {/* Right Content - Dynamic Rive Animation or Secondary Visual */}
+          <div className="relative flex flex-col items-center lg:items-end lg:mt-0">
+            <div className="relative max-lg:scale-[1.2] w-full h-[30dvh] aspect-square max-w-[460px] lg:max-w-none lg:h-[75vh] lg:w-[45vw] pointer-events-none transition-transform hover:scale-105 duration-700">
+              {/* StarField Background */}
+              <div className="absolute inset-0 z-0">
+                <StarField className="w-full h-full" />
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 text-center">
-                <div className="text-2xl font-bold text-white">3+</div>
-                <div className="text-sm text-gray-300">Years</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 text-center lg:block">
-                <div className="text-2xl font-bold text-white">30+</div>
-                <div className="text-sm text-gray-300">Clients</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 text-center lg:block">
-                <div className="text-2xl font-bold text-white">7+</div>
-                <div className="text-sm text-gray-300">Tech Stack</div>
-              </div>
+              <SecondHero className="relative z-10 w-full h-full object-contain" />
             </div>
           </div>
         </div>
 
-
+        <div className="absolute lg:bottom-10 bottom-0 left-2/4 max-lg:scale-150  -translate-x-1/2 translate-y-0   w-full max-w-[1200px] lg:mx-18 px-6 flex justify-center lg:justify-end pointer-events-none">
+          <div className="flex flex-row items-center gap-x-4 sm:gap-x-12 opacity-160 hover:opacity-100 transition-opacity duration-500 pointer-events-auto">
+            {[
+              { label: 'PROJECTS', val: '25+' },
+              { label: 'EXP.', val: '03+' },
+              { label: 'CLIENTS', val: '30+' },
+              { label: 'STACK', val: '12' },
+            ].map((stat, i) => (
+              <div key={i} className="flex flex-col items-start group">
+                <span className="text-[6px] sm:text-[8px] font-mono text-purple-400 tracking-[0.3em] group-hover:text-purple-300 transition-colors">
+                  {stat.label}
+                </span>
+                <div className="flex items-center gap-1.5 sm:gap-3">
+                  <div className="h-3 w-[1px] bg-purple-500/20 group-hover:bg-purple-500/50" />
+                  <span className="text-sm sm:text-3xl font-black font-mono text-white tracking-widest leading-none">
+                    {stat.val}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
+
     </section>
   );
 };

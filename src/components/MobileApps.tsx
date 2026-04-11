@@ -16,9 +16,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function MobileApps() {
   const { isPreviewOpen, openPreview, closePreview } = useProjectPreview()
-const [selectedImages, setSelectedImages] = useState([] as { src: string; alt: string }[]);
+  const [selectedImages, setSelectedImages] = useState([] as { src: string; alt: string }[]);
 
-   const Ecommerce = [
+  const Ecommerce = [
     {
       src: 'https://res.cloudinary.com/duyyhs6ef/image/upload/v1757643581/.trashed-1737034100-Screenshot_20241217-185356.blinkit_kbpjjy.png',
       alt: 'Project 1 Homepage',
@@ -91,12 +91,12 @@ const [selectedImages, setSelectedImages] = useState([] as { src: string; alt: s
       src: 'https://res.cloudinary.com/duyyhs6ef/image/upload/v1757644741/Blinkit_1_gnw2m5.png',
       alt: 'Project 1 Dashboard',
     },
- 
+
     // Add more images as needed
   ];
 
 
-  const kcart =[
+  const kcart = [
 
     {
       src: 'https://res.cloudinary.com/duyyhs6ef/image/upload/v1757644741/Kcart_1_mxqz4h.png',
@@ -113,8 +113,9 @@ const [selectedImages, setSelectedImages] = useState([] as { src: string; alt: s
   ]
 
 
-  const screens =[
-    {      src: 'https://res.cloudinary.com/duyyhs6ef/image/upload/v1757644741/Kcart_1_mxqz4h.png',
+  const screens = [
+    {
+      src: 'https://res.cloudinary.com/duyyhs6ef/image/upload/v1757644741/Kcart_1_mxqz4h.png',
       alt: 'Project 2 Homepage',
     },
     {
@@ -207,9 +208,13 @@ const [selectedImages, setSelectedImages] = useState([] as { src: string; alt: s
   return (
     <section
       id="mobile-apps"
-      className="py-20 md:py-32 bg-black text-white"
+      className="relative py-24 md:py-40 bg-black text-white overflow-hidden"
       ref={sectionRef}
     >
+
+      {/* Dynamic Neon Atmosphere */}
+
+
       <div className="container mx-auto lg:px-59 p-5">
         <div className="grid grid-cols-3 items-center justify-center gap-5">
           {mobileApps.map((app, index) => {
@@ -228,12 +233,12 @@ const [selectedImages, setSelectedImages] = useState([] as { src: string; alt: s
                 }}>
 
                 <CardContent className=" flex items-center justify-center p-0 ">
-                 <IPhoneMockup 
-                   onClick={() => {
-                  setSelectedImages(app.images); // Set the selected images
-                  openPreview(); // Open the preview
-                }}
-              >
+                  <IPhoneMockup
+                    onClick={() => {
+                      setSelectedImages(app.images); // Set the selected images
+                      openPreview(); // Open the preview
+                    }}
+                  >
                     <video
                       src={app.videoUrl}
                       autoPlay
@@ -250,11 +255,11 @@ const [selectedImages, setSelectedImages] = useState([] as { src: string; alt: s
           })}
         </div>
 
-       <ProjectPreview
-        images={selectedImages} // Use selectedImages instead of projectImages
-        isOpen={isPreviewOpen}
-        onClose={closePreview}
-      />
+        <ProjectPreview
+          images={selectedImages} // Use selectedImages instead of projectImages
+          isOpen={isPreviewOpen}
+          onClose={closePreview}
+        />
 
 
 

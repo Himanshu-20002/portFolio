@@ -65,7 +65,7 @@ export function AboutMe() {
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full max-w-4xl">
-          {stats.map((stat, index) => (
+          {/* {stats.map((stat, index) => (
             <div
               key={index}
               className="bg-[#111113] border border-white/5 backdrop-blur-xl rounded-2xl p-8 flex flex-col items-start justify-center transition-all hover:bg-[#161618] text-left hover:-translate-y-1 hover:border-white/10 duration-300"
@@ -74,7 +74,7 @@ export function AboutMe() {
               <p className="text-white font-medium text-sm mb-2">{stat.title}</p>
               <p className="text-zinc-500 text-sm">{stat.description}</p>
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
     </section>

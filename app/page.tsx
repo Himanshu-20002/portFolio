@@ -1,17 +1,18 @@
 "use client"
+import dynamic from "next/dynamic";
 import Hero from "@/src/components/Hero";
 import React, { useEffect, useState } from "react";
-import Services from "@/src/components/Services";
-import ReactLenis from "lenis/react"
-import MobileApps from "@/src/components/MobileApps";
-import Footer from "@/src/components/Footer";
-import Contact from "@/src/components/Contact";
-import Projects from "@/src/components/Project";
-import HeroSlider from "@/src/components/HeroSlider";
+import ReactLenis from "lenis/react";
 
-import { AboutMe } from '@/src/components/AboutMe';
+// Dynamically import heavy components
+const Services = dynamic(() => import("@/src/components/Services"), { ssr: false });
+const Footer = dynamic(() => import("@/src/components/Footer"), { ssr: false });
+const Contact = dynamic(() => import("@/src/components/Contact"), { ssr: false });
+const Projects = dynamic(() => import("@/src/components/Project"), { ssr: false });
+const HeroSlider = dynamic(() => import("@/src/components/HeroSlider"), { ssr: false });
+const AboutMe = dynamic(() => import("@/src/components/AboutMe").then(mod => mod.AboutMe), { ssr: false });
+const TechStack = dynamic(() => import("@/src/components/TechStack"), { ssr: false });
 
-import TechStack from "@/src/components/TechStack";
 
 
 
@@ -43,7 +44,7 @@ export default function Home() {
       <HeroSlider />
       <Services />
 
-      <MobileApps />
+      {/* <MobileApps /> */}
       <Projects />
 
       <TechStack />

@@ -3,99 +3,98 @@ export const servicesData = [
   {
     title: "Helping with",
     description:
-      "A clunky interface can sink even the best ideas. I craft responsive, pixel perfect web and mobile apps (React Native/Flutter) that users love—bridging design and functionality seamlessly.",
+      "I specialize in solving complex digital problems through clean code and intuitive design. Whether you need a simple landing page or a feature-rich platform, I bridge the gap between vision and reality.",
     items: [
       {
-        title: "freelance Dev projects",
-        description: "(REST/GraphQL APIs, Microservices, Auth Systems)",
+        title: "Freelance Dev Projects",
+        description: "Full-cycle software development tailored to your specific business needs and goals.",
       },
       {
-        title: "Cross-Platform Apps",
-        description: "(React, Vue, TypeScript, Interactive UI/UX)",
+        title: "Technical Consulting",
+        description: "Advising on architecture, tech stacks, and best practices for growing startups.",
       },
       {
-        title: "mobile apps",
-        description: "(SQL/NoSQL Optimization, Scalable Structures)",
+        title: "UI/UX Optimization",
+        description: "Refining user flows and performance to maximize engagement and conversion rates.",
       },
     ],
   },
   {
     title: "Frontend Development",
     description:
-      "Your business deserves a fast, secure, and future-proof digital foundation. I develop custom web apps with clean architecture, optimized databases, and seamless integrations—ensuring reliability at every layer.",
+      "Crafting immersive, high-performance user interfaces that captivate and convert. I focus on speed, accessibility, and modern interactive experiences that push the boundaries of the web.",
     items: [
       {
-        title: "React.js | Next.js | gsap | Tailwind-css | Three.js | Rive | Typescript ",
-        description: "(REST/GraphQL APIs, Microservices, Auth Systems)",
+        title: "React & Next.js Expert",
+        description: "Building scalable, SEO-friendly web applications using the latest industry standards.",
       },
       {
-        title: "Emersive & Interactive Experiences ",
-        description: "(SQL/NoSQL Optimization, Scalable Structures)",
+        title: "Immersive Web Animations",
+        description: "Using GSAP, Three.js, and Rive to create motion that feels fluid and premium.",
       },
       {
-        title: "Frontend Excellence",
-        description: "(React, Vue, TypeScript, Interactive UI/UX)",
+        title: "Design-to-Code Excellence",
+        description: "Pixel-perfect implementation of Figma designs with clean, maintainable Tailwind CSS.",
       },
     ],
   },
   {
     title: "Mobile Development",
     description:
-      "A clunky interface can sink even the best ideas. I craft responsive, pixel perfect web and mobile apps (React Native/Flutter) that users love—bridging design and functionality seamlessly.",
+      "Developing seamless native-feel applications for iOS and Android. I build robust mobile experiences that handle everything from real-time data to complex animations with Ease.",
     items: [
       {
-        title: "React Native | Expo | ios | Android | reduxSega ",
-
-        description: "(GitHub Actions, Docker, Kubernetes)",
+        title: "React Native & Expo",
+        description: "Cross-platform apps with a single codebase and high-performance native modules.",
       },
       {
-        title: "Cross-Platform Apps",  //Server Management 
-        description: "(Linux, Nginx, Load Balancing)",
+        title: "Adaptive Mobile UX",
+        description: "Focused on thumb-friendly layouts, gestures, and smooth navigation patterns.",
       },
       {
-        title: "E-commerce",
-        description: "(Caching, Compression, Lighthouse 90+ Scores)",
+        title: "App Store Deployment",
+        description: "Managing the full lifecycle from development to publishing on App Store and Play Store.",
       },
     ],
   },
   {
     title: "Backend Development",
     description:
-      "Slow or hacked apps destroy trust. I harden security (XSS/SQLI protection, OAuth) and optimize bottlenecks so your app stays fast, safe, and scalable as you grow.",
+      "Designing rock-solid server-side logic and database architectures. I build secure, scalable backends that power your application's heart with speed and reliability.",
     items: [
       {
-        title: "Node.js | Express.js | fastify | postgreSql | MongoDB | REST APIs",
-        description: "(Refactoring, Tech Debt Cleanup)",
+        title: "Serverless & REST APIs",
+        description: "Building efficient, well-documented endpoints with Node.js, Express, and Fastify.",
       },
       {
-        title: "Database Design",
-        description: "(Vulnerability Assessments)",
+        title: "Database Architecture",
+        description: "Optimizing PostgreSQL and MongoDB schemas for high-speed queries and data integrity.",
       },
       {
-        title: "SEO Tech Stack",
-        description: "(SSR, Metadata, Structured Data)",
+        title: "Secure Authentication",
+        description: "Implementing robust JWT, OAuth, and multi-factor authentication systems.",
       },
     ],
   },
-
   {
     title: "Cloud & DevOps",
-
     description:
-      "Deploying software shouldn't be a gamble. I automate infrastructure, enforce security, and leverage cloud platforms (AWS/Azure) to keep your app running smoothly—24/7, at any scale.",
+      "Modernizing your deployment pipeline so you can focus on building features. I handle the infrastructure, security, and scaling so your app stays online and performs 24/7.",
     items: [
       {
-        title: "Vercel | Docker | CI/CD | Git ",
-
-        description: "(Single codebase for iOS/Android/Web)",
+        title: "CI/CD Automation",
+        description: "Setting up GitHub Actions and automated testing for zero-downtime deployments.",
       },
       {
-        title: "E-Commerce",
-        description: "(Checkout flows, Payment Gateways, Inventory APIs)",
+        title: "Containerization & Cloud",
+        description: "Deploying scalable applications using Docker, Vercel, and AWS infrastructure.",
+      },
+      {
+        title: "Performance Monitoring",
+        description: "Real-time tracking of app health, traffic bottlenecks, and server resource usage.",
       },
     ],
   },
-
 ];
 
 
