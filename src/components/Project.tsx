@@ -16,6 +16,28 @@ if (typeof window !== 'undefined') {
 
 const projects = [
   {
+    title: "PM_Manager",
+    description: "Team Project & Task Management System",
+    image: "/img/image.png",
+    technologies: ["next.js", "tailwind", "Firebase", "GSAP"],
+    type: "Web App",
+    icon: <Globe className="h-4 w-4" />,
+    github: "https://github.com/Himanshu-20002/PM_Manager",
+    live: "https://pm-manager-eight.vercel.app/",
+    featured: true,
+  },
+  {
+    title: "EventGo ",
+    description: "AI-Integrated Event Planner",
+    image: "/img/eventgo.png",
+    technologies: ["react-native", "node-js", "firebase", "google-gemini-api"],
+    type: "Mobile App",
+    icon: <Smartphone className="h-4 w-4" />,
+    github: "https://github.com/Himanshu-20002/eventGo",
+    live: "#",
+    featured: true,
+  },
+  {
     title: "Interactive Game Dashboard",
     description: "A full-featured Emersive gaming dashboard packed with scroll Transition, leaderboards and animated data visualizations.",
     image: "/img/projectImg1.png",

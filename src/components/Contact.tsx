@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Send,   } from "lucide-react"
+import { Mail, Phone, MapPin, Send, } from "lucide-react"
 import toast from "react-hot-toast";
 
 export default function Contact() {
@@ -26,14 +26,14 @@ export default function Contact() {
     e.preventDefault()
     setIsLoading(true);
     if (!formRef.current) return;
-   try {
+    try {
       const result = await emailjs.sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         formRef.current,
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
-      
+
       if (result.status === 200) {
         toast.success('Message sent successfully!');
         formRef.current.reset();
@@ -44,7 +44,7 @@ export default function Contact() {
     } finally {
       setIsLoading(false);
     }
-};
+  };
 
 
 
@@ -195,7 +195,7 @@ export default function Contact() {
               <CardContent className="p-6">
                 <div className="text-center space-y-2">
                   <h3 className="font-semibold">Response Time</h3>
-                  <p className="text-2xl font-bold text-purple-600">&lt; 24 hours</p>
+                  <p className="text-2xl font-bold text-purple-600">&lt; 1 hours</p>
                   <p className="text-sm text-muted-foreground">I typically respond to all inquiries within 24 hours</p>
                 </div>
               </CardContent>
