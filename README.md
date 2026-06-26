@@ -36,6 +36,12 @@ Here is a detailed breakdown of the projects featured in this portfolio, includi
     *   *Stack:* Next.js, OpenAI API, Prisma, PostgreSQL, Tailwind CSS
     *   *Live Demo:* [Link](https://next-nike-mauve.vercel.app/)
 
+*   **ContentAI**
+    *   *Description:* An elegant, premium AI-powered social media generator for multi-platform content ideas, captions, and hashtags.
+    *   *Stack:* Next.js 16 (React 19), Vercel AI SDK, Drizzle ORM, Neon PostgreSQL, Auth.js v5, Tailwind CSS v4, Framer Motion
+    *   *Live Demo:* [Link](https://content-ai-amber.vercel.app/)
+    *   *GitHub:* [Repository](https://github.com/Himanshu-20002/contentAI)
+
 ### 🌐 Web Applications
 
 *   **PM_Manager**
