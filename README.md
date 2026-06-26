@@ -31,11 +31,6 @@ Here is a detailed breakdown of the projects featured in this portfolio, includi
     *   *Description:* A real-time AI voice assistant and chat application utilizing WebSockets and speech-to-text processing.
     *   *Stack:* React, WebRTC, WebSocket, Node.js, OpenAI Whisper / Gemini API
 
-*   **Nike AI Showcase**
-    *   *Description:* A dynamic brand showcase platform featuring interactive product displays and AI-driven custom product recommendations.
-    *   *Stack:* Next.js, OpenAI API, Prisma, PostgreSQL, Tailwind CSS
-    *   *Live Demo:* [Link](https://next-nike-mauve.vercel.app/)
-
 *   **ContentAI**
     *   *Description:* An elegant, premium AI-powered social media generator for multi-platform content ideas, captions, and hashtags.
     *   *Stack:* Next.js 16 (React 19), Vercel AI SDK, Drizzle ORM, Neon PostgreSQL, Auth.js v5, Tailwind CSS v4, Framer Motion
