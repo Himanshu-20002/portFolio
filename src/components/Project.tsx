@@ -181,7 +181,7 @@ export default function Projects() {
   }, { scope: rootRef })
 
   const ProjectCardContent = ({ project, index }: { project: typeof projects[0], index: number }) => (
-    <div className="absolute inset-0 bg-gradient-to-t from-[#020203]/90 via-[#020203]/20 to-transparent flex flex-col justify-end p-6 md:p-8 group/content">
+    <div className="absolute inset-0 bg-gradient-to-t from-[#0e0e11]/90 via-[#0e0e11]/20 to-transparent flex flex-col justify-end p-6 md:p-8 group/content">
       <div className="relative z-10 space-y-3 md:space-y-4 lg:translate-y-6 lg:opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]">
         <div className="flex justify-between items-center">
           <Badge className="bg-purple-500/20 text-purple-400 border-purple-500/30 backdrop-blur-md text-[10px] font-mono tracking-[0.2em] px-3 py-1">
@@ -245,7 +245,7 @@ export default function Projects() {
   )
 
   return (
-    <section id="portfolio" ref={rootRef} className="bg-[#020203] text-[#e0e0d5] relative z-10 overflow-hidden border-t border-white/5">
+    <section id="portfolio" ref={rootRef} className="bg-[#0e0e11] text-[#e0e0d5] relative z-10 overflow-hidden border-t border-white/5">
 
       {/* Scrollbar Removal Hack */}
       <style jsx global>{`
