@@ -35,7 +35,7 @@ Here is a detailed breakdown of the projects featured in this portfolio, includi
     *   *GitHub:* [Repository](https://github.com/Himanshu-20002/contentAI)
 
 *   **Echo**
-    *   *Description:* A real-time AI voice assistant and chat application utilizing WebSockets and speech-to-text processing.
+    *   *Description:* An immersive, low-latency AI voice assistant and chat application featuring real-time bi-directional audio streaming, natural conversational turn-taking, and intelligent context retention.
     *   *Stack:* React, WebRTC, WebSocket, Node.js, OpenAI Whisper / Gemini API
     *   *GitHub:* [Repository](https://github.com/Himanshu-20002/Echo)
     *   *Live Demo:* [Link](https://echo-alpha-one.vercel.app)
