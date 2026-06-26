@@ -26,8 +26,7 @@ Here is a detailed breakdown of the projects featured in this portfolio, includi
     *   *Description:* An AI-integrated cross-platform event planning application designed to automate organization workflows and event scheduling.
     *   *Stack:* React Native, Node.js, Firebase, Google Gemini API
     *   *GitHub:* [Repository](https://github.com/Himanshu-20002/eventGo)
-
-*  
+    
 *   **ContentAI**
     *   *Description:* An elegant, premium AI-powered social media generator for multi-platform content ideas, captions, and hashtags.
     *   *Stack:* Next.js 16 (React 19), Vercel AI SDK, Drizzle ORM, Neon PostgreSQL, Auth.js v5, Tailwind CSS v4, Framer Motion
