@@ -1,5 +1,6 @@
-import { useRive } from "@rive-app/react-canvas";
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import {
   ArrowRight,
   Github,
@@ -11,15 +12,23 @@ import { Button } from "@/components/ui/button";
 import DecryptionText from "./animated/component/DecryptedText";
 import { StarField } from "./animated/component/StarField";
 
+const RiveHero = dynamic(() => import("./RiveHero"), { ssr: false });
 
 const Hero = () => {
+  const [loadRive, setLoadRive] = useState(false);
 
-
-  const { RiveComponent: SecondHero, } = useRive({
-    src: "/parallax_hero.riv",
-    autoplay: true,
-    stateMachines: "MainStateMachine",
-  });
+  useEffect(() => {
+    const triggerRiveLoad = () => {
+      setLoadRive(true);
+    };
+    if (typeof window !== "undefined") {
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(triggerRiveLoad, { timeout: 2000 });
+      } else {
+        setTimeout(triggerRiveLoad, 1000);
+      }
+    }
+  }, []);
 
 
 
@@ -114,7 +123,7 @@ const Hero = () => {
               <div className="absolute inset-0 z-0">
                 <StarField className="w-full h-full" />
               </div>
-              <SecondHero className="relative z-1000 w-full h-full object-contain" />
+              {loadRive && <RiveHero className="relative z-1000 w-full h-full object-contain" />}
             </div>
           </div>
         </div>

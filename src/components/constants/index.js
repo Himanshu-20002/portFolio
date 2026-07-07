@@ -1,103 +1,119 @@
-// index.js
 export const servicesData = [
   {
     title: "Helping with",
     description:
-      "I specialize in solving complex digital problems through clean code and intuitive design. Whether you need a simple landing page or a feature-rich platform, I bridge the gap between vision and reality.",
+      "I help startups and businesses build high-converting digital products—from landing pages and analytics to scalable backend systems. My focus is solving business problems with clean engineering.",
     items: [
       {
-        title: "Freelance Dev Projects",
-        description: "Full-cycle software development tailored to your specific business needs and goals.",
+        title: "Product Development",
+        description:
+          "Building complete web applications from idea to production.",
       },
       {
-        title: "Technical Consulting",
-        description: "Advising on architecture, tech stacks, and best practices for growing startups.",
+        title: "Technical Strategy",
+        description:
+          "Choosing the right architecture, APIs, databases, and deployment strategy.",
       },
       {
-        title: "UI/UX Optimization",
-        description: "Refining user flows and performance to maximize engagement and conversion rates.",
+        title: "Growth & Conversion",
+        description:
+          "Improving user journeys, conversion funnels, and customer acquisition.",
       },
     ],
   },
+
   {
     title: "Frontend Development",
     description:
-      "Crafting immersive, high-performance user interfaces that captivate and convert. I focus on speed, accessibility, and modern interactive experiences that push the boundaries of the web.",
+      "Building fast, responsive interfaces focused on performance, accessibility, and conversion. I create products that look premium while loading quickly.",
     items: [
       {
-        title: "React & Next.js Expert",
-        description: "Building scalable, SEO-friendly web applications using the latest industry standards.",
+        title: "Next.js & React",
+        description:
+          "SEO-friendly applications with reusable component architecture.",
       },
       {
-        title: "Immersive Web Animations",
-        description: "Using GSAP, Three.js, and Rive to create motion that feels fluid and premium.",
+        title: "Landing Pages & CRO",
+        description:
+          "Conversion-optimized landing pages using UX principles, trust signals, and CTA optimization.",
       },
       {
-        title: "Design-to-Code Excellence",
-        description: "Pixel-perfect implementation of Figma designs with clean, maintainable Tailwind CSS.",
+        title: "Performance Optimization",
+        description:
+          "Core Web Vitals, Lighthouse optimization, lazy loading, image optimization, and accessibility.",
       },
     ],
   },
-  {
-    title: "Mobile Development",
-    description:
-      "Developing seamless native-feel applications for iOS and Android. I build robust mobile experiences that handle everything from real-time data to complex animations with Ease.",
-    items: [
-      {
-        title: "React Native & Expo",
-        description: "Cross-platform apps with a single codebase and high-performance native modules.",
-      },
-      {
-        title: "Adaptive Mobile UX",
-        description: "Focused on thumb-friendly layouts, gestures, and smooth navigation patterns.",
-      },
-      {
-        title: "App Store Deployment",
-        description: "Managing the full lifecycle from development to publishing on App Store and Play Store.",
-      },
-    ],
-  },
+
   {
     title: "Backend Development",
     description:
-      "Designing rock-solid server-side logic and database architectures. I build secure, scalable backends that power your application's heart with speed and reliability.",
+      "Designing reliable APIs and scalable backend systems with a focus on security, integrations, and maintainability.",
     items: [
       {
-        title: "Serverless & REST APIs",
-        description: "Building efficient, well-documented endpoints with Node.js, Express, and Fastify.",
+        title: "REST APIs",
+        description:
+          "Node.js, Express, Fastify, authentication, and business logic.",
       },
       {
-        title: "Database Architecture",
-        description: "Optimizing PostgreSQL and MongoDB schemas for high-speed queries and data integrity.",
+        title: "CRM & Third-party Integrations",
+        description:
+          "HubSpot CRM, Google Ads Conversion Tracking, GTM, WhatsApp Business APIs, Zapier, and webhooks.",
       },
       {
-        title: "Secure Authentication",
-        description: "Implementing robust JWT, OAuth, and multi-factor authentication systems.",
+        title: "Data Validation",
+        description:
+          "Duplicate prevention, request validation, error handling, and resilient backend workflows.",
       },
     ],
   },
+
   {
-    title: "Cloud & DevOps",
+    title: "Analytics & Marketing Tech",
     description:
-      "Modernizing your deployment pipeline so you can focus on building features. I handle the infrastructure, security, and scaling so your app stays online and performs 24/7.",
+      "Connecting marketing with engineering through analytics, attribution, and event tracking that drives measurable business decisions.",
     items: [
       {
-        title: "CI/CD Automation",
-        description: "Setting up GitHub Actions and automated testing for zero-downtime deployments.",
+        title: "Google Tag Manager",
+        description:
+          "Custom dataLayer events, event schemas, and conversion tracking.",
       },
       {
-        title: "Containerization & Cloud",
-        description: "Deploying scalable applications using Docker, Vercel, and AWS infrastructure.",
+        title: "GA4 & Attribution",
+        description:
+          "Conversion funnels, user journey analysis, and campaign attribution.",
       },
       {
-        title: "Performance Monitoring",
-        description: "Real-time tracking of app health, traffic bottlenecks, and server resource usage.",
+        title: "Marketing Automation",
+        description:
+          "Lead tracking, CRM synchronization, and customer communication workflows.",
+      },
+    ],
+  },
+
+  {
+    title: "Cloud & Deployment",
+    description:
+      "Deploying scalable applications with automation, monitoring, and production-ready infrastructure.",
+    items: [
+      {
+        title: "CI/CD",
+        description:
+          "GitHub Actions with automated deployment pipelines.",
+      },
+      {
+        title: "Cloud Platforms",
+        description:
+          "Vercel, Docker, AWS basics, serverless deployment, and environment management.",
+      },
+      {
+        title: "Production Monitoring",
+        description:
+          "Logging, performance monitoring, and deployment troubleshooting.",
       },
     ],
   },
 ];
-
-
 
 
 export const sliderData = [

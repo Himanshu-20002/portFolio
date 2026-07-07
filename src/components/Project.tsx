@@ -319,7 +319,6 @@ export default function Projects() {
                     src={projects[0].image}
                     alt={projects[0].title}
                     fill
-                    priority
                     sizes="(max-width: 1024px) 100vw, 42rem"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -334,7 +333,6 @@ export default function Projects() {
                     src={projects[1].image}
                     alt={projects[1].title}
                     fill
-                    priority
                     sizes="(max-width: 1024px) 100vw, 34rem"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -345,7 +343,6 @@ export default function Projects() {
                     src={projects[2].image}
                     alt={projects[2].title}
                     fill
-                    priority
                     sizes="(max-width: 1024px) 100vw, 24rem"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -372,7 +369,6 @@ export default function Projects() {
                     src={projects[3].image}
                     alt={projects[3].title}
                     fill
-                    priority
                     sizes="(max-width: 1024px) 100vw, 60rem"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -387,7 +383,6 @@ export default function Projects() {
                     src={projects[4].image}
                     alt={projects[1].title}
                     fill
-                    priority
                     sizes="(max-width: 1024px) 100vw, 34rem"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -398,7 +393,6 @@ export default function Projects() {
                     src={projects[5].image}
                     alt={projects[5].title}
                     fill
-                    priority
                     sizes="(max-width: 1024px) 100vw, 24rem"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -412,7 +406,6 @@ export default function Projects() {
                     src={projects[6].image}
                     alt={projects[6].title}
                     fill
-                    priority
                     sizes="(max-width: 1024px) 100vw, 42rem"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -452,7 +445,6 @@ export default function Projects() {
                   src={project.image}
                   alt={project.title}
                   fill
-                  priority
                   sizes="88vw"
                   className="object-cover"
                 />
