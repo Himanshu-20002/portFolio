@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import Image from 'next/image'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -25,6 +25,7 @@ const projects = [
     github: "https://github.com/Himanshu-20002/PM_Manager",
     live: "https://pm-manager-eight.vercel.app/",
     featured: true,
+    category: "Apps",
   },
   {
     title: "Habib's Hair & Beauty",
@@ -46,8 +47,8 @@ const projects = [
     github: "#", // Private
     live: "https://habibs-hair-beauty-salon.vercel.app/",
     featured: true,
+    category: "Landing Page",
   },
-
   {
     title: "EventGo ",
     description: "AI-Integrated Event Planner",
@@ -58,6 +59,7 @@ const projects = [
     github: "https://github.com/Himanshu-20002/eventGo",
     live: "#",
     featured: true,
+    category: "AI",
   },
   {
     title: "Interactive Game Dashboard",
@@ -69,6 +71,7 @@ const projects = [
     github: "https://github.com/Himanshu-20002/gaming-webapp.git",
     live: "https://next-valorant.vercel.app/",
     featured: true,
+    category: "Apps",
   },
   {
     title: "OrthoNow",
@@ -89,6 +92,7 @@ const projects = [
     github: "#", // Assignment/Private
     live: "https://namoza-developer-assignment-wheat.vercel.app/",
     featured: true,
+    category: "Landing Page",
   },
   {
     title: "Webberry Digital Agency",
@@ -100,6 +104,7 @@ const projects = [
     github: "https://github.com/Himanshu-20002/webberry-frontend.git",
     live: "https://webberry-frontend.vercel.app/",
     featured: false,
+    category: "Landing Page",
   },
   {
     title: "Grocery Delivery App",
@@ -111,6 +116,7 @@ const projects = [
     github: "#",
     live: "",
     featured: false,
+    category: "Apps",
   },
   {
     title: "Multi-vendor E-commerce app",
@@ -122,6 +128,7 @@ const projects = [
     github: "#",
     live: "#",
     featured: false,
+    category: "Apps",
   },
   {
     title: "Web Scraper API",
@@ -133,6 +140,7 @@ const projects = [
     github: "#",
     live: "#",
     featured: false,
+    category: "Apps",
   },
   {
     title: "Nike Website",
@@ -144,6 +152,7 @@ const projects = [
     github: "#",
     live: "https://next-nike-mauve.vercel.app/",
     featured: true,
+    category: "AI",
   },
   {
     title: "Freelance dev project",
@@ -155,6 +164,7 @@ const projects = [
     github: "https://github.com/Himanshu-20002/ssgroup.git",
     live: "https://ssgroup-chi.vercel.app/",
     featured: true,
+    category: "Landing Page",
   },
   {
     title: "Animated Component Library",
@@ -166,6 +176,7 @@ const projects = [
     github: "#",
     live: "https://landing-page-bay-seven-16.vercel.app/",
     featured: true,
+    category: "Landing Page",
   },
 ]
 
@@ -175,6 +186,13 @@ export default function Projects() {
   const pinContainerRef = useRef<HTMLDivElement>(null)
   const entryContainerRef = useRef<HTMLDivElement>(null)
   const trackRef = useRef<HTMLDivElement>(null)
+
+  const [activeCategory, setActiveCategory] = useState("All")
+  const categories = ["All", "AI", "Landing Page", "Apps"]
+
+  const filteredProjects = activeCategory === "All"
+    ? projects
+    : projects.filter(p => p.category === activeCategory)
 
   useGSAP(() => {
     const track = trackRef.current
@@ -473,24 +491,100 @@ export default function Projects() {
             </div>
           </div>
 
+          {/* Category Tabs - Mobile Only */}
+          <div className="flex flex-wrap gap-2 px-8">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`px-4 py-2 rounded-full text-[10px] font-mono uppercase tracking-wider transition-all duration-300 ${
+                  activeCategory === category
+                    ? "bg-purple-600 text-white shadow-[0_4px_12px_rgba(168,85,247,0.3)]"
+                    : "bg-white/5 border border-white/10 text-white/60 hover:bg-white/10 hover:text-white"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+
           <div className="flex overflow-x-auto gap-8 px-8 pb-16 snap-x snap-mandatory no-scrollbar scroll-smooth">
-            {projects.map((project, idx) => (
+            {filteredProjects.map((project, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="min-w-[88vw] snap-center relative rounded-[2.5rem] overflow-hidden aspect-[4/5] bg-neutral-900/40 border border-white/5 shadow-[0_0_40px_rgba(168,85,247,0.15)]"
+                className="min-w-[88vw] snap-center flex flex-col rounded-[2rem] overflow-hidden bg-neutral-900/60 border border-white/5 shadow-[0_0_40px_rgba(168,85,247,0.15)] backdrop-blur-md"
               >
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  sizes="88vw"
-                  className="object-cover"
-                />
-                <ProjectCardContent project={project} index={idx} />
+                {/* Image top container (16:9 aspect ratio) */}
+                <div className="relative w-full aspect-video overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes="88vw"
+                    className="object-cover"
+                  />
+                </div>
+                
+                {/* Content area below image */}
+                <div className="flex flex-col p-6 gap-4 bg-[#0e0e11]/85">
+                  <div className="flex justify-between items-center">
+                    <Badge className="bg-purple-500/20 text-purple-400 border-purple-500/30 backdrop-blur-md text-[10px] font-mono tracking-[0.2em] px-3 py-1">
+                      {project.type}
+                    </Badge>
+                    <span className="text-[10px] font-mono text-white/30 tracking-[0.3em] font-bold">
+                      0{idx + 1}
+                    </span>
+                  </div>
+
+                  <h4 className="text-2xl font-serif text-white font-bold leading-tight">
+                    {project.title}
+                  </h4>
+
+                  <p className="text-xs text-neutral-400 font-sans line-clamp-3 leading-relaxed">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 py-1">
+                    {project.technologies.slice(0, 4).map((tech, idx) => (
+                      <span key={idx} className="text-[9px] px-2.5 py-1 rounded-full bg-white/5 text-purple-300 border border-white/10 font-mono">
+                        {tech}
+                      </span>
+                    ))}
+                    {project.technologies.length > 4 && (
+                      <span className="text-[9px] px-2.5 py-1 rounded-full bg-white/5 text-purple-300 border border-white/10 font-mono">
+                        +{project.technologies.length - 4} more
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="flex gap-4 pt-2">
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="h-10 rounded-xl text-[10px] font-mono uppercase bg-white/5 border-white/10 text-white hover:border-purple-500/50 hover:bg-purple-500/20 flex-1 transition-all duration-500"
+                      asChild
+                    >
+                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <Github className="h-4 w-4 mr-2" /> REPO
+                      </a>
+                    </Button>
+                    {project.type !== "Mobile App" && (
+                      <Button
+                        size="sm"
+                        className="h-10 rounded-xl text-[10px] font-mono uppercase bg-purple-600 hover:bg-purple-500 text-white border-0 flex-1 shadow-[0_10px_20px_rgba(168,85,247,0.3)] transition-all duration-500"
+                        asChild
+                      >
+                        <a href={project.live} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4 mr-2" /> LIVE
+                        </a>
+                      </Button>
+                    )}
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
