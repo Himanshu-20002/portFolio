@@ -27,6 +27,47 @@ const projects = [
     featured: true,
   },
   {
+    title: "Habib's Hair & Beauty",
+    description:
+      "A production-ready salon website built for lead generation with online appointment booking, admin dashboard, SEO optimization, and automated WhatsApp workflows.",
+    image: "/img/habibs.png",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "Prisma",
+      "Zapier",
+      "GSAP",
+      "Vercel",
+    ],
+    type: "Client Project",
+    icon: <Globe className="h-4 w-4" />,
+    github: "#", // Private
+    live: "https://habibs-hair-beauty-salon.vercel.app/",
+    featured: true,
+  },
+  {
+    title: "OrthoNow",
+    description:
+      "Healthcare landing page optimized for conversions with GA4 & GTM event tracking, CRM integration architecture, conversion attribution, and performance optimization.",
+    image: "/img/orthonow.webp",
+    technologies: [
+      "Next.js",
+      "Google Analytics 4",
+      "Google Tag Manager",
+      "HubSpot",
+      "Node.js",
+      "TypeScript",
+      "Vercel",
+    ],
+    type: "Healthcare Platform",
+    icon: <Globe className="h-4 w-4" />,
+    github: "#", // Assignment/Private
+    live: "https://namoza-developer-assignment-wheat.vercel.app/",
+    featured: true,
+  },
+  {
     title: "EventGo ",
     description: "AI-Integrated Event Planner",
     image: "/img/eventgo.png",
