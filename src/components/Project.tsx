@@ -47,26 +47,7 @@ const projects = [
     live: "https://habibs-hair-beauty-salon.vercel.app/",
     featured: true,
   },
-  {
-    title: "OrthoNow",
-    description:
-      "Healthcare landing page optimized for conversions with GA4 & GTM event tracking, CRM integration architecture, conversion attribution, and performance optimization.",
-    image: "/img/orthonow.webp",
-    technologies: [
-      "Next.js",
-      "Google Analytics 4",
-      "Google Tag Manager",
-      "HubSpot",
-      "Node.js",
-      "TypeScript",
-      "Vercel",
-    ],
-    type: "Healthcare Platform",
-    icon: <Globe className="h-4 w-4" />,
-    github: "#", // Assignment/Private
-    live: "https://namoza-developer-assignment-wheat.vercel.app/",
-    featured: true,
-  },
+
   {
     title: "EventGo ",
     description: "AI-Integrated Event Planner",
@@ -87,6 +68,26 @@ const projects = [
     icon: <Smartphone className="h-4 w-4" />,
     github: "https://github.com/Himanshu-20002/gaming-webapp.git",
     live: "https://next-valorant.vercel.app/",
+    featured: true,
+  },
+  {
+    title: "OrthoNow",
+    description:
+      "Healthcare landing page optimized for conversions with GA4 & GTM event tracking, CRM integration architecture, conversion attribution, and performance optimization.",
+    image: "/img/orthonow.png",
+    technologies: [
+      "Next.js",
+      "Google Analytics 4",
+      "Google Tag Manager",
+      "HubSpot",
+      "Node.js",
+      "TypeScript",
+      "Vercel",
+    ],
+    type: "Healthcare Platform",
+    icon: <Globe className="h-4 w-4" />,
+    github: "#", // Assignment/Private
+    live: "https://namoza-developer-assignment-wheat.vercel.app/",
     featured: true,
   },
   {
@@ -379,7 +380,7 @@ export default function Projects() {
                   />
                   <ProjectCardContent project={projects[1]} index={1} />
                 </div>
-                <div className="relative w-[24rem] h-[24rem] overflow-hidden rounded-3xl shadow-2xl bg-neutral-900/40 border border-pink-500/20 group-hover:border-pink-500/50 group self-start transition-all duration-500">
+                <div className="relative w-[35rem] h-[24rem] overflow-hidden rounded-3xl shadow-2xl bg-neutral-900/40 border border-pink-500/20 group-hover:border-pink-500/50 group self-start transition-all duration-500">
                   <Image
                     src={projects[2].image}
                     alt={projects[2].title}
@@ -404,7 +405,7 @@ export default function Projects() {
               </div>
 
               {/* Cluster 3 - Massive Hero */}
-              <div className="relative w-[60rem] h-[48rem] shrink-0 group">
+              <div className="relative w-[68rem] h-[28rem] shrink-0 group">
                 <div className="w-full h-full relative overflow-hidden rounded-3xl shadow-[0_0_80px_rgba(168,85,247,0.2)] bg-neutral-900/40 border border-white/10 group-hover:border-purple-400/40 transition-all duration-700">
                   <Image
                     src={projects[3].image}
@@ -429,7 +430,7 @@ export default function Projects() {
                   />
                   <ProjectCardContent project={projects[1]} index={1} />
                 </div>
-                <div className="relative w-[24rem] h-[24rem] overflow-hidden rounded-3xl shadow-2xl bg-neutral-900/40 border border-pink-500/20 group-hover:border-pink-500/50 group self-start transition-all duration-500">
+                <div className="relative w-[34rem] h-[24rem] overflow-hidden rounded-3xl shadow-2xl bg-neutral-900/40 border border-pink-500/20 group-hover:border-pink-500/50 group self-start transition-all duration-500">
                   <Image
                     src={projects[5].image}
                     alt={projects[5].title}
